@@ -1,0 +1,62 @@
+ext {
+
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 19,
+            targetSdkVersion : 30
+    ]
+
+    version = [
+            retrofitSdkVersion      : "2.9.0",
+            dagger2SdkVersion       : "2.37",
+            glideSdkVersion         : "4.12.0",
+            rxlifecycle4SdkVersion  : "4.0.2",
+            canarySdkVersion        : "2.7"
+    ]
+
+    dependencies = [
+            //network
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"  : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava3" : "com.squareup.retrofit2:adapter-rxjava3:${version["retrofitSdkVersion"]}",
+            "okhttp3"                  : "com.squareup.okhttp3:okhttp:4.9.1",
+            "okhttp-urlconnection"     : "com.squareup.okhttp:okhttp-urlconnection:2.0.0",
+            "glide"                    : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-compiler"           : "com.github.bumptech.glide:compiler:${version["glideSdkVersion"]}",
+            "glide-loader-okhttp3"     : "com.github.bumptech.glide:okhttp3-integration:${version["glideSdkVersion"]}",
+
+            //view
+            "pickerview"               : "com.contrarywind:Android-PickerView:4.1.8",
+            "photoview"                : "com.github.chrisbanes.photoview:library:1.2.3",
+
+            //rx3
+            "rxandroid3"               : "io.reactivex.rxjava3:rxandroid:3.0.0",
+            "rxjava3"                  : "io.reactivex.rxjava3:rxjava:3.0.13",
+            "rxlifecycle4"             : "com.trello.rxlifecycle4:rxlifecycle:${version["rxlifecycle4SdkVersion"]}",
+            "rxlifecycle4-android"     : "com.trello.rxlifecycle4:rxlifecycle-android:${version["rxlifecycle4SdkVersion"]}",
+            "rxlifecycle4-components"  : "com.trello.rxlifecycle4:rxlifecycle-components:${version["rxlifecycle4SdkVersion"]}",
+            "rxpermissions2"           : "com.github.tbruyelle:rxpermissions:0.12",
+
+            //tools
+            "dagger2"                  : "com.google.dagger:dagger:${version["dagger2SdkVersion"]}",
+            "dagger2-android"          : "com.google.dagger:dagger-android:${version["dagger2SdkVersion"]}",
+            "dagger2-android-support"  : "com.google.dagger:dagger-android-support:${version["dagger2SdkVersion"]}",
+            "dagger2-compiler"         : "com.google.dagger:dagger-compiler:${version["dagger2SdkVersion"]}",
+            "dagger2-android-processor": "com.google.dagger:dagger-android-processor:${version["dagger2SdkVersion"]}",
+            "androideventbus"          : "org.simple:androideventbus:1.0.5.1",
+            "gson"                     : "com.google.code.gson:gson:2.8.7",
+            "javax.annotation"         : "javax.annotation:jsr250-api:1.0",
+            "arouter"                  : "com.alibaba:arouter-api:1.5.2",
+            "arouter-compiler"         : "com.alibaba:arouter-compiler:1.5.2",
+            "umeng"                    : "com.umeng.umsdk:common:9.4.0",
+            "umeng-asms"               : "com.umeng.umsdk:asms:1.2.3",
+            "umeng-apm"                : "com.umeng.umsdk:apm:1.2.0",
+
+            //test
+            "timber"                   : "com.jakewharton.timber:timber:4.7.1",
+            "canary-debug"             : "com.squareup.leakcanary:leakcanary-android:${version["canarySdkVersion"]}",
+    ]
+
+
+}

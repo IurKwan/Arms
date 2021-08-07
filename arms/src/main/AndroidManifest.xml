@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jess.arms">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--适配Android O 应用安装-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application >
+        <service android:name=".update.UpdateService" />
+    </application>
+
+</manifest>

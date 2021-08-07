@@ -1,0 +1,8 @@
+include ':arms-debugtool'
+include ':arms-push'
+include ':arms-imageloader-glide'
+include ':arms'
+include ':app'
+rootProject.name = "Arms"
+include ':sqlbrite-lint'
+include ':sqlbrite'
