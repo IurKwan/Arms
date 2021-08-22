@@ -24,15 +24,15 @@ buildscript {
         // 本地依赖库
         maven {
             allowInsecureProtocol = true
-            url "http://localhost:8081/repository/maven-releases/"
+            url "http://120.24.83.94:8081/repository/maven-releases/"
         }
         maven {
             allowInsecureProtocol = true
-            url "http://localhost:8081/repository/krbb-snapshots/"
+            url "http://120.24.83.94:8081/repository/krbb-snapshots/"
         }
         maven {
             allowInsecureProtocol = true
-            url "http://localhost:8081/repository/krbb-releases/"
+            url "http://120.24.83.94:8081/repository/krbb-releases/"
         }
     }
     dependencies {
@@ -73,15 +73,15 @@ allprojects {
         // 本地依赖库
         maven {
             allowInsecureProtocol = true
-            url "http://localhost:8081/repository/maven-releases/"
+            url "http://120.24.83.94:8081/repository/maven-releases/"
         }
         maven {
             allowInsecureProtocol = true
-            url "http://localhost:8081/repository/krbb-snapshots/"
+            url "http://120.24.83.94:8081/repository/krbb-snapshots/"
         }
         maven {
             allowInsecureProtocol = true
-            url "http://localhost:8081/repository/krbb-releases/"
+            url "http://120.24.83.94:8081/repository/krbb-releases/"
         }
     }
 }
