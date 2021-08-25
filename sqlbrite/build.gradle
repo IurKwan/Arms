@@ -31,4 +31,4 @@ android {
 
 }
 
-apply from: '../mvn.gradle'
+//apply from: '../mvn.gradle'

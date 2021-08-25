@@ -44,4 +44,4 @@ dependencies {
     implementation "android.arch.persistence:db-framework:1.1.1"
 }
 
-apply from: '../mvn.gradle'
+//apply from: '../mvn.gradle'

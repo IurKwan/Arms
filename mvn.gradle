@@ -1,5 +1,4 @@
 // 一个可以让你把库上传到maven仓库的插件
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 // 对库文件进行数字签名的插件,可以通过签名知道谁创建了这个库文件,签名的时间等等信息
 apply plugin: 'signing'
@@ -11,12 +10,12 @@ if (isReleaseBuild()) {
     println 'RELEASE BUILD'
     // 下面的库地址指向的是我们私有仓库的Releases 仓库
     mavenRepositoryUrl = hasProperty('RELEASE_REPOSITORY_URL') ? RELEASE_REPOSITORY_URL
-            : "http://localhost:8081/repository/krbb-releases/"
+            : "http://120.24.83.94:8081/repository/krbb-releases/"
 } else {
     println 'SNAPSHOTS BUILD'
     // 下面的库地址指向的是我们私有仓库的snapshots 仓库
     mavenRepositoryUrl = hasProperty('SNAPSHOT_REPOSITORY_URL') ? SNAPSHOT_REPOSITORY_URL
-            : "http://localhost:8081/repository/krbb-snapshots/"
+            : "http://120.24.83.94:8081/repository/krbb-snapshots/"
 }
 // NEXUS_USERNAME等变量在我们主项目的gradle.properties中可以找到
 def getRepositoryUsername() {
