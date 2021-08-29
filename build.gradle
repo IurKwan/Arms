@@ -15,6 +15,10 @@ buildscript {
             allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
         }
+        maven {
+            allowInsecureProtocol = true
+            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+        }
         google()
         mavenCentral()
         // 本地依赖库
@@ -28,7 +32,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.1'
+        classpath 'com.android.tools.build:gradle:4.2.2'
 
         // kotlin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
@@ -49,6 +53,10 @@ allprojects {
         maven {
             allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
+        }
+        maven {
+            allowInsecureProtocol = true
+            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
         }
         google()
         mavenCentral()

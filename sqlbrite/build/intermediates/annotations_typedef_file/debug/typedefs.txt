@@ -1,1 +1,0 @@
-D com/squareup/sqlbrite3/BriteDatabase$ConflictAlgorithm
