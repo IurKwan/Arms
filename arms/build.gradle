@@ -1,3 +1,5 @@
+import com.iur.arms.buildsrc.Libs
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -29,76 +31,74 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        viewBinding true
     }
 
 }
 
 dependencies {
     //support
-    compileOnly 'com.google.android.material:material:1.3.0'
-    api "androidx.appcompat:appcompat:1.3.0"
+    api Libs.material
+    api Libs.AndroidX.appcompat
 
     //rx
-    api rootProject.ext.dependencies["rxjava3"]
-    api rootProject.ext.dependencies["rxandroid3"]
-    api(rootProject.ext.dependencies["rxlifecycle4"]) {
+    api Libs.RxJava.rxjava3
+    api Libs.RxJava.rxAndroid3
+    api (Libs.RxJava.RxLifecycle.rxlifecycle4){
         exclude module: 'jsr305'
     }
-    api(rootProject.ext.dependencies["rxlifecycle4-android"]) {
+    api (Libs.RxJava.RxLifecycle.rxlifecycle4Android){
         exclude module: 'support-annotations'
         exclude module: 'rxjava'
         exclude module: 'rxandroid'
         exclude module: 'rxlifecycle'
     }
-    api(rootProject.ext.dependencies["rxpermissions2"]) {
+    api(Libs.RxJava.rxPermissions) {
         exclude module: 'rxjava'
         exclude module: 'support-annotations'
     }
     //network
-    api(rootProject.ext.dependencies["retrofit"]) {
+    api(Libs.Retrofit.retrofit) {
         exclude module: 'okhttp'
         exclude module: 'okio'
     }
-    implementation(rootProject.ext.dependencies["retrofit-converter-gson"]) {
+    implementation(Libs.Retrofit.retrofitConverterGson) {
         exclude module: 'gson'
         exclude module: 'okhttp'
         exclude module: 'okio'
         exclude module: 'retrofit'
     }
-    implementation(rootProject.ext.dependencies["retrofit-adapter-rxjava3"]) {
+    implementation(Libs.Retrofit.retrofitAdapterRxjava) {
         exclude module: 'rxjava'
         exclude module: 'okhttp'
         exclude module: 'retrofit'
         exclude module: 'okio'
     }
-    api rootProject.ext.dependencies["okhttp3"]
+    api Libs.okhttp3
 
     //tools
     compileOnly rootProject.ext.dependencies["javax.annotation"]
-    api rootProject.ext.dependencies["dagger2"]
-    kapt rootProject.ext.dependencies["dagger2-compiler"]
-    annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
-    compileOnly rootProject.ext.dependencies["androideventbus"]
-    api rootProject.ext.dependencies["gson"]
+    api Libs.Dagger.dagger
+    kapt Libs.Dagger.daggerCompiler
+    annotationProcessor Libs.Dagger.daggerCompiler
+    compileOnly Libs.androidEventBus
+    api Libs.gson
     //test
-    api rootProject.ext.dependencies["timber"]
+    api Libs.timber
     // 选择图片库
-    api 'io.github.lucksiege:pictureselector:v2.7.3-rc02'
+    api Libs.pictureSelector
     // 查看大图
-    api('com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6') {
+    api(Libs.bigImageViewPager) {
         exclude module: 'subsampling-scale-image-view'
     }
     // 友盟
-    compileOnly rootProject.ext.dependencies["umeng"]
-    compileOnly rootProject.ext.dependencies["umeng-asms"]
-    compileOnly rootProject.ext.dependencies["umeng-apm"]
+    compileOnly Libs.UMeng.umeng
+    compileOnly Libs.UMeng.umengApm
+    compileOnly Libs.UMeng.umengAsms
 
     configurations.all {
         resolutionStrategy.force 'androidx.fragment:fragment:1.1.0'
     }
-
-
 }
 
 apply from: '../mvn.gradle'

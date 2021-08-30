@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/arms-debugtool" />
             <option value="$PROJECT_DIR$/arms-imageloader-glide" />
             <option value="$PROJECT_DIR$/arms-push" />
+            <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/sqlbrite" />
             <option value="$PROJECT_DIR$/sqlbrite-lint" />
           </set>
@@ -23,5 +24,6 @@
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
+    <option name="offlineMode" value="true" />
   </component>
 </project>
