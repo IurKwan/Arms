@@ -1,7 +1,9 @@
+import com.iur.arms.buildsrc.Libs
+
 apply plugin: 'com.android.library'
 
 dependencies {
-  implementation "io.reactivex.rxjava3:rxjava:3.0.13"
+  implementation Libs.RxJava.rxjava3
   implementation "android.arch.persistence:db:1.1.1"
 
   lintChecks project(':sqlbrite-lint')

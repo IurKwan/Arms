@@ -1,3 +1,5 @@
+import com.iur.arms.buildsrc.Libs
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -32,14 +34,14 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.AndroidX.appcompat
 
-    api rootProject.ext.dependencies["glide"]
-    kapt(rootProject.ext.dependencies["glide-compiler"]) {
+    api Libs.Glide.glide
+    kapt(Libs.Glide.glideCompiler) {
         exclude module: 'jsr305'
     }
     compileOnly project(':arms')
 }
 
-//apply from: '../mvn.gradle'
+apply from: '../mvn.gradle'

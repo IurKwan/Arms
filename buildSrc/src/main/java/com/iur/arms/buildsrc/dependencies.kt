@@ -28,6 +28,14 @@ object Libs {
     const val pictureSelector = "io.github.lucksiege:pictureselector:v2.7.3-rc02"
     const val bigImageViewPager = "'com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6'"
 
+    object Glide {
+        private const val version = "4.12.0"
+
+        const val glide = "com.github.bumptech.glide:glide:$version"
+        const val glideCompiler = "com.github.bumptech.glide:compiler:$version"
+        const val glideLoaderOkhttp = "com.github.bumptech.glide:okhttp3-integration:$version"
+    }
+
     object UMeng {
         const val umeng = "com.umeng.umsdk:common:9.4.0"
         const val umengAsms = "com.umeng.umsdk:asms:1.2.3"

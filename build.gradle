@@ -5,24 +5,16 @@ apply from: "config.gradle"
 buildscript {
     ext.kotlin_version = "1.5.30"
     repositories {
+        mavenCentral()
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://jitpack.io" }
 
         // 非HTTPS的需要加上allowInsecureProtocol
         maven {
             allowInsecureProtocol = true
-            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-        }
-        maven {
-            allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
         }
-        maven {
-            allowInsecureProtocol = true
-            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-        }
         google()
-        mavenCentral()
         // 本地依赖库
         maven {
             allowInsecureProtocol = true
@@ -41,22 +33,14 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://jitpack.io" }
         maven {
             allowInsecureProtocol = true
-            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-        }
-        maven {
-            allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
         }
-        maven {
-            allowInsecureProtocol = true
-            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
-        }
         google()
-        mavenCentral()
         // 本地依赖库
         maven {
             allowInsecureProtocol = true
