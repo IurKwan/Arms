@@ -5,6 +5,7 @@ apply from: "config.gradle"
 buildscript {
     ext.kotlin_version = "1.5.30"
     repositories {
+        google()
         mavenCentral()
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://jitpack.io" }
@@ -14,7 +15,6 @@ buildscript {
             allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
         }
-        google()
         // 本地依赖库
         maven {
             allowInsecureProtocol = true
@@ -33,6 +33,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         mavenCentral()
         maven { url 'https://repo1.maven.org/maven2/' }
         maven { url "https://jitpack.io" }
@@ -40,7 +41,6 @@ allprojects {
             allowInsecureProtocol = true
             url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'
         }
-        google()
         // 本地依赖库
         maven {
             allowInsecureProtocol = true

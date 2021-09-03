@@ -20,13 +20,13 @@ object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:4.2.2"
     const val jdkDesugar = "com.android.tools:desugar_jdk_libs:1.1.5"
     const val junit = "junit:junit:4.13"
-    const val material = "com.google.android.material:material:1.3.1"
-    const val okhttp3 = "om.squareup.okhttp3:okhttp:4.9.1"
+    const val material = "com.google.android.material:material:1.4.0"
+    const val okhttp3 = "com.squareup.okhttp3:okhttp:4.9.1"
     const val androidEventBus = "org.simple:androideventbus:1.0.5.1"
     const val gson = "com.google.code.gson:gson:2.8.7"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val pictureSelector = "io.github.lucksiege:pictureselector:v2.7.3-rc02"
-    const val bigImageViewPager = "'com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6'"
+    const val bigImageViewPager = "com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6"
 
     object Glide {
         private const val version = "4.12.0"
@@ -45,7 +45,7 @@ object Libs {
     object Dagger {
         private const val version = "2.37"
 
-        const val dagger = "om.google.dagger:dagger:$version"
+        const val dagger = "com.google.dagger:dagger:$version"
         const val daggerAndroid = "com.google.dagger:dagger-android:$version"
         const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:$version"
         const val daggerCompiler = "com.google.dagger:dagger-compiler:$version"
@@ -63,7 +63,7 @@ object Libs {
 
         const val retrofit = "com.squareup.retrofit2:retrofit:$version"
         const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:$version"
-        const val retrofitAdapterRxjava = "ccom.squareup.retrofit2:adapter-rxjava3:$version"
+        const val retrofitAdapterRxjava = "com.squareup.retrofit2:adapter-rxjava3:$version"
 
     }
 
