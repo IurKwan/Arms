@@ -119,8 +119,8 @@ public class GlideConfigImpl extends ImageConfig {
             return this;
         }
 
-        public Builder isCenterCrop(boolean isCenterCrop) {
-            this.isCenterCrop = isCenterCrop;
+        public Builder centerCrop() {
+            this.isCenterCrop = true;
             return this;
         }
 
