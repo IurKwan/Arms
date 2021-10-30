@@ -35,6 +35,14 @@ class ImageSelectorUtils private constructor() {
         mEngine = engine
     }
 
+    fun getEngine(): ImageEngine {
+        return mEngine!!
+    }
+
+    fun getTheme(): Int{
+        return mTheme
+    }
+
     fun takeOnePhoto(fragment: Fragment, isCut: Boolean, listener: OnResultCallbackListener<*>) {
         checkTheme()
 

@@ -26,6 +26,8 @@ import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.Preconditions;
 
+import timber.log.Timber;
+
 public class BaseApplication extends Application implements App {
     private AppLifecycles mAppDelegate;
 
@@ -76,4 +78,5 @@ public class BaseApplication extends Application implements App {
         Preconditions.checkState(mAppDelegate instanceof App, "%s must be implements %s", mAppDelegate.getClass().getName(), App.class.getName());
         return ((App) mAppDelegate).getAppComponent();
     }
+
 }
