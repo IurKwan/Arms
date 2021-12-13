@@ -95,8 +95,13 @@ internal class HandlerErrorGsonResponseBodyConverter<T>(private val adapter: Typ
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            // 抛出错误
-            throw NetErrorException(e.message, NetErrorException.PARSE_ERROR)
+            if (e is NetErrorException){
+                // 抛出服务器返回错误码
+                throw NetErrorException(e.message, e.mErrorType)
+            } else {
+                // 数据解析错误
+                throw NetErrorException(e.message, NetErrorException.PARSE_ERROR)
+            }
         } finally {
             value.close()
         }

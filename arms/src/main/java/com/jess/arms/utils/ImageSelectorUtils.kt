@@ -43,7 +43,7 @@ class ImageSelectorUtils private constructor() {
         return mTheme
     }
 
-    fun takeOnePhoto(fragment: Fragment, isCut: Boolean, listener: OnResultCallbackListener<*>) {
+    fun takeOnePhoto(fragment: Fragment, isCut: Boolean, listener: OnResultCallbackListener<LocalMedia>) {
         checkTheme()
 
         PictureSelector.create(fragment)
@@ -67,7 +67,7 @@ class ImageSelectorUtils private constructor() {
             .forResult(listener)
     }
 
-    fun starCamera(fragment: Fragment, listener: OnResultCallbackListener<*>) {
+    fun starCamera(fragment: Fragment, listener: OnResultCallbackListener<LocalMedia>) {
         checkTheme()
 
         PictureSelector.create(fragment)
@@ -83,7 +83,7 @@ class ImageSelectorUtils private constructor() {
         mLocalMedia: List<LocalMedia>,
         max: Int,
         isPhoto: Boolean,
-        listener: OnResultCallbackListener<*>
+        listener: OnResultCallbackListener<LocalMedia>
     ) {
         checkTheme()
 
@@ -121,7 +121,7 @@ class ImageSelectorUtils private constructor() {
         mLocalMedia: List<LocalMedia>,
         limitSize: Boolean,
         isPhoto: Boolean,
-        listener: OnResultCallbackListener<*>
+        listener: OnResultCallbackListener<LocalMedia>
     ) {
         checkTheme()
 
@@ -159,7 +159,7 @@ class ImageSelectorUtils private constructor() {
         mLocalMedia: List<LocalMedia>,
         limitSize: Boolean,
         isPhoto: Boolean,
-        listener: OnResultCallbackListener<*>
+        listener: OnResultCallbackListener<LocalMedia>
     ) {
         checkTheme()
 
@@ -193,7 +193,7 @@ class ImageSelectorUtils private constructor() {
     }
 
     fun startMediaSelected(
-        activity: Activity, mLocalMedia: List<LocalMedia>, listener: OnResultCallbackListener<*>
+        activity: Activity, mLocalMedia: List<LocalMedia>, listener: OnResultCallbackListener<LocalMedia>
     ) {
         checkTheme()
 
