@@ -25,7 +25,7 @@ object Libs {
     const val androidEventBus = "org.simple:androideventbus:1.0.5.1"
     const val gson = "com.google.code.gson:gson:2.8.7"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
-    const val pictureSelector = "io.github.lucksiege:pictureselector:v2.7.3-rc10"
+    const val pictureSelector = "io.github.lucksiege:pictureselector:v2.7.3-rc09"
     const val bigImageViewPager = "com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6"
 
     object Glide {
