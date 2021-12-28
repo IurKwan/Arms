@@ -11,12 +11,14 @@ import java.io.IOException
 class NetErrorException : IOException {
 
     var mErrorType = NO_CONNECT_ERROR
+    var mServiceErrorCode : Int? = null
     private var mException: Throwable? = null
     private var mErrorMessage: String? = ""
 
-    constructor(exception: Throwable?, mErrorType: Int) {
+    constructor(exception: Throwable?, mErrorType: Int,serviceCode : Int? = null) {
         mException = exception
         this.mErrorType = mErrorType
+        this.mServiceErrorCode = serviceCode
     }
 
     constructor(message: String, cause: Throwable) : super(message, cause) {

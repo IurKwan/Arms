@@ -68,7 +68,7 @@ abstract class HandlerNetErrorSubscriber<T> : Observer<T>, NetErrorExceptionCall
                 error = NetErrorException(e, NetErrorException.OTHER)
             }
         } else {
-            error = NetErrorException(e.message, NetErrorException.OTHER)
+            error = NetErrorException(e.message, e.mErrorType)
         }
 
         error?.let {

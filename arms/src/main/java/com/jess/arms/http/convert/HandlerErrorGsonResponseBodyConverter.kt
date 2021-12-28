@@ -1,5 +1,6 @@
 package com.jess.arms.http.convert
 
+import android.os.Message
 import com.google.gson.TypeAdapter
 import com.jess.arms.http.subscriber.NetErrorException
 import okhttp3.ResponseBody
@@ -90,20 +91,24 @@ internal class HandlerErrorGsonResponseBodyConverter<T>(private val adapter: Typ
                     return t as T
                 } else {
                     // 抛出错误
-                    throw NetErrorException(message, errorType)
+                    throw InnerException(message, errorType)
                 }
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            if (e is NetErrorException){
-                // 抛出服务器返回错误码
-                throw NetErrorException(e.message, e.mErrorType)
-            } else {
+            if (e !is InnerException){
                 // 数据解析错误
                 throw NetErrorException(e.message, NetErrorException.PARSE_ERROR)
+            } else {
+                // 抛出服务器返回错误码
+                throw NetErrorException(e.message, e.error)
             }
         } finally {
             value.close()
         }
     }
+}
+
+class InnerException(error: String, code : Int) : Exception(error) {
+    val error = code
 }
