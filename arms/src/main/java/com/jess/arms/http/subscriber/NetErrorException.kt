@@ -21,10 +21,6 @@ class NetErrorException : IOException {
         this.mServiceErrorCode = serviceCode
     }
 
-    constructor(message: String, cause: Throwable) : super(message, cause) {
-
-    }
-
     constructor(message: String?, mErrorType: Int) : super(message) {
         this.mErrorType = mErrorType
         mErrorMessage = message
@@ -34,6 +30,9 @@ class NetErrorException : IOException {
         get() {
             if (!TextUtils.isEmpty(mErrorMessage)) {
                 return mErrorMessage
+            }
+            if (mException is HttpException){
+                return convertStatusCode(mException as HttpException)
             }
             when (mErrorType) {
                 PARSE_ERROR -> return "数据解析异常"
@@ -63,6 +62,7 @@ class NetErrorException : IOException {
             403 -> "请求被服务器拒绝"
             307 -> "请求被重定向到其他页面"
             405 -> "请求方法错误"
+            400 -> "服务器错误"
             else -> httpException.message()
         }
     }

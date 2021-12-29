@@ -1,8 +1,10 @@
 package com.jess.arms.http.subscriber
 
 import com.google.gson.JsonParseException
-import com.jess.arms.integration.AppManager
 import com.jess.arms.http.convert.HandlerErrorGsonResponseBodyConverter
+import com.jess.arms.integration.AppManager
+import com.jess.arms.utils.convertStatusCode
+import com.jess.arms.utils.getHttpErrorText
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import org.json.JSONException
@@ -36,7 +38,7 @@ abstract class HandlerNetErrorSubscriber<T> : Observer<T>, NetErrorExceptionCall
                 error = NetErrorException(e, NetErrorException.CONNECT_EXCEPTION_ERROR)
             } else if (e is HttpException) {
                 // 输出服务器返回的错误信息
-                if (e.response() != null && e.response()!!.errorBody() != null) {
+                if (checkErrorBody(e)) {
                     e.response()?.errorBody()?.let {
                         try {
                             val json = JSONObject(it.string())
@@ -75,6 +77,12 @@ abstract class HandlerNetErrorSubscriber<T> : Observer<T>, NetErrorExceptionCall
             onFail(it)
         }
 
+    }
+
+    private fun checkErrorBody(e: HttpException): Boolean {
+        return e.response() != null
+                && e.response()!!.errorBody() != null
+                && e.response()!!.errorBody()!!.contentLength() > 0
     }
 
     override fun onFail(error: NetErrorException) {

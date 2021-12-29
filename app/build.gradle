@@ -17,6 +17,8 @@ android {
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -48,4 +50,5 @@ dependencies {
     implementation project(':arms-push')
     implementation project(':arms-debugtool')
     implementation project(':arms-imageloader-glide')
+    implementation "com.android.support:multidex:2.0.0"
 }
