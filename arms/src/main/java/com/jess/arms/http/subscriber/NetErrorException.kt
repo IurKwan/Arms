@@ -62,7 +62,7 @@ class NetErrorException : IOException {
             403 -> "请求被服务器拒绝"
             307 -> "请求被重定向到其他页面"
             405 -> "请求方法错误"
-            400 -> "服务器错误"
+            400 -> "当前无网络连接"
             else -> httpException.message()
         }
     }
