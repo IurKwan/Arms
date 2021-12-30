@@ -1,29 +1,36 @@
 package com.jess.arms.http.subscriber
 
+import android.content.Context
 import com.google.gson.JsonParseException
-import com.jess.arms.integration.AppManager
 import com.jess.arms.http.convert.HandlerErrorGsonResponseBodyConverter
+import com.jess.arms.integration.AppManager
+import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener
 import org.json.JSONException
 import org.json.JSONObject
-import org.reactivestreams.Subscriber
-import org.reactivestreams.Subscription
 import retrofit2.HttpException
+import timber.log.Timber
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.text.ParseException
 
 /**
+ * 根据凯尔公司后台规范作出相应处理
  * @author IurKwan
- * @date 12/18/20
+ * @date 2021/12/30
  */
-abstract class HandlerNetErrorSubscriberOfFlower<T> : Subscriber<T>,NetErrorExceptionCallback {
+class ErrorListenerImpl : ResponseErrorListener{
 
-    override fun onSubscribe(s: Subscription?) {
+    override fun handleResponseError(context: Context?, e: Throwable?) {
+        Timber.tag("Catch-Error").w(e)
 
-    }
+        if (e is NetErrorException){
 
-    override fun onError(e: Throwable?) {
+        }
+
+
+
+
         var error: NetErrorException? = null
         // 对不是自定义抛出的错误进行解析
         if (e !is NetErrorException) {
@@ -69,21 +76,16 @@ abstract class HandlerNetErrorSubscriberOfFlower<T> : Subscriber<T>,NetErrorExce
                 error = NetErrorException(e, NetErrorException.OTHER)
             }
         } else {
-            error = NetErrorException(e.message, NetErrorException.OTHER)
+            error = if (e is HttpException) {
+                NetErrorException(e, e.code())
+            } else {
+                NetErrorException(e.message, e.mErrorType)
+            }
         }
 
         error?.let {
-            onFail(it)
+            AppManager.getAppManager().showSnackbar(error?.message, false)
         }
-
-    }
-
-    override fun onFail(error: NetErrorException) {
-        AppManager.getAppManager().showSnackbar(error.message, false)
-    }
-
-    override fun onComplete() {
-
     }
 
 }

@@ -27,6 +27,7 @@ import com.jess.arms.http.imageloader.BaseImageLoaderStrategy;
 import com.jess.arms.http.log.DefaultFormatPrinter;
 import com.jess.arms.http.log.FormatPrinter;
 import com.jess.arms.http.log.RequestInterceptor;
+import com.jess.arms.http.subscriber.ErrorListenerImpl;
 import com.jess.arms.integration.cache.Cache;
 import com.jess.arms.integration.cache.CacheType;
 import com.jess.arms.integration.cache.IntelligentCache;
@@ -157,7 +158,7 @@ public class GlobalConfigModule {
     @Singleton
     @Provides
     ResponseErrorListener provideResponseErrorListener() {
-        return mErrorListener == null ? ResponseErrorListener.EMPTY : mErrorListener;
+        return mErrorListener == null ? new ErrorListenerImpl() : mErrorListener;
     }
 
     @Singleton
