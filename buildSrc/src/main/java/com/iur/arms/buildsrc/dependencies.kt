@@ -79,6 +79,7 @@ object Libs {
         const val rxjava3 = "io.reactivex.rxjava3:rxjava:$version"
         const val rxAndroid3 = "io.reactivex.rxjava3:rxandroid:3.0.0"
         const val rxPermissions = "com.github.tbruyelle:rxpermissions:0.12"
+        const val rxerrorhandler2 = "me.jessyan:rxerrorhandler:2.1.1"
 
         object RxLifecycle {
             private const val version = "4.0.2"

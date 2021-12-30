@@ -38,6 +38,8 @@ import javax.inject.Singleton;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
+import me.jessyan.rxerrorhandler.core.RxErrorHandler;
+import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 import okhttp3.Dispatcher;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -114,6 +116,7 @@ public abstract class ClientModule {
 
         if (handler != null) {
             builder.addInterceptor(new Interceptor() {
+                @NonNull
                 @Override
                 public Response intercept(@NotNull Chain chain) throws IOException {
                     return chain.proceed(handler.onHttpRequestBefore(chain, chain.request()));
@@ -147,6 +150,23 @@ public abstract class ClientModule {
     @Provides
     static OkHttpClient.Builder provideClientBuilder() {
         return new OkHttpClient.Builder();
+    }
+
+    /**
+     * 提供处理 RxJava 错误的管理器
+     *
+     * @param application {@link Application}
+     * @param listener    {@link ResponseErrorListener}
+     * @return {@link RxErrorHandler}
+     */
+    @Singleton
+    @Provides
+    static RxErrorHandler proRxErrorHandler(Application application, ResponseErrorListener listener) {
+        return RxErrorHandler
+                .builder()
+                .with(application)
+                .responseErrorListener(listener)
+                .build();
     }
 
     @Binds

@@ -3,8 +3,6 @@ package com.jess.arms.http.subscriber
 import com.google.gson.JsonParseException
 import com.jess.arms.http.convert.HandlerErrorGsonResponseBodyConverter
 import com.jess.arms.integration.AppManager
-import com.jess.arms.utils.convertStatusCode
-import com.jess.arms.utils.getHttpErrorText
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import org.json.JSONException
@@ -64,13 +62,17 @@ abstract class HandlerNetErrorSubscriber<T> : Observer<T>, NetErrorExceptionCall
                         }
                     }
                 } else {
-                    error = NetErrorException(e, NetErrorException.HTTP_EXCEPTION)
+                    error = NetErrorException(e, e.code())
                 }
             } else {
                 error = NetErrorException(e, NetErrorException.OTHER)
             }
         } else {
-            error = NetErrorException(e.message, e.mErrorType)
+            error = if (e is HttpException) {
+                NetErrorException(e, e.code())
+            } else {
+                NetErrorException(e.message, e.mErrorType)
+            }
         }
 
         error?.let {

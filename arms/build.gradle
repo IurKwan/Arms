@@ -57,6 +57,8 @@ dependencies {
         exclude module: 'rxjava'
         exclude module: 'support-annotations'
     }
+    api Libs.RxJava.rxerrorhandler2
+
     //network
     api(Libs.Retrofit.retrofit) {
         exclude module: 'okhttp'
