@@ -28,3 +28,5 @@ android {
 dependencies {
     compileOnly RxJava.rxjava3
 }
+
+apply from: '../mvn.gradle'

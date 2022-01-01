@@ -56,7 +56,7 @@ dependencies {
         exclude module: 'rxjava'
         exclude module: 'support-annotations'
     }
-    api project(':arms-rxerrorhandler')
+    api 'com.krbb.arms:rxerrorhandler:1.0.0'
 
     //network
     api(Retrofit.retrofit) {
