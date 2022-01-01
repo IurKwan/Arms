@@ -18,7 +18,6 @@ package com.jess.arms.utils;
 import android.Manifest;
 import android.os.Build;
 
-import com.jess.arms.http.subscriber.HandlerNetErrorSubscriber;
 import com.tbruyelle.rxpermissions3.Permission;
 import com.tbruyelle.rxpermissions3.RxPermissions;
 
@@ -26,6 +25,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.rxjava3.annotations.NonNull;
+import io.reactivex.rxjava3.core.Observer;
+import io.reactivex.rxjava3.disposables.Disposable;
+import me.jessyan.rxerrorhandler.core.RxErrorHandler;
+import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriber;
 import timber.log.Timber;
 
 /**
@@ -78,7 +81,12 @@ public class PermissionUtil {
             rxPermissions
                     .requestEach(needRequest.toArray(new String[needRequest.size()]))
                     .buffer(permissions.length)
-                    .subscribe(new HandlerNetErrorSubscriber<List<Permission>>() {
+                    .subscribe(new Observer<List<Permission>>() {
+                        @Override
+                        public void onSubscribe(@NonNull Disposable d) {
+
+                        }
+
                         @Override
                         public void onNext(@NonNull List<Permission> permissions) {
                             List<String> failurePermissions = new ArrayList<>();
@@ -106,6 +114,16 @@ public class PermissionUtil {
                                 Timber.tag(TAG).d("Request permissions success");
                                 requestPermission.onRequestPermissionSuccess();
                             }
+                        }
+
+                        @Override
+                        public void onError(@NonNull Throwable e) {
+
+                        }
+
+                        @Override
+                        public void onComplete() {
+
                         }
                     });
         }

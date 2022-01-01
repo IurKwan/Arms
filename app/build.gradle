@@ -1,8 +1,8 @@
-import com.iur.arms.buildsrc.Libs
 
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.krbb.version'
 }
 
 android {
@@ -42,10 +42,10 @@ android {
 }
 
 dependencies {
-    implementation Libs.Kotlin.stdlib
-    implementation Libs.material
-    implementation Libs.AndroidX.coreKtx
-    implementation Libs.AndroidX.constraintlayout
+    implementation Kotlin.stdlib
+    implementation Google.material
+    implementation AndroidX.coreKtx
+    implementation AndroidX.constraintlayout
     implementation project(':arms')
     implementation project(':arms-push')
     implementation project(':arms-debugtool')

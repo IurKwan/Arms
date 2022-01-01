@@ -1,10 +1,9 @@
-import com.iur.arms.buildsrc.Libs
-
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.krbb.version'
 }
 
 android {
@@ -35,13 +34,13 @@ android {
 }
 
 dependencies {
-    implementation Libs.Kotlin.stdlib
-    implementation Libs.AndroidX.coreKtx
-    implementation Libs.AndroidX.appcompat
+    implementation Kotlin.stdlib
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appcompat
     compileOnly 'com.krbb.arms:sqlbrite:1.0.0'
-    implementation Libs.gson
-    implementation Libs.RxJava.rxjava3
-    implementation Libs.RxJava.rxAndroid3
+    implementation Google.gson
+    implementation RxJava.rxjava3
+    implementation RxJava.rxAndroid3
     implementation "android.arch.persistence:db-framework:1.1.1"
 }
 

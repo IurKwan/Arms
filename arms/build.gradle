@@ -1,10 +1,9 @@
-import com.iur.arms.buildsrc.Libs
-
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.krbb.version'
 }
 
 
@@ -38,65 +37,65 @@ android {
 
 dependencies {
     //support
-    api Libs.material
-    api Libs.AndroidX.appcompat
+    api Google.material
+    api AndroidX.appcompat
 
     //rx
-    api Libs.RxJava.rxjava3
-    api Libs.RxJava.rxAndroid3
-    api (Libs.RxJava.RxLifecycle.rxlifecycle4){
+    api RxJava.rxjava3
+    api RxJava.rxAndroid3
+    api (RxJava.rxlifecycle4){
         exclude module: 'jsr305'
     }
-    api (Libs.RxJava.RxLifecycle.rxlifecycle4Android){
+    api (RxJava.rxlifecycle4Android){
         exclude module: 'support-annotations'
         exclude module: 'rxjava'
         exclude module: 'rxandroid'
         exclude module: 'rxlifecycle'
     }
-    api(Libs.RxJava.rxPermissions) {
+    api (RxJava.rxPermissions) {
         exclude module: 'rxjava'
         exclude module: 'support-annotations'
     }
-    api Libs.RxJava.rxerrorhandler2
+    api project(':arms-rxerrorhandler')
 
     //network
-    api(Libs.Retrofit.retrofit) {
+    api(Retrofit.retrofit) {
         exclude module: 'okhttp'
         exclude module: 'okio'
     }
-    implementation(Libs.Retrofit.retrofitConverterGson) {
+    implementation(Retrofit.retrofitConverterGson) {
         exclude module: 'gson'
         exclude module: 'okhttp'
         exclude module: 'okio'
         exclude module: 'retrofit'
     }
-    implementation(Libs.Retrofit.retrofitAdapterRxjava) {
+    implementation(Retrofit.retrofitAdapterRxjava) {
         exclude module: 'rxjava'
         exclude module: 'okhttp'
         exclude module: 'retrofit'
         exclude module: 'okio'
     }
-    api Libs.okhttp3
+    api Retrofit.okhttp3
 
     //tools
     compileOnly rootProject.ext.dependencies["javax.annotation"]
-    api Libs.Dagger.dagger
-    kapt Libs.Dagger.daggerCompiler
-    annotationProcessor Libs.Dagger.daggerCompiler
-    compileOnly Libs.androidEventBus
-    api Libs.gson
+    api Dagger.dagger
+    kapt Dagger.daggerCompiler
+    annotationProcessor Dagger.daggerCompiler
+    compileOnly AndroidX.androidEventBus
+    api Google.gson
     //test
-    api Libs.timber
+    api AndroidX.timber
     // 选择图片库
-    api Libs.pictureSelector
+    api Github.pictureSelector
     // 查看大图
-    api(Libs.bigImageViewPager) {
+    api(Github.bigImageViewPager) {
         exclude module: 'subsampling-scale-image-view'
     }
     // 友盟
-    compileOnly Libs.UMeng.umeng
-    compileOnly Libs.UMeng.umengApm
-    compileOnly Libs.UMeng.umengAsms
+    compileOnly Umeng.umeng
+    compileOnly Umeng.umengApm
+    compileOnly Umeng.umengAsms
 
     configurations.all {
         resolutionStrategy.force 'androidx.fragment:fragment:1.1.0'

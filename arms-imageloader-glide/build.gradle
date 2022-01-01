@@ -1,9 +1,8 @@
-import com.iur.arms.buildsrc.Libs
-
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.krbb.version'
 }
 
 android {
@@ -34,11 +33,11 @@ android {
 }
 
 dependencies {
-    implementation Libs.Kotlin.stdlib
-    implementation Libs.AndroidX.appcompat
+    implementation Kotlin.stdlib
+    implementation AndroidX.appcompat
 
-    api Libs.Glide.glide
-    kapt(Libs.Glide.glideCompiler) {
+    api Github.glide
+    kapt(Github.glideCompiler) {
         exclude module: 'jsr305'
     }
     compileOnly project(':arms')

@@ -1,9 +1,8 @@
-import com.iur.arms.buildsrc.Libs
-
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.krbb.version'
 }
 
 android {
@@ -43,8 +42,8 @@ static def buildTime() {
 }
 
 dependencies {
-    implementation Libs.Kotlin.stdlib
-    implementation Libs.AndroidX.coreKtx
-    implementation Libs.AndroidX.appcompat
-    implementation Libs.material
+    implementation Kotlin.stdlib
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appcompat
+    implementation Google.material
 }

@@ -6,3 +6,7 @@ include ':app'
 rootProject.name = "Arms"
 include ':sqlbrite-lint'
 include ':sqlbrite'
+include ':arms-rxerrorhandler'
+
+
+includeBuild("version")
