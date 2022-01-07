@@ -62,24 +62,25 @@ internal class HandlerErrorGsonResponseBodyConverter<T>(private val adapter: Typ
             // 也可能单纯是String类型
             // 也可能为null
             // 为null的情况下统一返回空字符串""
-            return if (status) {
+            if (status) {
                 // 请求成功
                 when (response) {
                     is JSONObject -> {
-                        adapter.fromJson(response.toString())
+                        return adapter.fromJson(response.toString())
                     }
                     is JSONArray -> {
-                        adapter.fromJson(response.toString())
+                        return adapter.fromJson(response.toString())
                     }
                     is Boolean -> {
-                        CastUtils.cast(response)
+                        return CastUtils.cast(response)
                     }
                     is String -> {
                         // 返回字符串内容
-                        CastUtils.cast(String(response.toCharArray()))
+                        return CastUtils.cast(String(response.toCharArray()))
                     }
                     else -> {
-                        CastUtils.cast(t)
+                        // 直接抛出错误
+                        throw CodeException(errorType, message)
                     }
                 }
             } else {
