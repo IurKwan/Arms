@@ -79,17 +79,21 @@ internal class HandlerErrorGsonResponseBodyConverter<T>(private val adapter: Typ
                         return CastUtils.cast(String(response.toCharArray()))
                     }
                     else -> {
-                        // 直接抛出错误
-                        throw CodeException(errorType, message)
+                        // 直接返回内容
+                        return CastUtils.cast(t)
                     }
                 }
             } else {
-                // 直接返回内容
-                return CastUtils.cast(t)
+                // 直接抛出错误
+                throw CodeException(errorType, message)
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            return CastUtils.cast(t)
+            if (e is CodeException){
+                throw e
+            } else {
+                return CastUtils.cast(t)
+            }
         } finally {
             value.close()
         }

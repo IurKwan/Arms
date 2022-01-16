@@ -3,6 +3,7 @@ package com.jess.arms.http.subscriber
 import android.content.Context
 import com.google.gson.JsonIOException
 import com.google.gson.JsonParseException
+import com.jess.arms.http.convert.CodeException
 import com.jess.arms.http.convert.HandlerErrorGsonResponseBodyConverter
 import com.jess.arms.integration.AppManager
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener
@@ -26,7 +27,9 @@ class ErrorListenerImpl : ResponseErrorListener{
         Timber.tag("Catch-Error").w(e)
 
         var message = "未知错误"
-        if (e is UnknownHostException){
+        if (e is CodeException){
+            message = e.message ?: ""
+        } else if (e is UnknownHostException){
             message = "无连接异常"
         } else if (e is SocketTimeoutException){
             message = "请求网络超时"
@@ -47,6 +50,9 @@ class ErrorListenerImpl : ResponseErrorListener{
 
     private fun convertStatusCode(httpException: HttpException): String {
         val msg: String = when {
+            httpException.code() == 400 -> {
+                "服务器发生错误"
+            }
             httpException.code() == 500 -> {
                 "服务器发生错误"
             }
