@@ -1,3 +1,4 @@
+includeBuild("version")
 include ':arms-debugtool'
 include ':arms-push'
 include ':arms-imageloader-glide'
@@ -7,6 +8,3 @@ rootProject.name = "Arms"
 include ':sqlbrite-lint'
 include ':sqlbrite'
 include ':arms-rxerrorhandler'
-
-
-includeBuild("version")

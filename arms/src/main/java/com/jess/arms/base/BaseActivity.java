@@ -113,6 +113,7 @@ public abstract class BaseActivity<P extends IPresenter> extends SupportActivity
         super.onResume();
         if (needStatistics() && Platform.DEPENDENCY_UMENG){
             // 友盟统计
+            MobclickAgent.onPageStart(getClass().getSimpleName());
             MobclickAgent.onResume(this);
         }
     }
@@ -122,6 +123,7 @@ public abstract class BaseActivity<P extends IPresenter> extends SupportActivity
         super.onPause();
         if (needStatistics() && Platform.DEPENDENCY_UMENG){
             // 友盟统计
+            MobclickAgent.onPageEnd(getClass().getSimpleName());
             MobclickAgent.onPause(this);
         }
     }
