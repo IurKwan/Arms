@@ -52,10 +52,6 @@ dependencies {
         exclude module: 'rxandroid'
         exclude module: 'rxlifecycle'
     }
-    api (RxJava.rxPermissions) {
-        exclude module: 'rxjava'
-        exclude module: 'support-annotations'
-    }
     api 'com.krbb.arms:rxerrorhandler:1.0.0'
 
     //network
