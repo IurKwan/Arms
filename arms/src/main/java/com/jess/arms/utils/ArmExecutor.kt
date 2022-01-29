@@ -64,7 +64,9 @@ object ArmExecutor {
             @SuppressLint("BinaryOperationInTimber")
             override fun afterExecute(r: Runnable?, t: Throwable?) {
                 //监控线程池耗时任务,线程创建数量,正在运行的数量
-                Timber.e("已执行完的任务的优先级是：" + (r as PriorityRunnable).priority)
+                if (r is PriorityRunnable){
+                    Timber.e("已执行完的任务的优先级是：" + r.priority)
+                }
             }
         }
     }
