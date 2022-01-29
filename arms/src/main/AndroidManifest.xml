@@ -2,8 +2,4 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jess.arms">
 
-    <application >
-        <service android:name=".update.UpdateService" />
-    </application>
-
 </manifest>

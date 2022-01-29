@@ -26,9 +26,6 @@ import com.jess.arms.http.GlobalHttpHandler;
 import com.jess.arms.http.convert.HandlerErrorGsonConverterFactory;
 import com.jess.arms.http.log.RequestInterceptor;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +41,6 @@ import okhttp3.Dispatcher;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -115,13 +111,7 @@ public abstract class ClientModule {
                 .addNetworkInterceptor(intercept);
 
         if (handler != null) {
-            builder.addInterceptor(new Interceptor() {
-                @NonNull
-                @Override
-                public Response intercept(@NotNull Chain chain) throws IOException {
-                    return chain.proceed(handler.onHttpRequestBefore(chain, chain.request()));
-                }
-            });
+            builder.addInterceptor(chain -> chain.proceed(handler.onHttpRequestBefore(chain, chain.request())));
         }
 
         //如果外部提供了 Interceptor 的集合则遍历添加

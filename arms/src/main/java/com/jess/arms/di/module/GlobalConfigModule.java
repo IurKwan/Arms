@@ -24,6 +24,7 @@ import androidx.annotation.Nullable;
 import com.jess.arms.http.BaseUrl;
 import com.jess.arms.http.GlobalHttpHandler;
 import com.jess.arms.http.imageloader.BaseImageLoaderStrategy;
+import com.jess.arms.http.imageloader.ImageConfig;
 import com.jess.arms.http.log.DefaultFormatPrinter;
 import com.jess.arms.http.log.FormatPrinter;
 import com.jess.arms.http.log.RequestInterceptor;
@@ -32,6 +33,7 @@ import com.jess.arms.integration.cache.Cache;
 import com.jess.arms.integration.cache.CacheType;
 import com.jess.arms.integration.cache.IntelligentCache;
 import com.jess.arms.integration.cache.LruCache;
+import com.jess.arms.utils.ArmExecutor;
 import com.jess.arms.utils.DataHelper;
 import com.jess.arms.utils.Preconditions;
 
@@ -39,9 +41,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
@@ -50,27 +50,27 @@ import dagger.Provides;
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
-import okhttp3.internal.Util;
 
 /**
  * 框架独创的建造者模式 {@link Module},可向框架中注入外部配置的自定义参数
+ * @author guanzhirui
  */
 @Module
 public class GlobalConfigModule {
-    private HttpUrl mApiUrl;
-    private BaseUrl mBaseUrl;
-    private BaseImageLoaderStrategy mLoaderStrategy;
-    private GlobalHttpHandler mHandler;
-    private List<Interceptor> mInterceptors;
-    private ResponseErrorListener mErrorListener;
-    private File mCacheFile;
-    private ClientModule.RetrofitConfiguration mRetrofitConfiguration;
-    private ClientModule.OkhttpConfiguration mOkhttpConfiguration;
-    private AppModule.GsonConfiguration mGsonConfiguration;
-    private RequestInterceptor.Level mPrintHttpLogLevel;
-    private FormatPrinter mFormatPrinter;
-    private Cache.Factory mCacheFactory;
-    private ThreadPoolExecutor mThreadPoolExecutor;
+    private final HttpUrl mApiUrl;
+    private final BaseUrl mBaseUrl;
+    private final BaseImageLoaderStrategy<ImageConfig> mLoaderStrategy;
+    private final GlobalHttpHandler mHandler;
+    private final List<Interceptor> mInterceptors;
+    private final ResponseErrorListener mErrorListener;
+    private final File mCacheFile;
+    private final ClientModule.RetrofitConfiguration mRetrofitConfiguration;
+    private final ClientModule.OkhttpConfiguration mOkhttpConfiguration;
+    private final AppModule.GsonConfiguration mGsonConfiguration;
+    private final RequestInterceptor.Level mPrintHttpLogLevel;
+    private final FormatPrinter mFormatPrinter;
+    private final Cache.Factory mCacheFactory;
+    private final ThreadPoolExecutor mThreadPoolExecutor;
 
     private GlobalConfigModule(Builder builder) {
         this.mApiUrl = builder.apiUrl;
@@ -226,14 +226,15 @@ public class GlobalConfigModule {
     @Singleton
     @Provides
     ThreadPoolExecutor provideExecutorService() {
-        return mThreadPoolExecutor == null ? new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS,
-                new SynchronousQueue<>(), Util.threadFactory("Arms Executor", false)) : mThreadPoolExecutor;
+        return mThreadPoolExecutor == null ? ArmExecutor.INSTANCE.instance() : mThreadPoolExecutor;
+//        return mThreadPoolExecutor == null ? new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS,
+//                new SynchronousQueue<>(), Util.threadFactory("Arms Executor", false)) : mThreadPoolExecutor;
     }
 
     public static final class Builder {
         private HttpUrl apiUrl;
         private BaseUrl baseUrl;
-        private BaseImageLoaderStrategy loaderStrategy;
+        private BaseImageLoaderStrategy<ImageConfig> loaderStrategy;
         private GlobalHttpHandler handler;
         private List<Interceptor> interceptors;
         private ResponseErrorListener responseErrorListener;
@@ -262,7 +263,7 @@ public class GlobalConfigModule {
             return this;
         }
 
-        public Builder imageLoaderStrategy(BaseImageLoaderStrategy loaderStrategy) {//用来请求网络图片
+        public Builder imageLoaderStrategy(BaseImageLoaderStrategy<ImageConfig> loaderStrategy) {//用来请求网络图片
             this.loaderStrategy = loaderStrategy;
             return this;
         }
