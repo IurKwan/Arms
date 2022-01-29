@@ -41,7 +41,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
+import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
@@ -50,6 +52,7 @@ import dagger.Provides;
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
+import okhttp3.internal.Util;
 
 /**
  * 框架独创的建造者模式 {@link Module},可向框架中注入外部配置的自定义参数
