@@ -93,6 +93,10 @@ dependencies {
     compileOnly Umeng.umengApm
     compileOnly Umeng.umengAsms
 
+    // 协程
+    api Coroutines.core
+    api Coroutines.android
+
     configurations.all {
         resolutionStrategy.force 'androidx.fragment:fragment:1.1.0'
     }

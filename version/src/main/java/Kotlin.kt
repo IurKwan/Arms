@@ -8,3 +8,10 @@ object Kotlin {
     const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
     const val extensions = "org.jetbrains.kotlin:kotlin-android-extensions:$version"
 }
+
+object Coroutines {
+    private const val version = "1.5.0"
+    const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
+    const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
+    const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
+}
