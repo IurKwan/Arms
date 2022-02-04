@@ -15,7 +15,6 @@
  */
 package com.jess.arms.mvp;
 
-import android.app.Activity;
 import android.app.Service;
 import android.view.View;
 
@@ -84,7 +83,7 @@ public class BasePresenter<M extends IModel, V extends IView> implements IPresen
     }
 
     /**
-     * 在框架中 {@link Activity#onDestroy()} 时会默认调用 {@link IPresenter#onDestroy()}
+     * 在框架中 { Activity#onDestroy()} 时会默认调用 {@link IPresenter#onDestroy()}
      */
     @Override
     public void onDestroy() {
@@ -116,21 +115,8 @@ public class BasePresenter<M extends IModel, V extends IView> implements IPresen
     }
 
     /**
-     * 是否使用 EventBus
-     * Arms 核心库现在并不会依赖某个 EventBus, 要想使用 EventBus, 还请在项目中自行依赖对应的 EventBus
-     * 现在支持两种 EventBus, greenrobot 的 EventBus 和畅销书 《Android源码设计模式解析与实战》的作者 何红辉 所作的 AndroidEventBus
-     * 确保依赖后, 将此方法返回 true, Arms 会自动检测您依赖的 EventBus, 并自动注册
-     * 这种做法可以让使用者有自行选择三方库的权利, 并且还可以减轻 Arms 的体积
-     *
-     * @return 返回 {@code true} (默认为使用 {@code true}), Arms 会自动注册 EventBus
-     */
-    public boolean useEventBus() {
-        return true;
-    }
-
-    /**
      * 将 {@link Disposable} 添加到 {@link CompositeDisposable} 中统一管理
-     * 可在 {@link Activity#onDestroy()} 中使用 {@link #unDispose()} 停止正在执行的 RxJava 任务,避免内存泄漏
+     * 可在 { Activity#onDestroy()} 中使用 {@link #unDispose()} 停止正在执行的 RxJava 任务,避免内存泄漏
      * 目前框架已使用 {@link RxLifecycle} 避免内存泄漏,此方法作为备用方案
      *
      * @param disposable

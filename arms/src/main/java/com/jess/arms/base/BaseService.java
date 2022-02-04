@@ -40,18 +40,12 @@ public abstract class BaseService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (useEventBus()){
-            EventBusManager.getInstance().register(this);
-        }
         init();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (useEventBus()){
-            EventBusManager.getInstance().unregister(this);
-        }
         unDispose();//解除订阅
         this.mCompositeDisposable = null;
     }
