@@ -25,7 +25,6 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.OnLifecycleEvent;
 
-import com.jess.arms.integration.EventBusManager;
 import com.jess.arms.utils.Preconditions;
 import com.trello.rxlifecycle4.RxLifecycle;
 
@@ -82,11 +81,6 @@ public class BasePresenter<M extends IModel, V extends IView> implements IPresen
                 ((LifecycleOwner) mRootView).getLifecycle().addObserver((LifecycleObserver) mModel);
             }
         }
-        //如果要使用 EventBus 请将此方法返回 true
-        if (useEventBus()){
-            //注册 EventBus
-            EventBusManager.getInstance().register(this);
-        }
     }
 
     /**
@@ -94,11 +88,6 @@ public class BasePresenter<M extends IModel, V extends IView> implements IPresen
      */
     @Override
     public void onDestroy() {
-        //如果要使用 EventBus 请将此方法返回 true
-        if (useEventBus()){
-            //注销 EventBus
-            EventBusManager.getInstance().unregister(this);
-        }
         unDispose();//解除订阅
         if (mModel != null){
             mModel.onDestroy();

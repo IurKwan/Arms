@@ -78,7 +78,6 @@ dependencies {
     api Dagger.dagger
     kapt Dagger.daggerCompiler
     annotationProcessor Dagger.daggerCompiler
-    compileOnly AndroidX.androidEventBus
     api Google.gson
     //test
     api AndroidX.timber

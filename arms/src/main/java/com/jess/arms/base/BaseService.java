@@ -21,8 +21,6 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
-import com.jess.arms.integration.EventBusManager;
-
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 

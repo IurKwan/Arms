@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         ArmDataBus.with<String>("aaa").setStickyData("123456")
 
         ArmDataBus.with<String>("aaa").observerSticky(this,false) {
