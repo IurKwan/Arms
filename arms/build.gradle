@@ -97,6 +97,8 @@ dependencies {
     api Coroutines.core
     api Coroutines.android
 
+    api "android.arch.lifecycle:livedata:1.1.1"
+
     configurations.all {
         resolutionStrategy.force 'androidx.fragment:fragment:1.1.0'
     }
