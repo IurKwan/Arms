@@ -23,7 +23,7 @@ object Libs {
     const val gson = "com.google.code.gson:gson:2.8.7"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val pictureSelector = "io.github.lucksiege:pictureselector:v2.7.3-rc09"
-    const val bigImageViewPager = "com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6"
+    const val bigImageViewPager = "com.github.SherlockGougou:BigImageViewPager:androidx-6.2.1"
 
     object Glide {
         private const val version = "4.12.0"

@@ -11,6 +11,6 @@ object Github {
     const val glideLoaderOkhttp = "com.github.bumptech.glide:okhttp3-integration:$version"
 
     const val pictureSelector = "io.github.lucksiege:pictureselector:v2.7.3-rc09"
-    const val bigImageViewPager = "com.github.SherlockGougou:BigImageViewPager:androidx-6.1.6"
+    const val bigImageViewPager = "com.github.SherlockGougou:BigImageViewPager:androidx-6.2.1"
 
 }
