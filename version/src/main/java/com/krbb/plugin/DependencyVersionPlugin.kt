@@ -1,4 +1,4 @@
-package com.krbb.version
+package com.krbb.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

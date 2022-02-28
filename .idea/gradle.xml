@@ -7,9 +7,9 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT">
             <builds>
-              <build path="$PROJECT_DIR$/version" name="version">
+              <build path="$PROJECT_DIR$/plugin" name="plugin">
                 <projects>
-                  <project path="$PROJECT_DIR$/version" />
+                  <project path="$PROJECT_DIR$/plugin" />
                 </projects>
               </build>
             </builds>
@@ -28,9 +28,9 @@
             <option value="$PROJECT_DIR$/arms-imageloader-glide" />
             <option value="$PROJECT_DIR$/arms-push" />
             <option value="$PROJECT_DIR$/arms-rxerrorhandler" />
+            <option value="$PROJECT_DIR$/plugin" />
             <option value="$PROJECT_DIR$/sqlbrite" />
             <option value="$PROJECT_DIR$/sqlbrite-lint" />
-            <option value="$PROJECT_DIR$/version" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
