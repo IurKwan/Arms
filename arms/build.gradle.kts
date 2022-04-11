@@ -1,14 +1,13 @@
 import com.iur.plugin.Dep
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("kapt")
     `maven-publish`
+    signing
     id("arm-publish")
-//    kotlin("parcelize")
 }
-
 
 android {
     compileSdk = Dep.compileSdk
@@ -27,13 +26,15 @@ android {
     }
 
     buildTypes {
-
+        getByName("release"){
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
     }
 
     buildFeatures {
         viewBinding = true
     }
-
 }
 
 dependencies {
@@ -45,42 +46,16 @@ dependencies {
     api(Dep.RxJava.rxjava3)
     api(Dep.RxJava.rxAndroid3)
     api(Dep.RxJava.rxlifecycle4)
-//    {
-//        exclude module : 'jsr305'
-//    }
     api(Dep.RxJava.rxlifecycle4Android)
-//    {
-//        exclude module : 'support-annotations'
-//        exclude module : 'rxjava'
-//        exclude module : 'rxandroid'
-//        exclude module : 'rxlifecycle'
-//    }
-    api("com.krbb.arms:rxerrorhandler:1.0.0")
+    api(Dep.Arms.rxerrorhandler)
 
     //network
     api(Dep.Retrofit.retrofit)
-//    {
-//        exclude module : 'okhttp'
-//        exclude module : 'okio'
-//    }
     implementation(Dep.Retrofit.retrofitConverterGson)
-//    {
-//        exclude module : 'gson'
-//        exclude module : 'okhttp'
-//        exclude module : 'okio'
-//        exclude module : 'retrofit'
-//    }
     implementation(Dep.Retrofit.retrofitAdapterRxjava)
-//    {
-//        exclude module : 'rxjava'
-//        exclude module : 'okhttp'
-//        exclude module : 'retrofit'
-//        exclude module : 'okio'
-//    }
     api(Dep.Retrofit.okhttp3)
 
     // tools
-    // compileOnly rootProject.ext.dependencies["javax.annotation"]
     api(Dep.Dagger.dagger)
     kapt(Dep.Dagger.daggerCompiler)
     annotationProcessor(Dep.Dagger.daggerCompiler)
@@ -89,12 +64,11 @@ dependencies {
     //test
     api(Dep.AndroidX.timber)
     // 选择图片库
-    api(Dep.Github.pictureSelector)
+    api(Dep.PictureSelector.pictureSelector)
+    api(Dep.PictureSelector.pictureSelectorCompress)
+    api(Dep.PictureSelector.pictureSelectorUcrop)
     // 查看大图
     api(Dep.Github.bigImageViewPager)
-//    {
-//        exclude module : 'subsampling-scale-image-view'
-//    }
     // 友盟
     compileOnly(Dep.Umeng.umeng)
     compileOnly(Dep.Umeng.umengApm)
@@ -104,8 +78,4 @@ dependencies {
     api(Dep.Coroutines.core)
     api(Dep.Coroutines.android)
     api("android.arch.lifecycle:livedata:1.1.1")
-
-//    configurations.all {
-//        resolutionStrategy.force ('androidx.fragment:fragment:1.1.0')
-//    }
 }

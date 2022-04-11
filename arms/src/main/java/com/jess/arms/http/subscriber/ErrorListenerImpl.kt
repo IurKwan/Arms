@@ -49,27 +49,53 @@ class ErrorListenerImpl : ResponseErrorListener{
     }
 
     private fun convertStatusCode(httpException: HttpException): String {
-        val msg: String = when {
-            httpException.code() == 400 -> {
-                "服务器发生错误"
-            }
-            httpException.code() == 500 -> {
-                "服务器发生错误"
-            }
-            httpException.code() == 404 -> {
-                "请求地址不存在"
-            }
-            httpException.code() == 403 -> {
-                "请求被服务器拒绝"
-            }
-            httpException.code() == 307 -> {
-                "请求被重定向到其他页面"
-            }
-            else -> {
-                httpException.message()
+        // 优先显示服务器返回的错误
+        var tips : String? = null
+        val errorBody = httpException.response()?.errorBody()
+        if (errorBody != null){
+            val errorString = errorBody.string()
+            try {
+                var jsonObject: JSONObject? = null
+                try {
+                    jsonObject = JSONObject(errorString)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+                jsonObject?.let {
+                    val message = jsonObject.optString(HandlerErrorGsonResponseBodyConverter.MESSAGE)
+                    tips = message
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
+                errorBody.close()
             }
         }
-        return msg
+
+        if (tips.isNullOrEmpty()){
+            tips = when {
+                httpException.code() == 400 -> {
+                    "服务器发生错误"
+                }
+                httpException.code() == 500 -> {
+                    "服务器发生错误"
+                }
+                httpException.code() == 404 -> {
+                    "请求地址不存在"
+                }
+                httpException.code() == 403 -> {
+                    "请求被服务器拒绝"
+                }
+                httpException.code() == 307 -> {
+                    "请求被重定向到其他页面"
+                }
+                else -> {
+                    httpException.message()
+                }
+            }
+        }
+
+        return tips ?: ""
     }
 
 }

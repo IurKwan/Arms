@@ -1,15 +1,14 @@
 package com.iur.plugin
 
-import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.MavenPublication
-import org.gradle.api.tasks.bundling.Jar
-import org.gradle.api.tasks.javadoc.Javadoc
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.create
-import java.io.File
+import org.gradle.plugins.signing.SigningExtension
 import java.util.*
 import kotlin.io.*
 
@@ -17,24 +16,24 @@ class ArmPublish : Plugin<Project> {
 
     override fun apply(project: Project) {
 
-        val android = project.extensions.getByName("android") as BaseExtension
+        val isAndroid = project.hasProperty("android")
 
-        //register sourcesJar for android
-        val sourcesJar = project.tasks.register("sourcesJar", Jar::class.java){
-            archiveClassifier.set("sources")
-            from(android.sourceSets.getByName("main").java.srcDirs)
-        }
+        if (isAndroid) {
+            println("android")
+            val android = project.extensions.getByName("android") as LibraryExtension
+            android.publishing {
+                singleVariant("release") {
+                    withJavadocJar()
+                    withSourcesJar()
+                }
+            }
 
-        //register task javadoc for android
-        val javadoc = project.tasks.register("javadoc", Javadoc::class.java) {
-            isFailOnError = false
-            setSource(android.sourceSets.getByName("main").java.srcDirs)
-            classpath += project.files(android.bootClasspath.joinToString(File.pathSeparator))
-        }
-        project.tasks.register("androidJavaDocsJar", Jar::class.java) {
-            archiveClassifier.set("javadoc")
-            dependsOn(javadoc)
-            from(javadoc.get().destinationDir)
+        } else {
+            println("java/kotlin")
+            project.configure<JavaPluginExtension> {
+                withSourcesJar()
+                withJavadocJar()
+            }
         }
 
         project.afterEvaluate {
@@ -58,6 +57,8 @@ class ArmPublish : Plugin<Project> {
                 val mavenPassword = properties.getProperty("NEXUS_PASSWORD")
 
                 println("mavenUrl:$mavenRepositoryUrl")
+                println("mavenUsername:$mavenUsername")
+                println("mavenPassword:$mavenPassword")
 
                 project.configure<PublishingExtension> {
                     repositories {
@@ -72,9 +73,16 @@ class ArmPublish : Plugin<Project> {
                     }
                     publications {
                         create<MavenPublication>("release") {
-                            artifact(project.tasks.getByName("sourcesJar"))
-                            artifact(project.tasks.getByName("androidJavaDocsJar"))
-//                            from(components.getByName("release"))
+
+//                            project.configure<SigningExtension> {
+//                                sign(this@create)
+//                            }
+
+                            if (isAndroid) {
+                                from(components.getByName("release"))
+                            } else {
+                                from(components.getByName("java"))
+                            }
 
                             groupId = properties.getProperty("POM_GROUP_ID")
                             artifactId = properties.getProperty("POM_ARTIFACT_ID")

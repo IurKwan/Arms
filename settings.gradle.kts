@@ -1,6 +1,23 @@
 pluginManagement {
     repositories {
         mavenCentral()
+        maven { setUrl("https://jitpack.io") }
+        maven {
+            isAllowInsecureProtocol = true
+            credentials {
+                username = "admin"
+                password = "asd789zxc4"
+            }
+            setUrl("http://120.24.83.94:8081/repository/krbb-snapshots/")
+        }
+        maven {
+            isAllowInsecureProtocol = true
+            credentials {
+                username = "admin"
+                password = "asd789zxc4"
+            }
+            setUrl("http://120.24.83.94:8081/repository/krbb-releases/")
+        }
     }
 }
 
@@ -9,9 +26,22 @@ dependencyResolutionManagement {
         maven { setUrl("https://repo1.maven.org/maven2/") }
         maven { setUrl("https://jitpack.io") }
         maven { setUrl("http://maven.aliyun.com/nexus/content/repositories/jcenter") }
-        // 本地依赖库
-        maven { setUrl("http://120.24.83.94:8081/repository/krbb-snapshots/") }
-        maven { setUrl("http://120.24.83.94:8081/repository/krbb-releases/") }
+        maven {
+            isAllowInsecureProtocol = true
+            credentials {
+                username = "admin"
+                password = "asd789zxc4"
+            }
+            setUrl("http://120.24.83.94:8081/repository/krbb-snapshots/")
+        }
+        maven {
+            isAllowInsecureProtocol = true
+            credentials {
+                username = "admin"
+                password = "asd789zxc4"
+            }
+            setUrl("http://120.24.83.94:8081/repository/krbb-releases/")
+        }
     }
 }
 

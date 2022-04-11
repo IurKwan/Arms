@@ -7,9 +7,8 @@ import org.gradle.api.JavaVersion
  * @date 2022/2/27
  */
 object Dep {
-
-    val javaVersion = JavaVersion.VERSION_11
-    const val kotlinJvmTarget = "11"
+    val javaVersion = JavaVersion.VERSION_1_8
+    const val kotlinJvmTarget = "1.8"
     const val compileSdk = 30
     const val minSdk = 19
     const val targetSdk = 30
@@ -100,9 +99,16 @@ object Dep {
         const val glideCompiler = "com.github.bumptech.glide:compiler:$version"
         const val glideLoaderOkhttp = "com.github.bumptech.glide:okhttp3-integration:$version"
 
-        const val pictureSelector = "io.github.lucksiege:pictureselector:v2.7.3-rc09"
         const val bigImageViewPager = "com.github.SherlockGougou:BigImageViewPager:androidx-6.2.1"
 
+    }
+
+    object PictureSelector {
+        private const val version = "v3.0.9"
+
+        const val pictureSelector = "io.github.lucksiege:pictureselector:$version"
+        const val pictureSelectorCompress = "io.github.lucksiege:compress:$version"
+        const val pictureSelectorUcrop = "io.github.lucksiege:ucrop:$version"
     }
 
     object Umeng {
@@ -117,6 +123,10 @@ object Dep {
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
         const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
+    }
+
+    object Arms {
+        const val rxerrorhandler = "com.krbb.arms:rxerrorhandler:1.0.0"
     }
 
 }

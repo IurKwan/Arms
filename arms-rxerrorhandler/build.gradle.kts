@@ -1,10 +1,11 @@
 import com.iur.plugin.Dep
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("kapt")
     `maven-publish`
+    signing
     id("arm-publish")
 }
 

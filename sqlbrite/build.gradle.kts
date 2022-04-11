@@ -1,10 +1,11 @@
 import com.iur.plugin.Dep
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("kapt")
     `maven-publish`
+    signing
     id("arm-publish")
 }
 
@@ -27,15 +28,5 @@ android {
         sourceCompatibility = Dep.javaVersion
         targetCompatibility = Dep.javaVersion
     }
-
-//  lintOptions {
-//    textOutput 'stdout'
-//    textReport true
-//  }
-
-    // TODO replace with https://issuetracker.google.com/issues/72050365 once released.
-//  libraryVariants.all {
-//    it.generateBuildConfig.enabled = false
-//  }
 
 }
