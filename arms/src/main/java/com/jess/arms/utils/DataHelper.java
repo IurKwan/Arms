@@ -29,9 +29,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- *
  * 处理数据或本地文件的工具类
- *
+ * @author guanzhirui
  */
 public class DataHelper {
 
