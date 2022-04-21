@@ -22,10 +22,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
+import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.http.GlobalHttpHandler;
 import com.jess.arms.http.convert.HandlerErrorGsonConverterFactory;
+import com.jess.arms.http.factory.OkhttpEventListenerFactory;
 import com.jess.arms.http.log.RequestInterceptor;
+import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.NoNetworkInterceptor;
 
+import java.io.File;
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -37,6 +42,7 @@ import dagger.Module;
 import dagger.Provides;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
+import okhttp3.Cache;
 import okhttp3.Dispatcher;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
@@ -112,7 +118,17 @@ public abstract class ClientModule {
                 .addNetworkInterceptor(intercept);
 
         if (handler != null) {
-            builder.addInterceptor(chain -> chain.proceed(handler.onHttpRequestBefore(chain, chain.request())));
+            AppComponent appComponent = ArmsUtils.obtainAppComponentFromContext(application);
+            File cacheFile = new File(appComponent.cacheFile(), "okhttp");
+            long maxSize = 50 * 1024 * 1024L;
+            Cache cache = new Cache(cacheFile, maxSize);
+            builder
+                    .eventListenerFactory(OkhttpEventListenerFactory.FACTORY)
+                    // 缓存
+                    .cache(cache)
+                    // 无网络下优先使用缓存
+                    .addInterceptor(new NoNetworkInterceptor())
+                    .addInterceptor(chain -> chain.proceed(handler.onHttpRequestBefore(chain, chain.request())));
         }
 
         //如果外部提供了 Interceptor 的集合则遍历添加

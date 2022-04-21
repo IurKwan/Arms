@@ -92,8 +92,10 @@ public class AppDelegate implements App, AppLifecycles {
         this.mApplication = application;
         mAppComponent = DaggerAppComponent
                 .builder()
-                .application(mApplication)//提供application
-                .globalConfigModule(getGlobalConfigModule(mApplication, mModules))//全局配置
+                //提供application
+                .application(mApplication)
+                //全局配置
+                .globalConfigModule(getGlobalConfigModule(mApplication, mModules))
                 .build();
         mAppComponent.inject(this);
 

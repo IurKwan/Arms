@@ -22,15 +22,22 @@ import com.jess.arms.utils.DataHelper;
 import java.io.File;
 import java.io.InputStream;
 
+import okhttp3.Call;
+
 /**
  * {@link AppGlideModule} 的默认实现类
  * 用于配置缓存文件夹,切换图片请求框架等操作
+ *
  * @author IurKwan
  * @date 1/19/21
  */
 @GlideModule(glideName = "GlideArms")
 public class GlideConfiguration extends AppGlideModule {
-    public static final int IMAGE_DISK_CACHE_MAX_SIZE = 100 * 1024 * 1024;//图片缓存文件最大值为100Mb
+
+    /**
+     * 图片缓存文件最大值为100Mb
+     */
+    public static final int IMAGE_DISK_CACHE_MAX_SIZE = 100 * 1024 * 1024;
 
     @Override
     public void applyOptions(@NonNull Context context, @NonNull GlideBuilder builder) {
@@ -63,7 +70,11 @@ public class GlideConfiguration extends AppGlideModule {
     public void registerComponents(@NonNull Context context, @NonNull Glide glide, @NonNull Registry registry) {
         //Glide 默认使用 HttpURLConnection 做网络请求,在这切换成 Okhttp 请求
         AppComponent appComponent = ArmsUtils.obtainAppComponentFromContext(context);
-        registry.replace(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory(appComponent.okHttpClient()));
+        registry.replace(
+                GlideUrl.class,
+                InputStream.class,
+                new OkHttpUrlLoader.Factory((Call.Factory) appComponent.okHttpClient())
+        );
 
         BaseImageLoaderStrategy loadImgStrategy = appComponent.imageLoader().getLoadImgStrategy();
         if (loadImgStrategy instanceof GlideAppliesOptions) {

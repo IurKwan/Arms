@@ -230,8 +230,6 @@ public class GlobalConfigModule {
     @Provides
     ThreadPoolExecutor provideExecutorService() {
         return mThreadPoolExecutor == null ? ArmExecutor.INSTANCE.instance() : mThreadPoolExecutor;
-//        return mThreadPoolExecutor == null ? new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS,
-//                new SynchronousQueue<>(), Util.threadFactory("Arms Executor", false)) : mThreadPoolExecutor;
     }
 
     public static final class Builder {

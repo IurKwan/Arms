@@ -78,4 +78,6 @@ dependencies {
     api(Dep.Coroutines.core)
     api(Dep.Coroutines.android)
     api("android.arch.lifecycle:livedata:1.1.1")
+    // utils
+    api("com.blankj:utilcodex:1.31.0")
 }
