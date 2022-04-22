@@ -23,7 +23,7 @@ android {
 
 dependencies {
   compileOnly(kotlin("stdlib-jdk8"))
-  compileOnly("com.android.tools.lint:lint-api:27.2.2")
+  compileOnly("com.android.tools.lint:lint-api:30.1.3")
 }
 
 //jar {

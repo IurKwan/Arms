@@ -38,7 +38,6 @@ import io.reactivex.rxjava3.functions.Cancellable;
 
 import java.util.Arrays;
 
-import static com.squareup.sqlbrite3.QueryObservable.QUERY_OBSERVABLE;
 import static com.squareup.sqlbrite3.QueryObservableConverter.QUERY_OBSERVABLE_CONVERTER;
 import static java.lang.System.nanoTime;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;

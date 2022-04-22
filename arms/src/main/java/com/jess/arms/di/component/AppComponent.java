@@ -42,11 +42,16 @@ import okhttp3.OkHttpClient;
 /**
  * 可通过 {@link ArmsUtils#obtainAppComponentFromContext(Context)} 拿到此接口的实现类
  * 拥有此接口的实现类即可调用对应的方法拿到 Dagger 提供的对应实例
+ * @author guanzhirui
  */
 @Singleton
 @Component(modules = {AppModule.class, ClientModule.class, GlobalConfigModule.class})
 public interface AppComponent {
 
+    /**
+     * 提供App的Application
+     * @return {@link Application}
+     */
     Application application();
 
     /**
@@ -129,15 +134,34 @@ public interface AppComponent {
      */
     ThreadPoolExecutor executorService();
 
+    /**
+     * inject
+     * @param delegate {@link AppDelegate}
+     */
     void inject(AppDelegate delegate);
 
     @Component.Builder
     interface Builder {
+
+        /**
+         * Builder
+         * @param application {@link Application}
+         * @return {@link Builder}
+         */
         @BindsInstance
         Builder application(Application application);
 
+        /**
+         * globalConfigModule
+         * @param globalConfigModule {@link GlobalConfigModule}
+         * @return {@link Builder}
+         */
         Builder globalConfigModule(GlobalConfigModule globalConfigModule);
 
+        /**
+         * AppComponent
+         * @return {@link AppComponent}
+         */
         AppComponent build();
     }
 }

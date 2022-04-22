@@ -12,7 +12,7 @@ plugins {
 dependencies {
     implementation(Dep.RxJava.rxjava3)
     implementation("android.arch.persistence:db:1.1.1")
-    lintChecks(project(":sqlbrite-lint"))
+//    lintChecks(project(":sqlbrite-lint"))
 
 }
 

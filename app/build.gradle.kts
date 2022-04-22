@@ -48,7 +48,6 @@ dependencies {
     implementation(Dep.AndroidX.constraintlayout)
     implementation(project(":arms"))
     implementation(project(":arms-push"))
-    implementation(project(":arms-debugtool"))
     implementation(project(":arms-imageloader-glide"))
     implementation("com.android.support:multidex:2.0.0")
 }

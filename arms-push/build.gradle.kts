@@ -7,6 +7,7 @@ plugins {
     `maven-publish`
     signing
     id("arm-publish")
+    id("kotlin-parcelize")
 }
 
 android {

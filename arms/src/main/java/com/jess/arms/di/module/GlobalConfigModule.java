@@ -41,9 +41,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
@@ -52,7 +50,6 @@ import dagger.Provides;
 import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
-import okhttp3.internal.Util;
 
 /**
  * 框架独创的建造者模式 {@link Module},可向框架中注入外部配置的自定义参数
@@ -62,7 +59,7 @@ import okhttp3.internal.Util;
 public class GlobalConfigModule {
     private final HttpUrl mApiUrl;
     private final BaseUrl mBaseUrl;
-    private final BaseImageLoaderStrategy<ImageConfig> mLoaderStrategy;
+    private final BaseImageLoaderStrategy mLoaderStrategy;
     private final GlobalHttpHandler mHandler;
     private final List<Interceptor> mInterceptors;
     private final ResponseErrorListener mErrorListener;
@@ -235,7 +232,7 @@ public class GlobalConfigModule {
     public static final class Builder {
         private HttpUrl apiUrl;
         private BaseUrl baseUrl;
-        private BaseImageLoaderStrategy<ImageConfig> loaderStrategy;
+        private BaseImageLoaderStrategy loaderStrategy;
         private GlobalHttpHandler handler;
         private List<Interceptor> interceptors;
         private ResponseErrorListener responseErrorListener;
@@ -264,7 +261,7 @@ public class GlobalConfigModule {
             return this;
         }
 
-        public Builder imageLoaderStrategy(BaseImageLoaderStrategy<ImageConfig> loaderStrategy) {//用来请求网络图片
+        public Builder imageLoaderStrategy(BaseImageLoaderStrategy loaderStrategy) {//用来请求网络图片
             this.loaderStrategy = loaderStrategy;
             return this;
         }

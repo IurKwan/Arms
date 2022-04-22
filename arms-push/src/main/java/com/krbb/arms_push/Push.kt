@@ -1,9 +1,7 @@
 package com.krbb.arms_push
 
 import android.os.Parcelable
-import com.krbb.arms_push.source.local.PushsPersistenceContract
 import kotlinx.parcelize.Parcelize
-
 /**
  * @author IurKwan
  * @date 12/26/20

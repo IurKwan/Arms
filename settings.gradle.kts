@@ -45,13 +45,11 @@ dependencyResolutionManagement {
     }
 }
 
-includeBuild("plugin")
+includeBuild("../plugin")
 
 include(":app")
 include(":arms")
-include(":arms-debugtool")
 include(":arms-push")
 include(":arms-imageloader-glide")
 include(":arms-rxerrorhandler")
-include(":sqlbrite-lint")
 include(":sqlbrite")
