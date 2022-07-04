@@ -1,7 +1,7 @@
 package com.jess.arms.http.convert
 
 import com.google.gson.TypeAdapter
-import com.jess.arms.http.subscriber.NetErrorException
+import com.jess.arms.utils.CastUtils
 import okhttp3.ResponseBody
 import org.json.JSONArray
 import org.json.JSONObject
@@ -31,20 +31,20 @@ internal class HandlerErrorGsonResponseBodyConverter<T>(private val adapter: Typ
 
     @Throws(IOException::class)
     override fun convert(value: ResponseBody): T {
-        try {
-            // 这里就是对返回结果进行处理
-            val t = value.string()
+        // 这里就是对返回结果进行处理
+        val t = value.string()
 
+        try {
             val jsonObject: JSONObject?
             try {
                 jsonObject = JSONObject(t)
             } catch (e: Exception) {
                 // 非Json对象，转成String返回
-                return if (t.isNotEmpty()){
-                    t as T
+                return if (t.isNotEmpty()) {
+                    CastUtils.cast(t)
                 } else {
                     // 返回空字符串
-                    String() as T
+                    CastUtils.cast(String())
                 }
             }
 
@@ -54,7 +54,7 @@ internal class HandlerErrorGsonResponseBodyConverter<T>(private val adapter: Typ
             val response = jsonObject.opt(DATA)
 
             if (message.isEmpty() && response == null) {
-                return t as T
+                return CastUtils.cast(t)
             }
 
             // 存在不规范问题
@@ -62,41 +62,38 @@ internal class HandlerErrorGsonResponseBodyConverter<T>(private val adapter: Typ
             // 也可能单纯是String类型
             // 也可能为null
             // 为null的情况下统一返回空字符串""
-            return if (status) {
+            if (status) {
                 // 请求成功
                 when (response) {
                     is JSONObject -> {
-                        adapter.fromJson(response.toString())
+                        return adapter.fromJson(response.toString())
                     }
                     is JSONArray -> {
-                        adapter.fromJson(response.toString())
+                        return adapter.fromJson(response.toString())
                     }
                     is Boolean -> {
-                        response as T
+                        return CastUtils.cast(response)
                     }
                     is String -> {
                         // 返回字符串内容
-                        String(response.toCharArray()) as T
+                        return CastUtils.cast(String(response.toCharArray()))
                     }
                     else -> {
-                        // 返回空字符串
-                        String() as T
+                        // 直接返回内容
+                        return CastUtils.cast(t)
                     }
                 }
             } else {
-                // 判断是否固定结构的错误
-                if (response == null) {
-                    // 直接返回原数据
-                    return t as T
-                } else {
-                    // 抛出错误
-                    throw NetErrorException(message, errorType)
-                }
+                // 直接抛出错误
+                throw CodeException(errorType, message)
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            // 抛出错误
-            throw NetErrorException(e.message, NetErrorException.PARSE_ERROR)
+            if (e is CodeException){
+                throw e
+            } else {
+                return CastUtils.cast(t)
+            }
         } finally {
             value.close()
         }

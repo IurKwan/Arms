@@ -21,8 +21,6 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
-import com.jess.arms.integration.EventBusManager;
-
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
 
@@ -42,18 +40,12 @@ public abstract class BaseService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (useEventBus()){
-            EventBusManager.getInstance().register(this);
-        }
         init();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (useEventBus()){
-            EventBusManager.getInstance().unregister(this);
-        }
         unDispose();//解除订阅
         this.mCompositeDisposable = null;
     }
@@ -75,12 +67,14 @@ public abstract class BaseService extends Service {
         if (mCompositeDisposable == null) {
             mCompositeDisposable = new CompositeDisposable();
         }
-        mCompositeDisposable.add(disposable);//将所有 Disposable 放入容器集中处理
+        //将所有 Disposable 放入容器集中处理
+        mCompositeDisposable.add(disposable);
     }
 
     protected void unDispose() {
         if (mCompositeDisposable != null) {
-            mCompositeDisposable.clear();//保证 Activity 结束时取消所有正在执行的订阅
+            //保证 Activity 结束时取消所有正在执行的订阅
+            mCompositeDisposable.clear();
         }
     }
 

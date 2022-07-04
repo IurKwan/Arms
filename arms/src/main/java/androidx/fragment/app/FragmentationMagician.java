@@ -4,13 +4,15 @@ package androidx.fragment.app;
 import java.util.List;
 
 /**
- * Created by YoKey on 16/1/22.
+ * @author YoKey
+ * @date 16/1/22
  */
 public class FragmentationMagician {
 
     public static boolean isStateSaved(FragmentManager fragmentManager) {
-        if (!(fragmentManager instanceof FragmentManagerImpl))
+        if (!(fragmentManager instanceof FragmentManagerImpl)){
             return false;
+        }
         try {
             FragmentManagerImpl fragmentManagerImpl = (FragmentManagerImpl) fragmentManager;
             return fragmentManagerImpl.isStateSaved();
@@ -80,7 +82,9 @@ public class FragmentationMagician {
     }
 
     private static void hookStateSaved(FragmentManager fragmentManager, Runnable runnable) {
-        if (!(fragmentManager instanceof FragmentManagerImpl)) return;
+        if (!(fragmentManager instanceof FragmentManagerImpl)){
+            return;
+        }
 
         FragmentManagerImpl fragmentManagerImpl = (FragmentManagerImpl) fragmentManager;
         if (isStateSaved(fragmentManager)) {

@@ -22,13 +22,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.gson.Gson;
+import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.http.GlobalHttpHandler;
 import com.jess.arms.http.convert.HandlerErrorGsonConverterFactory;
+import com.jess.arms.http.factory.OkhttpEventListenerFactory;
 import com.jess.arms.http.log.RequestInterceptor;
+import com.jess.arms.utils.ArmsUtils;
+import com.jess.arms.utils.NoNetworkInterceptor;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
+import java.io.File;
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -38,17 +40,20 @@ import javax.inject.Singleton;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
+import me.jessyan.rxerrorhandler.core.RxErrorHandler;
+import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
+import okhttp3.Cache;
 import okhttp3.Dispatcher;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * 提供一些三方库客户端实例的 {@link Module}
+ *
  * @author guanzhirui
  */
 @Module
@@ -113,12 +118,17 @@ public abstract class ClientModule {
                 .addNetworkInterceptor(intercept);
 
         if (handler != null) {
-            builder.addInterceptor(new Interceptor() {
-                @Override
-                public Response intercept(@NotNull Chain chain) throws IOException {
-                    return chain.proceed(handler.onHttpRequestBefore(chain, chain.request()));
-                }
-            });
+            AppComponent appComponent = ArmsUtils.obtainAppComponentFromContext(application);
+            File cacheFile = new File(appComponent.cacheFile(), "okhttp");
+            long maxSize = 50 * 1024 * 1024L;
+            Cache cache = new Cache(cacheFile, maxSize);
+            builder
+                    .eventListenerFactory(OkhttpEventListenerFactory.FACTORY)
+                    // 缓存
+                    .cache(cache)
+                    // 无网络下优先使用缓存
+                    .addInterceptor(new NoNetworkInterceptor())
+                    .addInterceptor(chain -> chain.proceed(handler.onHttpRequestBefore(chain, chain.request())));
         }
 
         //如果外部提供了 Interceptor 的集合则遍历添加
@@ -147,6 +157,23 @@ public abstract class ClientModule {
     @Provides
     static OkHttpClient.Builder provideClientBuilder() {
         return new OkHttpClient.Builder();
+    }
+
+    /**
+     * 提供处理 RxJava 错误的管理器
+     *
+     * @param application {@link Application}
+     * @param listener    {@link ResponseErrorListener}
+     * @return {@link RxErrorHandler}
+     */
+    @Singleton
+    @Provides
+    static RxErrorHandler proRxErrorHandler(Application application, ResponseErrorListener listener) {
+        return RxErrorHandler
+                .builder()
+                .with(application)
+                .responseErrorListener(listener)
+                .build();
     }
 
     @Binds

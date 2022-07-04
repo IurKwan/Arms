@@ -16,6 +16,8 @@
 package com.jess.arms.base;
 
 import android.app.Activity;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -79,20 +81,6 @@ public abstract class BaseActivity<P extends IPresenter> extends SupportActivity
     }
 
     /**
-     * 是否使用 EventBus
-     * Arms 核心库现在并不会依赖某个 EventBus, 要想使用 EventBus, 还请在项目中自行依赖对应的 EventBus
-     * 现在支持两种 EventBus, greenrobot 的 EventBus 和畅销书 《Android源码设计模式解析与实战》的作者 何红辉 所作的 AndroidEventBus
-     * 确保依赖后, 将此方法返回 true, Arms 会自动检测您依赖的 EventBus, 并自动注册
-     * 这种做法可以让使用者有自行选择三方库的权利, 并且还可以减轻 Arms 的体积
-     *
-     * @return 返回 {@code true} (默认为 {@code true}), Arms 会自动注册 EventBus
-     */
-    @Override
-    public boolean useEventBus() {
-        return true;
-    }
-
-    /**
      * 这个 {@link Activity} 是否会使用 {@link Fragment}, 框架会根据这个属性判断是否注册 {@link FragmentManager.FragmentLifecycleCallbacks}
      * 如果返回 {@code false}, 那意味着这个 {@link Activity} 不需要绑定 {@link Fragment}, 那你再在这个 {@link Activity} 中绑定继承于 {@link BaseFragment} 的 {@link Fragment} 将不起任何作用
      *
@@ -111,7 +99,7 @@ public abstract class BaseActivity<P extends IPresenter> extends SupportActivity
     @Override
     protected void onResume() {
         super.onResume();
-        if (needStatistics() && Platform.DEPENDENCY_UMENG){
+        if (needStatistics() && Platform.DEPENDENCY_UMENG) {
             // 友盟统计
             MobclickAgent.onResume(this);
         }
@@ -120,9 +108,40 @@ public abstract class BaseActivity<P extends IPresenter> extends SupportActivity
     @Override
     protected void onPause() {
         super.onPause();
-        if (needStatistics() && Platform.DEPENDENCY_UMENG){
+        if (needStatistics() && Platform.DEPENDENCY_UMENG) {
             // 友盟统计
             MobclickAgent.onPause(this);
         }
     }
+
+    @Override
+    public boolean forceFontScale() {
+        return true;
+    }
+
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        //fontScale不为1，需要强制设置为1
+        if (forceFontScale() && newConfig.fontScale != 1) {
+            getResources();
+        }
+    }
+
+    @Override
+    public Resources getResources() {
+        if (!forceFontScale()) {
+            return super.getResources();
+        }
+        Resources resources = super.getResources();
+        //fontScale不为1，需要强制设置为1
+        if (resources.getConfiguration().fontScale != 1) {
+            Configuration newConfig = new Configuration();
+            //设置成默认值，即fontScale为1
+            newConfig.setToDefaults();
+            resources.updateConfiguration(newConfig, resources.getDisplayMetrics());
+        }
+        return resources;
+    }
+
 }

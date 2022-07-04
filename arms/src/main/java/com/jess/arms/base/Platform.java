@@ -15,14 +15,16 @@
  */
 package com.jess.arms.base;
 
+/**
+ * @author guanzhirui
+ * @date 2022/06/26
+ */
 public class Platform {
     public static final boolean DEPENDENCY_GLIDE;
-    public static final boolean DEPENDENCY_ANDROID_EVENTBUS;
     public static final boolean DEPENDENCY_UMENG;
 
     static {
         DEPENDENCY_GLIDE = findClassByClassName("com.bumptech.glide.Glide");
-        DEPENDENCY_ANDROID_EVENTBUS = findClassByClassName("org.simple.eventbus.EventBus");
         DEPENDENCY_UMENG = findClassByClassName("com.umeng.analytics.MobclickAgent");
     }
 

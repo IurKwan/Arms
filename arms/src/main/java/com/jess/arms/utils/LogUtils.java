@@ -22,9 +22,10 @@ import android.util.Log;
  *
  * 日志工具类
  *
+ * @author guanzhirui
  */
 public class LogUtils {
-    private static final String DEFAULT_TAG = "MVPArms";
+    private static final String DEFAULT_TAG = "Arm";
     private static boolean isLog = true;
 
     private LogUtils() {

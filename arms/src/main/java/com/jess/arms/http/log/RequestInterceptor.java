@@ -15,6 +15,7 @@
  */
 package com.jess.arms.http.log;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.jess.arms.di.module.GlobalConfigModule;
@@ -80,6 +81,7 @@ public class RequestInterceptor implements Interceptor {
     public RequestInterceptor() {
     }
 
+    @NonNull
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();

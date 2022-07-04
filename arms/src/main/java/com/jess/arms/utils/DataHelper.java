@@ -29,9 +29,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- *
  * 处理数据或本地文件的工具类
- *
+ * @author guanzhirui
  */
 public class DataHelper {
 
@@ -45,8 +44,10 @@ public class DataHelper {
     public static File getCacheFile(Context context) {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             File file = null;
-            file = context.getExternalCacheDir();//获取系统管理的sd卡缓存文件
-            if (file == null) {//如果获取的文件为空,就使用自己定义的缓存文件夹做缓存路径
+            //获取系统管理的sd卡缓存文件
+            file = context.getExternalCacheDir();
+            if (file == null) {
+                //如果获取的文件为空,就使用自己定义的缓存文件夹做缓存路径
                 file = new File(getCacheFilePath(context));
                 makeDirs(file);
             }

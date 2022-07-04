@@ -164,7 +164,7 @@ class TransactionDelegate {
                 handleAfterSaveInStateTransactionException(fm, "popTo()");
                 FragmentationMagician.executePendingTransactionsAllowingStateLoss(fm);
                 top.getSupportDelegate().mLockAnim = true;
-                if (!FragmentationMagician.isStateSaved(fm)) {
+                if (!fm.isStateSaved()) {
                     mockStartWithPopAnim(SupportHelper.getTopFragment(fm), to, top.getSupportDelegate().mAnimHelper.popExitAnim);
                 }
 

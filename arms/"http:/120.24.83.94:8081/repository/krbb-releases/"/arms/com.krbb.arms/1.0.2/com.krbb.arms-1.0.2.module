@@ -1,0 +1,429 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "arms",
+    "module": "com.krbb.arms",
+    "version": "1.0.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.0.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "io.reactivex.rxjava3",
+          "module": "rxjava",
+          "version": {
+            "requires": "3.0.13"
+          }
+        },
+        {
+          "group": "io.reactivex.rxjava3",
+          "module": "rxandroid",
+          "version": {
+            "requires": "3.0.0"
+          }
+        },
+        {
+          "group": "com.trello.rxlifecycle4",
+          "module": "rxlifecycle",
+          "version": {
+            "requires": "4.0.2"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "jsr305"
+            }
+          ]
+        },
+        {
+          "group": "com.trello.rxlifecycle4",
+          "module": "rxlifecycle-android",
+          "version": {
+            "requires": "4.0.2"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "support-annotations"
+            },
+            {
+              "group": "*",
+              "module": "rxandroid"
+            },
+            {
+              "group": "*",
+              "module": "rxlifecycle"
+            },
+            {
+              "group": "*",
+              "module": "rxjava"
+            }
+          ]
+        },
+        {
+          "group": "com.github.tbruyelle",
+          "module": "rxpermissions",
+          "version": {
+            "requires": "0.12"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "support-annotations"
+            },
+            {
+              "group": "*",
+              "module": "rxjava"
+            }
+          ]
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "okio"
+            },
+            {
+              "group": "*",
+              "module": "okhttp"
+            }
+          ]
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.9.1"
+          }
+        },
+        {
+          "group": "com.google.dagger",
+          "module": "dagger",
+          "version": {
+            "requires": "2.37"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.7"
+          }
+        },
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber",
+          "version": {
+            "requires": "4.7.1"
+          }
+        },
+        {
+          "group": "io.github.lucksiege",
+          "module": "pictureselector",
+          "version": {
+            "requires": "v2.7.3-rc02"
+          }
+        },
+        {
+          "group": "com.github.SherlockGougou",
+          "module": "BigImageViewPager",
+          "version": {
+            "requires": "androidx-6.1.6"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "subsampling-scale-image-view"
+            }
+          ]
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "viewbinding",
+          "version": {
+            "requires": "7.0.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.30"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "com.krbb.arms-1.0.2.aar",
+          "url": "com.krbb.arms-1.0.2.aar",
+          "size": 322958,
+          "sha512": "3c3775b0d9b635c4369331b0ecf409bb700fd0da667bf8983be2ff0246b406a8e3e86c6ecd95c05dbdf1e5d72f1283e23ae5d9571e905c5389db83be3afac2c9",
+          "sha256": "d4a96f8b805f990fe205e12ee88a3b0b90056cc3867dbc6241375824195e4bc3",
+          "sha1": "bb9ad339310444b04ec5137fdb8556b31bef6e56",
+          "md5": "e0483c75c6c8a9a0db1ec2b9c52879a4"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-parcelize-runtime",
+          "version": {
+            "requires": "1.5.30"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "io.reactivex.rxjava3",
+          "module": "rxjava",
+          "version": {
+            "requires": "3.0.13"
+          }
+        },
+        {
+          "group": "io.reactivex.rxjava3",
+          "module": "rxandroid",
+          "version": {
+            "requires": "3.0.0"
+          }
+        },
+        {
+          "group": "com.trello.rxlifecycle4",
+          "module": "rxlifecycle",
+          "version": {
+            "requires": "4.0.2"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "jsr305"
+            }
+          ]
+        },
+        {
+          "group": "com.trello.rxlifecycle4",
+          "module": "rxlifecycle-android",
+          "version": {
+            "requires": "4.0.2"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "support-annotations"
+            },
+            {
+              "group": "*",
+              "module": "rxandroid"
+            },
+            {
+              "group": "*",
+              "module": "rxlifecycle"
+            },
+            {
+              "group": "*",
+              "module": "rxjava"
+            }
+          ]
+        },
+        {
+          "group": "com.github.tbruyelle",
+          "module": "rxpermissions",
+          "version": {
+            "requires": "0.12"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "support-annotations"
+            },
+            {
+              "group": "*",
+              "module": "rxjava"
+            }
+          ]
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "okio"
+            },
+            {
+              "group": "*",
+              "module": "okhttp"
+            }
+          ]
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.9.1"
+          }
+        },
+        {
+          "group": "com.google.dagger",
+          "module": "dagger",
+          "version": {
+            "requires": "2.37"
+          }
+        },
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.8.7"
+          }
+        },
+        {
+          "group": "com.jakewharton.timber",
+          "module": "timber",
+          "version": {
+            "requires": "4.7.1"
+          }
+        },
+        {
+          "group": "io.github.lucksiege",
+          "module": "pictureselector",
+          "version": {
+            "requires": "v2.7.3-rc02"
+          }
+        },
+        {
+          "group": "com.github.SherlockGougou",
+          "module": "BigImageViewPager",
+          "version": {
+            "requires": "androidx-6.1.6"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "subsampling-scale-image-view"
+            }
+          ]
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "viewbinding",
+          "version": {
+            "requires": "7.0.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.5.30"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-gson",
+          "version": {
+            "requires": "2.9.0"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "retrofit"
+            },
+            {
+              "group": "*",
+              "module": "okio"
+            },
+            {
+              "group": "*",
+              "module": "okhttp"
+            },
+            {
+              "group": "*",
+              "module": "gson"
+            }
+          ]
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "adapter-rxjava3",
+          "version": {
+            "requires": "2.9.0"
+          },
+          "excludes": [
+            {
+              "group": "*",
+              "module": "retrofit"
+            },
+            {
+              "group": "*",
+              "module": "okio"
+            },
+            {
+              "group": "*",
+              "module": "okhttp"
+            },
+            {
+              "group": "*",
+              "module": "rxjava"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "com.krbb.arms-1.0.2.aar",
+          "url": "com.krbb.arms-1.0.2.aar",
+          "size": 322958,
+          "sha512": "3c3775b0d9b635c4369331b0ecf409bb700fd0da667bf8983be2ff0246b406a8e3e86c6ecd95c05dbdf1e5d72f1283e23ae5d9571e905c5389db83be3afac2c9",
+          "sha256": "d4a96f8b805f990fe205e12ee88a3b0b90056cc3867dbc6241375824195e4bc3",
+          "sha1": "bb9ad339310444b04ec5137fdb8556b31bef6e56",
+          "md5": "e0483c75c6c8a9a0db1ec2b9c52879a4"
+        }
+      ]
+    }
+  ]
+}

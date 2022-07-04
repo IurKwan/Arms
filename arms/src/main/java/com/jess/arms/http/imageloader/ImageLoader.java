@@ -39,6 +39,7 @@ public final class ImageLoader {
 
     @Inject
     public ImageLoader() {
+
     }
 
     /**

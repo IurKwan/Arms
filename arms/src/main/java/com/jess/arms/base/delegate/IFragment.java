@@ -18,21 +18,18 @@ package com.jess.arms.base.delegate;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Message;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.integration.cache.Cache;
 import com.jess.arms.integration.cache.LruCache;
 
 /**
  * 框架要求框架中的每个 {@link Fragment} 都需要实现此类,以满足规范
+ *
  * @author guanzhirui
  */
 public interface IFragment {
@@ -50,30 +47,21 @@ public interface IFragment {
     /**
      * 提供 AppComponent (提供所有的单例对象) 给实现类, 进行 Component 依赖
      *
-     * @param appComponent
+     * @param appComponent appComponent
      */
     void setupFragmentComponent(@NonNull AppComponent appComponent);
 
     /**
-     * 是否使用 EventBus
-     * Arms 核心库现在并不会依赖某个 EventBus, 要想使用 EventBus, 还请在项目中自行依赖对应的 EventBus
-     * 现在支持两种 EventBus, greenrobot 的 EventBus 和畅销书 《Android源码设计模式解析与实战》的作者 何红辉 所作的 AndroidEventBus
-     * 确保依赖后, 将此方法返回 true, Arms 会自动检测您依赖的 EventBus, 并自动注册
-     * 这种做法可以让使用者有自行选择三方库的权利, 并且还可以减轻 Arms 的体积
+     * 需要统计数据
      *
-     * @return 返回 {@code true}, Arms 会自动注册 EventBus
-     */
-    boolean useEventBus();
-
-    /**
-     * 是否需要统计
+     * @return boolean
      */
     boolean needStatistics();
 
     /**
      * 初始化数据
      *
-     * @param savedInstanceState
+     * @param savedInstanceState savedInstanceState
      */
     void initData(@Nullable Bundle savedInstanceState);
 
@@ -110,7 +98,7 @@ public interface IFragment {
      * data.arg1 = 1;
      * fragment.setData(data);
      * </pre>
-     *
+     * <p>
      * {@link #setData(Object)} 框架是不会调用的, 是拿给开发者自己去调用的, 让 {@link Activity} 或者其他类可以和 {@link Fragment} 通信,
      * 并且因为 {@link #setData(Object)} 是 {@link IFragment} 的方法, 所以你可以通过多态, 持有父类,
      * 不持有具体子类的方式就可以和子类 {@link Fragment} 通信, 这样如果需要替换子类, 就不会影响到其他地方,
@@ -121,6 +109,5 @@ public interface IFragment {
      * @param data 当不需要参数时 {@code data} 可以为 {@code null}
      */
     void setData(@Nullable Object data);
-
 
 }

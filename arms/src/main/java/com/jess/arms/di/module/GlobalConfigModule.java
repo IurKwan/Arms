@@ -24,13 +24,16 @@ import androidx.annotation.Nullable;
 import com.jess.arms.http.BaseUrl;
 import com.jess.arms.http.GlobalHttpHandler;
 import com.jess.arms.http.imageloader.BaseImageLoaderStrategy;
+import com.jess.arms.http.imageloader.ImageConfig;
 import com.jess.arms.http.log.DefaultFormatPrinter;
 import com.jess.arms.http.log.FormatPrinter;
 import com.jess.arms.http.log.RequestInterceptor;
+import com.jess.arms.http.subscriber.ErrorListenerImpl;
 import com.jess.arms.integration.cache.Cache;
 import com.jess.arms.integration.cache.CacheType;
 import com.jess.arms.integration.cache.IntelligentCache;
 import com.jess.arms.integration.cache.LruCache;
+import com.jess.arms.utils.ArmExecutor;
 import com.jess.arms.utils.DataHelper;
 import com.jess.arms.utils.Preconditions;
 
@@ -38,36 +41,36 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import me.jessyan.rxerrorhandler.handler.listener.ResponseErrorListener;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
-import okhttp3.internal.Util;
 
 /**
  * 框架独创的建造者模式 {@link Module},可向框架中注入外部配置的自定义参数
+ * @author guanzhirui
  */
 @Module
 public class GlobalConfigModule {
-    private HttpUrl mApiUrl;
-    private BaseUrl mBaseUrl;
-    private BaseImageLoaderStrategy mLoaderStrategy;
-    private GlobalHttpHandler mHandler;
-    private List<Interceptor> mInterceptors;
-    private File mCacheFile;
-    private ClientModule.RetrofitConfiguration mRetrofitConfiguration;
-    private ClientModule.OkhttpConfiguration mOkhttpConfiguration;
-    private AppModule.GsonConfiguration mGsonConfiguration;
-    private RequestInterceptor.Level mPrintHttpLogLevel;
-    private FormatPrinter mFormatPrinter;
-    private Cache.Factory mCacheFactory;
-    private ThreadPoolExecutor mThreadPoolExecutor;
+    private final HttpUrl mApiUrl;
+    private final BaseUrl mBaseUrl;
+    private final BaseImageLoaderStrategy mLoaderStrategy;
+    private final GlobalHttpHandler mHandler;
+    private final List<Interceptor> mInterceptors;
+    private final ResponseErrorListener mErrorListener;
+    private final File mCacheFile;
+    private final ClientModule.RetrofitConfiguration mRetrofitConfiguration;
+    private final ClientModule.OkhttpConfiguration mOkhttpConfiguration;
+    private final AppModule.GsonConfiguration mGsonConfiguration;
+    private final RequestInterceptor.Level mPrintHttpLogLevel;
+    private final FormatPrinter mFormatPrinter;
+    private final Cache.Factory mCacheFactory;
+    private final ThreadPoolExecutor mThreadPoolExecutor;
 
     private GlobalConfigModule(Builder builder) {
         this.mApiUrl = builder.apiUrl;
@@ -75,6 +78,7 @@ public class GlobalConfigModule {
         this.mLoaderStrategy = builder.loaderStrategy;
         this.mHandler = builder.handler;
         this.mInterceptors = builder.interceptors;
+        this.mErrorListener = builder.responseErrorListener;
         this.mCacheFile = builder.cacheFile;
         this.mRetrofitConfiguration = builder.retrofitConfiguration;
         this.mOkhttpConfiguration = builder.okhttpConfiguration;
@@ -146,6 +150,17 @@ public class GlobalConfigModule {
         return mCacheFile == null ? DataHelper.getCacheFile(application) : mCacheFile;
     }
 
+    /**
+     * 提供处理 RxJava 错误的管理器的回调
+     *
+     * @return
+     */
+    @Singleton
+    @Provides
+    ResponseErrorListener provideResponseErrorListener() {
+        return mErrorListener == null ? new ErrorListenerImpl() : mErrorListener;
+    }
+
     @Singleton
     @Provides
     @Nullable
@@ -211,8 +226,7 @@ public class GlobalConfigModule {
     @Singleton
     @Provides
     ThreadPoolExecutor provideExecutorService() {
-        return mThreadPoolExecutor == null ? new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS,
-                new SynchronousQueue<>(), Util.threadFactory("Arms Executor", false)) : mThreadPoolExecutor;
+        return mThreadPoolExecutor == null ? ArmExecutor.INSTANCE.instance() : mThreadPoolExecutor;
     }
 
     public static final class Builder {
@@ -221,6 +235,7 @@ public class GlobalConfigModule {
         private BaseImageLoaderStrategy loaderStrategy;
         private GlobalHttpHandler handler;
         private List<Interceptor> interceptors;
+        private ResponseErrorListener responseErrorListener;
         private File cacheFile;
         private ClientModule.RetrofitConfiguration retrofitConfiguration;
         private ClientModule.OkhttpConfiguration okhttpConfiguration;
@@ -261,6 +276,11 @@ public class GlobalConfigModule {
                 interceptors = new ArrayList<>();
             }
             this.interceptors.add(interceptor);
+            return this;
+        }
+
+        public Builder responseErrorListener(ResponseErrorListener listener) {
+            this.responseErrorListener = listener;
             return this;
         }
 

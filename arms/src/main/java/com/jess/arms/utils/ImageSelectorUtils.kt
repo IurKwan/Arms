@@ -1,14 +1,25 @@
 package com.jess.arms.utils
 
 import android.app.Activity
-import android.os.Build
+import android.content.Context
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.luck.picture.lib.PictureSelector
-import com.luck.picture.lib.config.PictureConfig
+import com.jess.arms.R
+import com.luck.picture.lib.animators.AnimationType
+import com.luck.picture.lib.basic.PictureSelectionModel
+import com.luck.picture.lib.basic.PictureSelector
 import com.luck.picture.lib.config.PictureMimeType
+import com.luck.picture.lib.config.PictureSelectionConfig.selectorStyle
 import com.luck.picture.lib.engine.ImageEngine
+import com.luck.picture.lib.engine.UriToFileTransformEngine
 import com.luck.picture.lib.entity.LocalMedia
-import com.luck.picture.lib.listener.OnResultCallbackListener
+import com.luck.picture.lib.interfaces.OnKeyValueResultCallbackListener
+import com.luck.picture.lib.style.PictureSelectorStyle
+import com.luck.picture.lib.style.SelectMainStyle
+import com.luck.picture.lib.style.TitleBarStyle
+import com.luck.picture.lib.utils.SandboxTransformUtils
+import com.luck.picture.lib.utils.StyleUtils
+import com.yalantis.ucrop.UCrop
 
 /**
  * 选择图片库
@@ -16,207 +27,42 @@ import com.luck.picture.lib.listener.OnResultCallbackListener
  * @author IurKwan
  * @date 1/19/21
  */
-class ImageSelectorUtils private constructor() {
-
-    companion object {
-        val instance = ImageSelectorUtils.holder
-    }
-
-    private object ImageSelectorUtils {
-        val holder = ImageSelectorUtils()
-    }
+object ImageSelectorUtils {
 
     private var mEngine: ImageEngine? = null
+    private var mTheme: PictureSelectorStyle = PictureSelectorStyle()
 
-    private var mTheme: Int = 0
-
-    fun init(theme: Int, engine: ImageEngine) {
+    fun init(theme: PictureSelectorStyle, engine: ImageEngine) {
         mTheme = theme
         mEngine = engine
     }
 
-    fun takeOnePhoto(fragment: Fragment, isCut: Boolean, listener: OnResultCallbackListener<*>) {
-        checkTheme()
-
-        PictureSelector.create(fragment)
-            .openGallery(PictureMimeType.ofImage())
-            .imageEngine(mEngine)
-            .theme(mTheme)
-            .imageSpanCount(3)
-            .isDragFrame(false)
-            .scaleEnabled(true)
-            .circleDimmedLayer(true)
-            .selectionMode(PictureConfig.SINGLE)
-            .isPreviewImage(true)
-            .withAspectRatio(1, 1)
-            .isCamera(true)
-            .isAndroidQTransform(true)
-            .isEnableCrop(isCut)
-            .isCompress(true)
+    fun defaultModel(model: PictureSelectionModel): PictureSelectionModel {
+        return model.setImageEngine(mEngine)
+            .setSelectorUIStyle(mTheme)
+            .setCompressEngine(ImageFileCompressEngine())
+            .setSandboxFileEngine(SandboxFileEngine())
+            .setRecyclerAnimationMode(AnimationType.DEFAULT_ANIMATION)
+            .isDisplayCamera(true)
+            .isPageStrategy(true)
             .isGif(true)
             .isOpenClickSound(false)
-            .minimumCompressSize(10)
-            .forResult(listener)
-    }
-
-    fun starCamera(fragment: Fragment, listener: OnResultCallbackListener<*>) {
-        checkTheme()
-
-        PictureSelector.create(fragment)
-            .openCamera(PictureMimeType.ofImage())
-            .imageEngine(mEngine)
-            .isEnableCrop(true)
-            .circleDimmedLayer(true)
-            .forResult(listener)
-    }
-
-    fun startPictureSelected(
-        fragment: Fragment,
-        mLocalMedia: List<LocalMedia>,
-        max: Int,
-        isPhoto: Boolean,
-        listener: OnResultCallbackListener<*>
-    ) {
-        checkTheme()
-
-        PictureSelector.create(fragment)
-            .openGallery(if (isPhoto) PictureMimeType.ofImage() else PictureMimeType.ofVideo())
-            .imageEngine(mEngine)
-            .theme(mTheme)
-            .maxSelectNum(if (max == 0) 1 else max)
-            .minSelectNum(1)
-            .isAndroidQTransform(true)
-            .imageSpanCount(3)
-            .isPreviewVideo(true)
+            .isPreviewAudio(false)
             .isPreviewImage(true)
-            .selectionMode(PictureConfig.MULTIPLE)
-            .recordVideoSecond(10)
-            .isZoomAnim(true)
-            .isCamera(true)
-            .isEnableCrop(false)
-            .isCompress(true)
-            .maxVideoSelectNum(999)
-            .minVideoSelectNum(1)
-            .videoMaxSecond(15)
-            .videoMinSecond(1)
-            .queryMaxFileSize(30f)
-            .isGif(false)
-            .isPreviewEggs(false)
-            .isOpenClickSound(false)
-            .selectionData(mLocalMedia)
-            .minimumCompressSize(100)
-            .forResult(listener)
-    }
-
-    fun startPictureSelected(
-        fragment: Fragment,
-        mLocalMedia: List<LocalMedia>,
-        limitSize: Boolean,
-        isPhoto: Boolean,
-        listener: OnResultCallbackListener<*>
-    ) {
-        checkTheme()
-
-        PictureSelector.create(fragment)
-            .openGallery(if (isPhoto) PictureMimeType.ofImage() else PictureMimeType.ofVideo())
-            .imageEngine(mEngine)
-            .theme(mTheme)
-            .maxSelectNum(if (limitSize) 9 else 999)
-            .minSelectNum(1)
-            .imageSpanCount(3)
             .isPreviewVideo(true)
-            .isPreviewImage(true)
-            .selectionMode(PictureConfig.MULTIPLE)
-            .recordVideoSecond(10)
-            .isZoomAnim(true)
-            .isCamera(true)
-            .isEnableCrop(false)
-            .isCompress(true)
-            .maxVideoSelectNum(999)
-            .minVideoSelectNum(1)
-            .videoMaxSecond(15)
-            .videoMinSecond(1)
-            .queryMaxFileSize(30f)
-            .isAndroidQTransform(true)
-            .isGif(false)
-            .isPreviewEggs(false)
-            .isOpenClickSound(false)
-            .selectionData(mLocalMedia)
-            .minimumCompressSize(100)
-            .forResult(listener)
-    }
-
-    fun startPictureSelected(
-        activity: Activity,
-        mLocalMedia: List<LocalMedia>,
-        limitSize: Boolean,
-        isPhoto: Boolean,
-        listener: OnResultCallbackListener<*>
-    ) {
-        checkTheme()
-
-        PictureSelector.create(activity)
-            .openGallery(if (isPhoto) PictureMimeType.ofImage() else PictureMimeType.ofVideo())
-            .imageEngine(mEngine)
-            .theme(mTheme)
-            .maxSelectNum(if (limitSize) 9 else 999)
-            .minSelectNum(1)
-            .imageSpanCount(3)
-            .isPreviewVideo(true)
-            .isPreviewImage(true)
-            .selectionMode(PictureConfig.MULTIPLE)
-            .recordVideoSecond(10)
-            .isZoomAnim(true)
-            .isCamera(true)
-            .isEnableCrop(false)
-            .isAndroidQTransform(true)
-            .isCompress(true)
-            .maxVideoSelectNum(999)
-            .minVideoSelectNum(1)
-            .videoMaxSecond(15)
-            .videoMinSecond(1)
-            .queryMaxFileSize(30f)
-            .isGif(false)
-            .isPreviewEggs(false)
-            .isOpenClickSound(false)
-            .selectionData(mLocalMedia)
-            .minimumCompressSize(100)
-            .forResult(listener)
-    }
-
-    fun startMediaSelected(
-        activity: Activity, mLocalMedia: List<LocalMedia>, listener: OnResultCallbackListener<*>
-    ) {
-        checkTheme()
-
-        PictureSelector.create(activity)
-            .openGallery(PictureMimeType.ofAll())
-            .imageEngine(mEngine)
-            .theme(mTheme)
-            .maxSelectNum(9)
-            .minSelectNum(1)
-            .imageSpanCount(3)
-            .isPreviewVideo(true)
-            .isPreviewImage(true)
-            .selectionMode(PictureConfig.MULTIPLE)
-            .recordVideoSecond(10)
-            .isZoomAnim(true)
-            .isCamera(true)
-            .isEnableCrop(false)
-            .isAndroidQTransform(true)
-            .isCompress(true)
-            .maxVideoSelectNum(1)
-            .minVideoSelectNum(1)
-            .videoMaxSecond(15)
-            .videoMinSecond(1)
-            .isGif(false)
-            .queryMaxFileSize(30f)
-            .isPreviewEggs(false)
-            .videoQuality(1)
-            .isOpenClickSound(false)
-            .selectionData(mLocalMedia)
-            .minimumCompressSize(100)
-            .forResult(listener)
+            .isPreviewFullScreenMode(true)
+            .isEmptyResultReturn(true)
+            .isWithSelectVideoImage(false)
+            .isSelectZoomAnim(true)
+            .isCameraAroundState(true)
+            .isCameraRotateImage(true)
+            .isWebp(true)
+            .isBmp(true)
+            .isMaxSelectEnabledMask(true)
+            .isAutomaticTitleRecyclerTop(true)
+            .isFastSlidingSelect(true)
+            .isDirectReturnSingle(true)
+            .setSkipCropMimeType(PictureMimeType.ofGIF(), PictureMimeType.ofWEBP())
     }
 
     fun getFinalPath(media: LocalMedia): String {
@@ -226,33 +72,92 @@ class ImageSelectorUtils private constructor() {
         if (media.isCut) {
             return media.cutPath
         }
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.Q && media.androidQToPath != null) {
-            return media.androidQToPath
-        }
-        return media.path
+        return media.availablePath
     }
 
-    fun openExternalPreview(fragment: Fragment, position: Int, media: List<LocalMedia>) {
-        checkTheme()
-
+    fun openExternalPreview(fragment: Fragment, position: Int, media: ArrayList<LocalMedia>) {
         PictureSelector.create(fragment)
-            .themeStyle(mTheme)
-            .imageEngine(mEngine)
-            .openExternalPreview(position, media)
+            .openPreview()
+            .setImageEngine(mEngine)
+            .setSelectorUIStyle(mTheme)
+            .isPreviewFullScreenMode(false)
+            .startActivityPreview(position, false, media)
     }
 
-    fun openExternalPreview(activity: Activity, position: Int, media: List<LocalMedia>) {
-        checkTheme()
-
+    fun openExternalPreview(activity: Activity, position: Int, media: ArrayList<LocalMedia>) {
         PictureSelector.create(activity)
-            .themeStyle(mTheme)
-            .imageEngine(mEngine)
-            .openExternalPreview(position, media)
+            .openPreview()
+            .setImageEngine(mEngine)
+            .setSelectorUIStyle(mTheme)
+            .isPreviewFullScreenMode(false)
+            .startActivityPreview(position, false, media)
     }
 
-    private fun checkTheme() {
-        if (mEngine == null) {
-            throw RuntimeException("请先初始化主题")
+    fun buildOptions(context: Context): UCrop.Options {
+        val options = UCrop.Options()
+        options.setHideBottomControls(false)
+        options.setFreeStyleCropEnabled(false)
+        options.setShowCropFrame(true)
+        options.setShowCropGrid(true)
+        options.setCircleDimmedLayer(true)
+        options.withAspectRatio(-1f, -1f)
+        options.isCropDragSmoothToCenter(false)
+        options.setSkipCropMimeType(PictureMimeType.ofGIF(), PictureMimeType.ofWEBP())
+        options.isForbidCropGifWebp(true)
+        options.isForbidSkipMultipleCrop(false)
+        options.setMaxScaleMultiplier(100f)
+        if (mTheme.selectMainStyle.statusBarColor != 0) {
+            val mainStyle: SelectMainStyle = selectorStyle.selectMainStyle
+            val isDarkStatusBarBlack = mainStyle.isDarkStatusBarBlack
+            val statusBarColor = mainStyle.statusBarColor
+            options.isDarkStatusBarBlack(isDarkStatusBarBlack)
+            if (StyleUtils.checkStyleValidity(statusBarColor)) {
+                options.setStatusBarColor(statusBarColor)
+                options.setToolbarColor(statusBarColor)
+            } else {
+                options.setStatusBarColor(
+                    ContextCompat.getColor(
+                        context,
+                        R.color.ps_color_grey
+                    )
+                )
+                options.setToolbarColor(ContextCompat.getColor(context, R.color.ps_color_grey))
+            }
+            val titleBarStyle: TitleBarStyle = selectorStyle.titleBarStyle
+            if (StyleUtils.checkStyleValidity(titleBarStyle.titleTextColor)) {
+                options.setToolbarWidgetColor(titleBarStyle.titleTextColor)
+            } else {
+                options.setToolbarWidgetColor(
+                    ContextCompat.getColor(
+                        context,
+                        R.color.ps_color_white
+                    )
+                )
+            }
+        } else {
+            options.setStatusBarColor(ContextCompat.getColor(context, R.color.ps_color_grey))
+            options.setToolbarColor(ContextCompat.getColor(context, R.color.ps_color_grey))
+            options.setToolbarWidgetColor(
+                ContextCompat.getColor(
+                    context,
+                    R.color.ps_color_white
+                )
+            )
+        }
+        return options
+    }
+
+    class SandboxFileEngine : UriToFileTransformEngine {
+        override fun onUriToFileAsyncTransform(
+            context: Context,
+            srcPath: String,
+            mineType: String,
+            call: OnKeyValueResultCallbackListener
+        ) {
+            call.onCallback(
+                srcPath,
+                SandboxTransformUtils.copyPathToSandbox(context, srcPath, mineType)
+            )
         }
     }
 }

@@ -24,13 +24,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.jess.arms.integration.EventBusManager;
 import com.jess.arms.utils.ArmsUtils;
-
-import timber.log.Timber;
 
 /**
  * {@link FragmentDelegate} 默认实现类
+ * @author guanzhirui
  */
 public class FragmentDelegateImpl implements FragmentDelegate {
     private FragmentManager mFragmentManager;
@@ -50,10 +48,6 @@ public class FragmentDelegateImpl implements FragmentDelegate {
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        if (iFragment.useEventBus())//如果要使用eventbus请将此方法返回true
-        {
-            EventBusManager.getInstance().register(mFragment);//注册到事件主线
-        }
         iFragment.setupFragmentComponent(ArmsUtils.obtainAppComponentFromContext(mFragment.getActivity()));
     }
 
@@ -99,10 +93,6 @@ public class FragmentDelegateImpl implements FragmentDelegate {
 
     @Override
     public void onDestroy() {
-        if (iFragment != null && iFragment.useEventBus())//如果要使用eventbus请将此方法返回true
-        {
-            EventBusManager.getInstance().unregister(mFragment);//注册到事件主线
-        }
         this.mFragmentManager = null;
         this.mFragment = null;
         this.iFragment = null;

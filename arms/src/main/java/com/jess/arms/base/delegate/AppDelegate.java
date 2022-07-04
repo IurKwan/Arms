@@ -47,6 +47,7 @@ import javax.inject.Named;
  * 所以当遇到某些三方库需要继承于它的 Application 的时候,就只有自定义 Application 并继承于三方库的 Application
  * 这时就不用再继承 BaseApplication,只用在自定义Application中对应的生命周期调用AppDelegate对应的方法
  * (Application一定要实现APP接口),框架就能照常运行
+ * @author guanzhirui
  */
 public class AppDelegate implements App, AppLifecycles {
     @Inject
@@ -80,7 +81,6 @@ public class AppDelegate implements App, AppLifecycles {
 
     @Override
     public void attachBaseContext(@NonNull Context base) {
-
         //遍历 mAppLifecycles, 执行所有已注册的 AppLifecycles 的 attachBaseContext() 方法 (框架外部, 开发者扩展的逻辑)
         for (AppLifecycles lifecycle : mAppLifecycles) {
             lifecycle.attachBaseContext(base);
@@ -92,8 +92,10 @@ public class AppDelegate implements App, AppLifecycles {
         this.mApplication = application;
         mAppComponent = DaggerAppComponent
                 .builder()
-                .application(mApplication)//提供application
-                .globalConfigModule(getGlobalConfigModule(mApplication, mModules))//全局配置
+                //提供application
+                .application(mApplication)
+                //全局配置
+                .globalConfigModule(getGlobalConfigModule(mApplication, mModules))
                 .build();
         mAppComponent.inject(this);
 

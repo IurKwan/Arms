@@ -1,0 +1,2293 @@
+<!DOCTYPE HTML>
+<!-- NewPage -->
+<html lang="en"><head>
+    <title>VideoView </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="dc.created" content="2020-03-25">
+    <link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../../../dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../../../jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="../../../../../../jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+    <script type="text/javascript" src="../../../../../../jquery/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="../../../../../../search.js"></script>
+    <script async type="text/javascript" src="../../../../../../module-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../../package-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../../type-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../../member-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../../tag-search-index.js"></script>
+</head><body>
+<script type="text/javascript">
+var pathtoroot = "../../../../../../";
+</script>
+<noscript>
+    <div>JavaScript is disabled on your browser.</div>
+</noscript><header role="banner">
+    <nav role="navigation">
+        <div class="fixedNav">
+            <!-- ========= START OF TOP NAVBAR ======= -->
+            <div class="topNav"><a id="navbar.top">
+                <!--   -->
+            </a>
+                <div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a>
+                </div>
+                <a id="navbar.top.firstrow">
+                    <!--   -->
+                </a>
+                <ul class="navList" title="Navigation">
+    <li><a href="../../../../../../index.html">Overview</a></li>
+    
+    <li><a href="package-summary.html">Package</a></li>
+    
+    <li class="navBarCell1Rev">Class</li>
+    
+    <li><a href="package-tree.html">Tree</a></li>
+    
+    <li><a href="../../../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+            <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="../../../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+
+<ul class="navListSearch">
+<li><label for="search">SEARCH:</label>
+<input type="text" id="search" value="search" class="ui-autocomplete-input" autocomplete="off" placeholder="Search">
+<input type="reset" id="reset" value="reset">
+</li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ========= END OF TOP NAVBAR ========= -->
+        </div>
+        <div class="navPadding">&nbsp;</div>
+        <script type="text/javascript"><!--
+        $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
+        //-->
+        </script>
+    </nav>
+</header>
+
+<main role="main">
+    <div class="header">
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
+        <h2 title="Class VideoView" class="title">Class VideoView</h2>
+    </div>
+    <div class="contentContainer">
+        <!-- <ul class="inheritance">
+            <li>java.lang.Object</li>
+            <li>
+                <ul class="inheritance">
+                    <li>adaptation.Adaptation</li>
+                </ul>
+            </li>
+        </ul> TODO inheritance tree -->
+        <div class="description">
+            <ul class="blockList">
+                <li class="blockList">
+                    
+                    <dl>
+                        <dt>All Implemented Interfaces:</dt>
+                        <dd>
+                            
+                            <code>android.graphics.drawable.Drawable.Callback</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.view.KeyEvent.Callback</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.view.ViewManager</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.view.ViewParent</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.view.accessibility.AccessibilityEventSource</code>
+                            
+                            
+                        </dd>
+                    </dl>
+                    
+                    <hr>
+                    <pre class="wrap-overflow">
+
+public class <span class="typeNameLabel"><a href=VideoView.html>VideoView</a></span>
+extends <a href=https://developer.android.com/reference/kotlin/android/widget/RelativeLayout.html>RelativeLayout</a>
+                    </pre>
+                    <div class="block"><p>This is a support VideoView that will use the standard VideoView on devices below JellyBean.  On devices with JellyBean and up we will use the ExoPlayer in order to better support HLS streaming and full 1080p video resolutions which the VideoView struggles with, and in some cases crashes.</p><p>To an external user this view should have the same APIs used with the standard VideoView to help with quick implementations.</p><p>TODO why doesn't this extend VideoPlayerApi? TODO: standardize naming of exposed methods with the AudioPlayer (e.g. setMediaUri instead of setVideoUri)</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="summary">
+            <ul class="blockList">
+                <li class="blockList">
+                <!-- ======== NESTED CLASS SUMMARY ======== -->
+                    
+                    <!-- =========== FIELD SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="field.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Field Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Field</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/android/widget/ImageView.html>ImageView</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#previewImageView>previewImageView</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private  <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#videoUri>videoUri</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private  <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#positionOffset>positionOffset</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private  <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#releaseOnDetachFromWindow>releaseOnDetachFromWindow</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private  <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#handleAudioFocus>handleAudioFocus</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private  <a href=controls/VideoControls.html>VideoControls</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#videoControls>videoControls</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private  <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#volume>volume</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#isPlaying>isPlaying</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#duration>duration</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#currentPosition>currentPosition</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#bufferPercentage>bufferPercentage</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=../../nmp/manager/window/WindowInfo.html>WindowInfo</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#windowInfo>windowInfo</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#playbackSpeed>playbackSpeed</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=../../core/renderer/RendererType.html>RendererType</a>, TrackGroupArray&gt;</code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#availableTracks>availableTracks</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private final <a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#bitmap>bitmap</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- ======== CONSTRUCTOR SUMMARY ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tbody>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Constructor</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+
+                                        
+                                            <tr class="altColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#VideoView(Context)">VideoView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+                                            <tr class="rowColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#VideoView(Context,AttributeSet)">VideoView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+                                            <tr class="altColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#VideoView(Context,AttributeSet,Integer)">VideoView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> defStyleAttr)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+                                            <tr class="rowColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#VideoView(Context,AttributeSet,Integer,Integer)">VideoView</a></span>(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> defStyleAttr, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> defStyleRes)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- =========== ENUM CONSTANT SUMMARY =========== -->
+                    
+                    <!-- ========== METHOD SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="method.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Method Summary</h3>
+                                <div class="memberSummary">
+                                    <div role="tablist" aria-orientation="horizontal">
+                                        <button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button>
+                                        <!-- TODO: Instance and Concrete Methods #1118 -->
+                                    </div>
+                                    <div id="memberSummary_tabpanel" role="tabpanel">
+                                    <table aria-labelledby="t0">
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Method</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                        <tr id="i0" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/android/widget/ImageView.html>ImageView</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getPreviewImageView()>getPreviewImageView</a>() </code>
+                                            </th>
+                                            <td class="colLast">Gets the preview ImageView for use with image loading libraries.</td>
+                                        </tr>
+                                        
+                                        <tr id="i1" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getVideoUri()>getVideoUri</a>() </code>
+                                            </th>
+                                            <td class="colLast">Retrieves the current Video URI.</td>
+                                        </tr>
+                                        
+                                        <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setVideoUri(Uri)>setVideoUri</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> videoUri) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i3" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getPositionOffset()>getPositionOffset</a>() </code>
+                                            </th>
+                                            <td class="colLast">Sets the amount of time to change the return value from .</td>
+                                        </tr>
+                                        
+                                        <tr id="i4" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setPositionOffset(Long)>setPositionOffset</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> positionOffset) </code>
+                                            </th>
+                                            <td class="colLast">Sets the amount of time to change the return value from .</td>
+                                        </tr>
+                                        
+                                        <tr id="i5" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getReleaseOnDetachFromWindow()>getReleaseOnDetachFromWindow</a>() </code>
+                                            </th>
+                                            <td class="colLast"><i>WARNING:</i> Use of this method may cause memory leaks.</td>
+                                        </tr>
+                                        
+                                        <tr id="i6" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setReleaseOnDetachFromWindow(Boolean)>setReleaseOnDetachFromWindow</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> releaseOnDetachFromWindow) </code>
+                                            </th>
+                                            <td class="colLast"><i>WARNING:</i> Use of this method may cause memory leaks.</td>
+                                        </tr>
+                                        
+                                        <tr id="i7" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getHandleAudioFocus()>getHandleAudioFocus</a>() </code>
+                                            </th>
+                                            <td class="colLast">Enables or Disables automatic handling of audio focus.</td>
+                                        </tr>
+                                        
+                                        <tr id="i8" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setHandleAudioFocus(Boolean)>setHandleAudioFocus</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> handleAudioFocus) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i9" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=controls/VideoControls.html>VideoControls</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getVideoControls()>getVideoControls</a>() </code>
+                                            </th>
+                                            <td class="colLast">Retrieves the video controls being used by this view.</td>
+                                        </tr>
+                                        
+                                        <tr id="i10" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setVideoControls(VideoControls)>setVideoControls</a>(<a href=controls/VideoControls.html>VideoControls</a> videoControls) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i11" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getVolume()>getVolume</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setVolume(Float)>setVolume</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> volume) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i13" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getIsPlaying()>getIsPlaying</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i14" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getDuration()>getDuration</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i15" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getCurrentPosition()>getCurrentPosition</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i16" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getBufferPercentage()>getBufferPercentage</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i17" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=../../nmp/manager/window/WindowInfo.html>WindowInfo</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getWindowInfo()>getWindowInfo</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i18" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getPlaybackSpeed()>getPlaybackSpeed</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i19" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=../../core/renderer/RendererType.html>RendererType</a>, TrackGroupArray&gt;</code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getAvailableTracks()>getAvailableTracks</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i20" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getBitmap()>getBitmap</a>() </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i21" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOnTouchListener(View.OnTouchListener)>setOnTouchListener</a>(<a href=https://developer.android.com/reference/kotlin/android/view/View.OnTouchListener.html>View.OnTouchListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i22" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#release()>release</a>() </code>
+                                            </th>
+                                            <td class="colLast">Stops the playback and releases all resources attached to this VideoView.</td>
+                                        </tr>
+                                        
+                                        <tr id="i23" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setPreviewImage(Drawable)>setPreviewImage</a>(<a href=https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html>Drawable</a> drawable) </code>
+                                            </th>
+                                            <td class="colLast">Sets an image that will be visible only when the video is loading.</td>
+                                        </tr>
+                                        
+                                        <tr id="i24" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setPreviewImage(Integer)>setPreviewImage</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/DrawableRes.html>DrawableRes</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> resourceId) </code>
+                                            </th>
+                                            <td class="colLast">Sets an image that will be visible only when the video is loading.</td>
+                                        </tr>
+                                        
+                                        <tr id="i25" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setPreviewImage(Bitmap)>setPreviewImage</a>(<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a> bitmap) </code>
+                                            </th>
+                                            <td class="colLast">Sets an image that will be visible only when the video is loading.</td>
+                                        </tr>
+                                        
+                                        <tr id="i26" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setPreviewImage(Uri)>setPreviewImage</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri) </code>
+                                            </th>
+                                            <td class="colLast">Sets an image that will be visible only when the video is loading.</td>
+                                        </tr>
+                                        
+                                        <tr id="i27" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#showControls()>showControls</a>() </code>
+                                            </th>
+                                            <td class="colLast">Requests the DefaultVideoControls to become visible.</td>
+                                        </tr>
+                                        
+                                        <tr id="i28" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setVideoURI(Uri)>setVideoURI</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri) </code>
+                                            </th>
+                                            <td class="colLast">Sets the Uri location for the video to play</td>
+                                        </tr>
+                                        
+                                        <tr id="i29" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setVideoURI(Uri,MediaSource)>setVideoURI</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, MediaSource mediaSource) </code>
+                                            </th>
+                                            <td class="colLast">Sets the Uri location for the video to play</td>
+                                        </tr>
+                                        
+                                        <tr id="i30" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setVideoPath(String)>setVideoPath</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> path) </code>
+                                            </th>
+                                            <td class="colLast">Sets the path to the video.</td>
+                                        </tr>
+                                        
+                                        <tr id="i31" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setDrmSessionManagerProvider(DrmSessionManagerProvider)>setDrmSessionManagerProvider</a>(DrmSessionManagerProvider drmSessionManagerProvider) </code>
+                                            </th>
+                                            <td class="colLast">Sets the DrmSessionManager to use when handling DRM for media.</td>
+                                        </tr>
+                                        
+                                        <tr id="i32" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#reset()>reset</a>() </code>
+                                            </th>
+                                            <td class="colLast">Stops the current video playback and resets the repeatListener states so that we receive the callbacks for events like onPrepared</td>
+                                        </tr>
+                                        
+                                        <tr id="i33" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#seekTo(Long)>seekTo</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> milliSeconds) </code>
+                                            </th>
+                                            <td class="colLast">Moves the current video progress to the specified location.</td>
+                                        </tr>
+                                        
+                                        <tr id="i34" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#start()>start</a>() </code>
+                                            </th>
+                                            <td class="colLast">Starts the playback for the video specified in .</td>
+                                        </tr>
+                                        
+                                        <tr id="i35" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#pause(Boolean)>pause</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> transientFocusLoss) </code>
+                                            </th>
+                                            <td class="colLast">Pauses the current video in playback, only abandoning the audio focus if <code>transientFocusLoss</code> is <code>false</code>.</td>
+                                        </tr>
+                                        
+                                        <tr id="i36" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#pause(Boolean)>pause</a>() </code>
+                                            </th>
+                                            <td class="colLast">Pauses the current video in playback, only abandoning the audio focus if <code>transientFocusLoss</code> is <code>false</code>.</td>
+                                        </tr>
+                                        
+                                        <tr id="i37" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#stopPlayback()>stopPlayback</a>() </code>
+                                            </th>
+                                            <td class="colLast">If a video is currently in playback then the playback will be stopped</td>
+                                        </tr>
+                                        
+                                        <tr id="i38" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#restart()>restart</a>() </code>
+                                            </th>
+                                            <td class="colLast">If the video has completed playback, calling <code>restart</code> will seek to the beginning of the video, and play it.</td>
+                                        </tr>
+                                        
+                                        <tr id="i39" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#suspend()>suspend</a>() </code>
+                                            </th>
+                                            <td class="colLast">If a video is currently in playback then the playback will be suspended TODO: rename to release?</td>
+                                        </tr>
+                                        
+                                        <tr id="i40" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#overrideDuration(Long)>overrideDuration</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> duration) </code>
+                                            </th>
+                                            <td class="colLast">Setting this will override the duration that the item may actually be.</td>
+                                        </tr>
+                                        
+                                        <tr id="i41" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#restartOverridePosition()>restartOverridePosition</a>() </code>
+                                            </th>
+                                            <td class="colLast">Restarts the audio position to the start if the position is being overridden (see .</td>
+                                        </tr>
+                                        
+                                        <tr id="i42" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#overridePosition(Boolean)>overridePosition</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> override) </code>
+                                            </th>
+                                            <td class="colLast">Sets if the position should be overridden, allowing the time to be restarted at will.</td>
+                                        </tr>
+                                        
+                                        <tr id="i43" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOverridePositionMatchesPlaybackSpeed(Boolean)>setOverridePositionMatchesPlaybackSpeed</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> match) </code>
+                                            </th>
+                                            <td class="colLast">If set the overridden position will use the same playback rate as the media in playback.</td>
+                                        </tr>
+                                        
+                                        <tr id="i44" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setRepeatMode(Integer)>setRepeatMode</a>(@Player.RepeatMode() <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> repeatMode) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeat mode for this MediaPlayer.</td>
+                                        </tr>
+                                        
+                                        <tr id="i45" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setPlaybackSpeed(Float)>setPlaybackSpeed</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> speed) </code>
+                                            </th>
+                                            <td class="colLast">Sets the playback speed for this MediaPlayer.</td>
+                                        </tr>
+                                        
+                                        <tr id="i46" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setCaptionListener(CaptionListener)>setCaptionListener</a>(<a href=../../core/listener/CaptionListener.html>CaptionListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the caption repeatListener for this MediaPlayer Only the exoplayer implementation supports captions.</td>
+                                        </tr>
+                                        
+                                        <tr id="i47" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#trackSelectionAvailable()>trackSelectionAvailable</a>() </code>
+                                            </th>
+                                            <td class="colLast">Determines if the current video player implementation supports track selection for audio or video tracks.</td>
+                                        </tr>
+                                        
+                                        <tr id="i48" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setTrack(RendererType,Integer,Integer)>setTrack</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> trackType, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> groupIndex, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackIndex) </code>
+                                            </th>
+                                            <td class="colLast">Changes to the track with <code>trackIndex</code> for the specified <code>trackType</code></td>
+                                        </tr>
+                                        
+                                        <tr id="i49" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getSelectedTrackIndex(RendererType,Integer)>getSelectedTrackIndex</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> groupIndex) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i50" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#clearSelectedTracks(RendererType)>clearSelectedTracks</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type) </code>
+                                            </th>
+                                            <td class="colLast">Clear all selected tracks for the specified renderer.</td>
+                                        </tr>
+                                        
+                                        <tr id="i51" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setRendererEnabled(RendererType,Boolean)>setRendererEnabled</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> enabled) </code>
+                                            </th>
+                                            <td class="colLast">Enables or disables the track associated with the <code>type</code>.</td>
+                                        </tr>
+                                        
+                                        <tr id="i52" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#isRendererEnabled(RendererType)>isRendererEnabled</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type) </code>
+                                            </th>
+                                            <td class="colLast">Return true if at least one renderer for the given type is enabled</td>
+                                        </tr>
+                                        
+                                        <tr id="i53" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setScaleType(ScaleType)>setScaleType</a>(<a href=../../core/video/scale/ScaleType.html>ScaleType</a> scaleType) </code>
+                                            </th>
+                                            <td class="colLast">Sets how the video should be scaled in the view</td>
+                                        </tr>
+                                        
+                                        <tr id="i54" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setMeasureBasedOnAspectRatioEnabled(Boolean)>setMeasureBasedOnAspectRatioEnabled</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> measureBasedOnAspectRatioEnabled) </code>
+                                            </th>
+                                            <td class="colLast">Measures the underlying <a href=../../core/video/VideoPlayerApi.html>VideoPlayerApi</a> using the video's aspect ratio if <code>true</code></td>
+                                        </tr>
+                                        
+                                        <tr id="i55" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setVideoRotation(Integer)>setVideoRotation</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/IntRange.html>IntRange</a>(from = 0.toLong(), to = 359.toLong()) <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> rotation) </code>
+                                            </th>
+                                            <td class="colLast">Sets the rotation for the Video</td>
+                                        </tr>
+                                        
+                                        <tr id="i56" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOnPreparedListener(OnPreparedListener)>setOnPreparedListener</a>(<a href=../../listener/OnPreparedListener.html>OnPreparedListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of VideoPlayer prepared events</td>
+                                        </tr>
+                                        
+                                        <tr id="i57" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOnCompletionListener(OnCompletionListener)>setOnCompletionListener</a>(<a href=../../listener/OnCompletionListener.html>OnCompletionListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of VideoPlayer completion events</td>
+                                        </tr>
+                                        
+                                        <tr id="i58" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOnBufferUpdateListener(OnBufferUpdateListener)>setOnBufferUpdateListener</a>(<a href=../../listener/OnBufferUpdateListener.html>OnBufferUpdateListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of VideoPlayer buffer update events</td>
+                                        </tr>
+                                        
+                                        <tr id="i59" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOnSeekCompletionListener(OnSeekCompletionListener)>setOnSeekCompletionListener</a>(<a href=../../listener/OnSeekCompletionListener.html>OnSeekCompletionListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of VideoPlayer seek completion events</td>
+                                        </tr>
+                                        
+                                        <tr id="i60" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOnErrorListener(OnErrorListener)>setOnErrorListener</a>(<a href=../../listener/OnErrorListener.html>OnErrorListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of playback errors</td>
+                                        </tr>
+                                        
+                                        <tr id="i61" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setId3MetadataListener(MetadataListener)>setId3MetadataListener</a>(<a href=../../core/listener/MetadataListener.html>MetadataListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of ID3 metadata updates</td>
+                                        </tr>
+                                        
+                                        <tr id="i62" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setAnalyticsListener(AnalyticsListener)>setAnalyticsListener</a>(AnalyticsListener listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of Analytics updates</td>
+                                        </tr>
+                                        
+                                        <tr id="i63" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#setOnVideoSizedChangedListener(OnVideoSizeChangedListener)>setOnVideoSizedChangedListener</a>(<a href=../../listener/OnVideoSizeChangedListener.html>OnVideoSizeChangedListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of video size changes</td>
+                                        </tr>
+                                        
+                                        <tr id="i64" class="altColor">
+                                            <td class="colFirst"><code>final <a href=../../core/video/VideoPlayerApi.html>VideoPlayerApi</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=VideoView.html#getApiImplementation()>getApiImplementation</a>() </code>
+                                            </th>
+                                            <td class="colLast">Retrieves the API implementation to use to play media</td>
+                                        </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <ul class="blockList">
+                                
+                                    <li class="blockList"><a id="methods.inherited.from.class.android.view.ViewGroup">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;android.view.ViewGroup</h3>
+                                            <code>addFocusables, addOnAttachStateChangeListener, addOnLayoutChangeListener, addOnUnhandledKeyEventListener, animate, announceForAccessibility, autofill, autofill, awakenScrollBars, awakenScrollBars, awakenScrollBars, bringToFront, buildDrawingCache, buildDrawingCache, buildLayer, callOnClick, canResolveLayoutDirection, canResolveTextAlignment, canResolveTextDirection, canScrollHorizontally, canScrollVertically, cancelDragAndDrop, cancelLongPress, cancelPendingInputEvents, checkInputConnectionProxy, clearAnimation, clearViewTranslationCallback, computeHorizontalScrollExtent, computeHorizontalScrollOffset, computeHorizontalScrollRange, computeScroll, computeSystemWindowInsets, computeVerticalScrollExtent, computeVerticalScrollOffset, computeVerticalScrollRange, createAccessibilityNodeInfo, createContextMenu, destroyDrawingCache, dispatchGenericMotionEvent, dispatchNestedFling, dispatchNestedPreFling, dispatchNestedPrePerformAccessibilityAction, dispatchNestedPreScroll, dispatchNestedScroll, dispatchPopulateAccessibilityEvent, draw, drawableHotspotChanged, findViewById, findViewWithTag, fitSystemWindows, focusSearch, forceHasOverlappingRendering, forceLayout, generateDisplayHash, getAccessibilityDelegate, getAccessibilityLiveRegion, getAccessibilityNodeProvider, getAccessibilityPaneTitle, getAccessibilityTraversalAfter, getAccessibilityTraversalBefore, getAlpha, getAnimation, getAnimationMatrix, getApplicationWindowToken, getAttributeResolutionStack, getAttributeSourceResourceMap, getAutofillHints, getAutofillId, getAutofillType, getAutofillValue, getBackground, getBackgroundTintBlendMode, getBackgroundTintList, getBackgroundTintMode, getBottom, getBottomFadingEdgeStrength, getBottomPaddingOffset, getCameraDistance, getClipBounds, getClipBounds, getClipToOutline, getContentCaptureSession, getContentDescription, getContext, getContextMenuInfo, getDefaultFocusHighlightEnabled, getDisplay, getDrawableState, getDrawingCache, getDrawingCache, getDrawingCacheBackgroundColor, getDrawingCacheQuality, getDrawingRect, getDrawingTime, getElevation, getExplicitStyle, getFilterTouchesWhenObscured, getFitsSystemWindows, getFocusable, getFocusables, getFocusedRect, getForeground, getForegroundGravity, getForegroundTintBlendMode, getForegroundTintList, getForegroundTintMode, getGlobalVisibleRect, getGlobalVisibleRect, getHandler, getHasOverlappingRendering, getHeight, getHitRect, getHorizontalFadingEdgeLength, getHorizontalScrollbarHeight, getHorizontalScrollbarThumbDrawable, getHorizontalScrollbarTrackDrawable, getId, getImportantForAccessibility, getImportantForAutofill, getImportantForContentCapture, getKeepScreenOn, getKeyDispatcherState, getLabelFor, getLayerType, getLayoutDirection, getLayoutParams, getLeft, getLeftFadingEdgeStrength, getLeftPaddingOffset, getLocalVisibleRect, getLocationInSurface, getLocationInWindow, getLocationOnScreen, getMatrix, getMeasuredHeight, getMeasuredHeightAndState, getMeasuredState, getMeasuredWidth, getMeasuredWidthAndState, getMinimumHeight, getMinimumWidth, getNextClusterForwardId, getNextFocusDownId, getNextFocusForwardId, getNextFocusLeftId, getNextFocusRightId, getNextFocusUpId, getOnFocusChangeListener, getOutlineAmbientShadowColor, getOutlineProvider, getOutlineSpotShadowColor, getOverScrollMode, getPaddingBottom, getPaddingEnd, getPaddingLeft, getPaddingRight, getPaddingStart, getPaddingTop, getParent, getParentForAccessibility, getPivotX, getPivotY, getPointerIcon, getReceiveContentMimeTypes, getResources, getRevealOnFocusHint, getRight, getRightFadingEdgeStrength, getRightPaddingOffset, getRootSurfaceControl, getRootView, getRootWindowInsets, getRotation, getRotationX, getRotationY, getScaleX, getScaleY, getScrollBarDefaultDelayBeforeFade, getScrollBarFadeDuration, getScrollBarSize, getScrollBarStyle, getScrollCaptureHint, getScrollIndicators, getScrollX, getScrollY, getSolidColor, getSourceLayoutResId, getStateDescription, getStateListAnimator, getSuggestedMinimumHeight, getSuggestedMinimumWidth, getSystemGestureExclusionRects, getSystemUiVisibility, getTag, getTag, getTextAlignment, getTextDirection, getTooltipText, getTop, getTopFadingEdgeStrength, getTopPaddingOffset, getTouchDelegate, getTouchables, getTransitionAlpha, getTransitionName, getTranslationX, getTranslationY, getTranslationZ, getUniqueDrawingId, getVerticalFadingEdgeLength, getVerticalScrollbarPosition, getVerticalScrollbarThumbDrawable, getVerticalScrollbarTrackDrawable, getVerticalScrollbarWidth, getViewTranslationResponse, getViewTreeObserver, getVisibility, getWidth, getWindowAttachCount, getWindowId, getWindowInsetsController, getWindowSystemUiVisibility, getWindowToken, getWindowVisibility, getWindowVisibleDisplayFrame, getX, getY, getZ, hasExplicitFocusable, hasFocusable, hasNestedScrollingParent, hasOnClickListeners, hasOnLongClickListeners, hasOverlappingRendering, hasPointerCapture, hasWindowFocus, invalidate, invalidate, invalidate, invalidateDrawable, invalidateOutline, isAccessibilityFocused, isAccessibilityHeading, isActivated, isAttachedToWindow, isClickable, isContextClickable, isDirty, isDrawingCacheEnabled, isDuplicateParentStateEnabled, isEnabled, isFocusable, isFocusableInTouchMode, isFocused, isFocusedByDefault, isForceDarkAllowed, isHapticFeedbackEnabled, isHardwareAccelerated, isHorizontalFadingEdgeEnabled, isHorizontalScrollBarEnabled, isHovered, isImportantForAccessibility, isImportantForAutofill, isImportantForContentCapture, isInEditMode, isInLayout, isInTouchMode, isKeyboardNavigationCluster, isLaidOut, isLayoutDirectionResolved, isLayoutRequested, isLongClickable, isNestedScrollingEnabled, isOpaque, isPaddingOffsetRequired, isPaddingRelative, isPivotSet, isPressed, isSaveEnabled, isSaveFromParentEnabled, isScreenReaderFocusable, isScrollContainer, isScrollbarFadingEnabled, isSelected, isShowingLayoutBounds, isShown, isSoundEffectsEnabled, isTemporarilyDetached, isTextAlignmentResolved, isTextDirectionResolved, isVerticalFadingEdgeEnabled, isVerticalScrollBarEnabled, isVisibleToUserForAutofill, keyboardNavigationClusterSearch, measure, offsetLeftAndRight, offsetTopAndBottom, onAnimationEnd, onAnimationStart, onApplyWindowInsets, onCancelPendingInputEvents, onCapturedPointerEvent, onCheckIsTextEditor, onConfigurationChanged, onCreateContextMenu, onCreateInputConnection, onCreateViewTranslationRequest, onCreateVirtualViewTranslationRequests, onDisplayHint, onDragEvent, onDraw, onDrawForeground, onDrawScrollBars, onFilterTouchEventForSecurity, onFinishInflate, onFinishTemporaryDetach, onFocusChanged, onGenericMotionEvent, onHoverChanged, onHoverEvent, onInitializeAccessibilityEvent, onInitializeAccessibilityNodeInfo, onKeyDown, onKeyLongPress, onKeyMultiple, onKeyPreIme, onKeyShortcut, onKeyUp, onOverScrolled, onPointerCaptureChange, onPopulateAccessibilityEvent, onProvideAutofillStructure, onProvideAutofillVirtualStructure, onProvideContentCaptureStructure, onProvideStructure, onProvideVirtualStructure, onReceiveContent, onRestoreInstanceState, onRtlPropertiesChanged, onSaveInstanceState, onScreenStateChanged, onScrollCaptureSearch, onScrollChanged, onSetAlpha, onSizeChanged, onStartTemporaryDetach, onTouchEvent, onTrackballEvent, onViewTranslationResponse, onVirtualViewTranslationResponses, onVisibilityAggregated, onVisibilityChanged, onWindowFocusChanged, onWindowSystemUiVisibilityChanged, onWindowVisibilityChanged, overScrollBy, performAccessibilityAction, performClick, performContextClick, performContextClick, performHapticFeedback, performHapticFeedback, performLongClick, performLongClick, performReceiveContent, playSoundEffect, post, postDelayed, postInvalidate, postInvalidate, postInvalidateDelayed, postInvalidateDelayed, postInvalidateOnAnimation, postInvalidateOnAnimation, postOnAnimation, postOnAnimationDelayed, refreshDrawableState, releasePointerCapture, removeCallbacks, removeOnAttachStateChangeListener, removeOnLayoutChangeListener, removeOnUnhandledKeyEventListener, requestApplyInsets, requestFitSystemWindows, requestFocus, requestFocus, requestFocusFromTouch, requestPointerCapture, requestRectangleOnScreen, requestRectangleOnScreen, requestUnbufferedDispatch, requestUnbufferedDispatch, requireViewById, resetPivot, restoreHierarchyState, saveAttributeDataForStyleable, saveHierarchyState, scheduleDrawable, scrollBy, scrollTo, sendAccessibilityEvent, sendAccessibilityEventUnchecked, setAccessibilityDelegate, setAccessibilityHeading, setAccessibilityLiveRegion, setAccessibilityPaneTitle, setAccessibilityTraversalAfter, setAccessibilityTraversalBefore, setActivated, setAllowClickWhenDisabled, setAlpha, setAnimation, setAnimationMatrix, setAutofillHints, setAutofillId, setBackground, setBackgroundColor, setBackgroundDrawable, setBackgroundResource, setBackgroundTintBlendMode, setBackgroundTintList, setBackgroundTintMode, setBottom, setCameraDistance, setClickable, setClipBounds, setClipToOutline, setContentCaptureSession, setContentDescription, setContextClickable, setDefaultFocusHighlightEnabled, setDrawingCacheBackgroundColor, setDrawingCacheEnabled, setDrawingCacheQuality, setDuplicateParentStateEnabled, setElevation, setEnabled, setFadingEdgeLength, setFilterTouchesWhenObscured, setFitsSystemWindows, setFocusable, setFocusable, setFocusableInTouchMode, setFocusedByDefault, setForceDarkAllowed, setForeground, setForegroundGravity, setForegroundTintBlendMode, setForegroundTintList, setForegroundTintMode, setHapticFeedbackEnabled, setHasTransientState, setHorizontalFadingEdgeEnabled, setHorizontalScrollBarEnabled, setHorizontalScrollbarThumbDrawable, setHorizontalScrollbarTrackDrawable, setHovered, setId, setImportantForAccessibility, setImportantForAutofill, setImportantForContentCapture, setKeepScreenOn, setKeyboardNavigationCluster, setLabelFor, setLayerPaint, setLayerType, setLayoutDirection, setLayoutParams, setLeft, setLeftTopRightBottom, setLongClickable, setMeasuredDimension, setMinimumHeight, setMinimumWidth, setNestedScrollingEnabled, setNextClusterForwardId, setNextFocusDownId, setNextFocusForwardId, setNextFocusLeftId, setNextFocusRightId, setNextFocusUpId, setOnApplyWindowInsetsListener, setOnCapturedPointerListener, setOnClickListener, setOnContextClickListener, setOnCreateContextMenuListener, setOnDragListener, setOnFocusChangeListener, setOnGenericMotionListener, setOnHoverListener, setOnKeyListener, setOnLongClickListener, setOnReceiveContentListener, setOnScrollChangeListener, setOnSystemUiVisibilityChangeListener, setOutlineAmbientShadowColor, setOutlineProvider, setOutlineSpotShadowColor, setOverScrollMode, setPadding, setPaddingRelative, setPivotX, setPivotY, setPointerIcon, setPressed, setRenderEffect, setRevealOnFocusHint, setRight, setRotation, setRotationX, setRotationY, setSaveEnabled, setSaveFromParentEnabled, setScaleX, setScaleY, setScreenReaderFocusable, setScrollBarDefaultDelayBeforeFade, setScrollBarFadeDuration, setScrollBarSize, setScrollBarStyle, setScrollCaptureCallback, setScrollCaptureHint, setScrollContainer, setScrollIndicators, setScrollIndicators, setScrollX, setScrollY, setScrollbarFadingEnabled, setSelected, setSoundEffectsEnabled, setStateDescription, setStateListAnimator, setSystemGestureExclusionRects, setSystemUiVisibility, setTag, setTag, setTextAlignment, setTextDirection, setTooltipText, setTop, setTouchDelegate, setTransitionAlpha, setTransitionName, setTransitionVisibility, setTranslationX, setTranslationY, setTranslationZ, setVerticalFadingEdgeEnabled, setVerticalScrollBarEnabled, setVerticalScrollbarPosition, setVerticalScrollbarThumbDrawable, setVerticalScrollbarTrackDrawable, setViewTranslationCallback, setVisibility, setWillNotCacheDrawing, setWillNotDraw, setX, setY, setZ, showContextMenu, showContextMenu, startActionMode, startActionMode, startAnimation, startDrag, startDragAndDrop, startNestedScroll, stopNestedScroll, toString, transformMatrixToGlobal, transformMatrixToLocal, unscheduleDrawable, unscheduleDrawable, updateDragShadow, verifyDrawable, willNotCacheDrawing, willNotDraw</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.android.widget.RelativeLayout">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;android.widget.RelativeLayout</h3>
+                                            <code>addChildrenForAccessibility, addExtraDataToAccessibilityNodeInfo, addFocusables, addKeyboardNavigationClusters, addStatesFromChildren, addTouchables, addView, addView, addView, addView, addView, addViewInLayout, addViewInLayout, attachLayoutAnimationParameters, attachViewToParent, bringChildToFront, canAnimate, childDrawableStateChanged, childHasTransientStateChanged, cleanupLayoutState, clearChildFocus, clearDisappearingChildren, clearFocus, debug, detachAllViewsFromParent, detachViewFromParent, detachViewFromParent, detachViewsFromParent, dispatchApplyWindowInsets, dispatchCapturedPointerEvent, dispatchConfigurationChanged, dispatchCreateViewTranslationRequest, dispatchDisplayHint, dispatchDragEvent, dispatchDraw, dispatchDrawableHotspotChanged, dispatchFinishTemporaryDetach, dispatchFreezeSelfOnly, dispatchGenericFocusedEvent, dispatchGenericPointerEvent, dispatchHoverEvent, dispatchKeyEvent, dispatchKeyEventPreIme, dispatchKeyShortcutEvent, dispatchPointerCaptureChanged, dispatchProvideAutofillStructure, dispatchProvideStructure, dispatchRestoreInstanceState, dispatchSaveInstanceState, dispatchScrollCaptureSearch, dispatchSetActivated, dispatchSetPressed, dispatchSetSelected, dispatchStartTemporaryDetach, dispatchSystemUiVisibilityChanged, dispatchThawSelfOnly, dispatchTouchEvent, dispatchTrackballEvent, dispatchUnhandledMove, dispatchVisibilityChanged, dispatchWindowFocusChanged, dispatchWindowInsetsAnimationEnd, dispatchWindowInsetsAnimationPrepare, dispatchWindowInsetsAnimationProgress, dispatchWindowInsetsAnimationStart, dispatchWindowSystemUiVisiblityChanged, dispatchWindowVisibilityChanged, drawChild, drawableStateChanged, endViewTransition, findFocus, findViewsWithText, focusSearch, focusableViewAvailable, gatherTransparentRegion, getChildAt, getChildCount, getChildDrawingOrder, getChildDrawingOrder, getChildStaticTransformation, getChildVisibleRect, getClipChildren, getClipToPadding, getDescendantFocusability, getFocusedChild, getLayoutAnimation, getLayoutAnimationListener, getLayoutMode, getLayoutTransition, getNestedScrollAxes, getOverlay, getPersistentDrawingCache, getTouchscreenBlocksFocus, hasFocus, hasTransientState, indexOfChild, invalidateChild, invalidateChildInParent, isAlwaysDrawnWithCacheEnabled, isAnimationCacheEnabled, isChildrenDrawingOrderEnabled, isChildrenDrawnWithCacheEnabled, isLayoutSuppressed, isMotionEventSplittingEnabled, isTransitionGroup, jumpDrawablesToCurrentState, layout, measureChild, measureChildWithMargins, measureChildren, notifySubtreeAccessibilityStateChanged, offsetDescendantRectToMyCoords, offsetRectIntoDescendantCoords, onAttachedToWindow, onCreateDrawableState, onDescendantInvalidated, onInterceptHoverEvent, onInterceptTouchEvent, onNestedFling, onNestedPreFling, onNestedPrePerformAccessibilityAction, onNestedPreScroll, onNestedScroll, onNestedScrollAccepted, onRequestFocusInDescendants, onRequestSendAccessibilityEvent, onResolvePointerIcon, onStartNestedScroll, onStopNestedScroll, onViewAdded, onViewRemoved, recomputeViewAttributes, removeAllViews, removeAllViewsInLayout, removeDetachedView, removeView, removeViewAt, removeViewInLayout, removeViews, removeViewsInLayout, requestChildFocus, requestChildRectangleOnScreen, requestDisallowInterceptTouchEvent, requestFocus, requestSendAccessibilityEvent, requestTransparentRegion, restoreDefaultFocus, scheduleLayoutAnimation, setAddStatesFromChildren, setAlwaysDrawnWithCacheEnabled, setAnimationCacheEnabled, setChildrenDrawingCacheEnabled, setChildrenDrawingOrderEnabled, setChildrenDrawnWithCacheEnabled, setClipChildren, setClipToPadding, setDescendantFocusability, setLayoutAnimation, setLayoutAnimationListener, setLayoutMode, setLayoutTransition, setMotionEventSplittingEnabled, setOnHierarchyChangeListener, setPersistentDrawingCache, setStaticTransformationsEnabled, setTouchscreenBlocksFocus, setTransitionGroup, setWindowInsetsAnimationCallback, showContextMenuForChild, showContextMenuForChild, startActionModeForChild, startActionModeForChild, startLayoutAnimation, startViewTransition, suppressLayout, updateViewLayout</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.com.devbrackets.android.exomedia.ui.widget.VideoView">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;com.devbrackets.android.exomedia.ui.widget.VideoView</h3>
+                                            <code>checkLayoutParams, generateDefaultLayoutParams, generateLayoutParams, generateLayoutParams, getAccessibilityClassName, getBaseline, getGravity, getIgnoreGravity, onLayout, onMeasure, requestLayout, setGravity, setHorizontalGravity, setIgnoreGravity, setVerticalGravity, shouldDelayChildPressedState</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
+                                        <!--   -->
+                                    </a>
+                                        <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+                                        <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString,
+                                            wait, wait, wait</code></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="details">
+            <ul class="blockList">
+                <li class="blockList">
+                    <!-- ========= CONSTRUCTOR DETAIL ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.detail">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Detail</h3>
+                                
+                                <a name="VideoView(Context)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>VideoView</h4>
+                                        <pre>VideoView(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                                <a name="VideoView(Context,AttributeSet)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>VideoView</h4>
+                                        <pre>VideoView(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                                <a name="VideoView(Context,AttributeSet,Integer)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>VideoView</h4>
+                                        <pre>VideoView(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> defStyleAttr)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                                <a name="VideoView(Context,AttributeSet,Integer,Integer)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>VideoView</h4>
+                                        <pre>VideoView(<a href=https://developer.android.com/reference/kotlin/android/content/Context.html>Context</a> context, <a href=https://developer.android.com/reference/kotlin/android/util/AttributeSet.html>AttributeSet</a> attrs, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> defStyleAttr, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> defStyleRes)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- ============ METHOD DETAIL ========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="method.detail">
+                                <!--   -->
+                            </a>
+                                <h3>Method Detail</h3>
+                                
+                                <a id="getPreviewImageView()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getPreviewImageView</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/android/widget/ImageView.html>ImageView</a> <a href=VideoView.html#getPreviewImageView()>getPreviewImageView</a>()</pre>
+                                        <div class="block"><p>Gets the preview ImageView for use with image loading libraries.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getVideoUri()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getVideoUri</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> <a href=VideoView.html#getVideoUri()>getVideoUri</a>()</pre>
+                                        <div class="block"><p>Retrieves the current Video URI.  If this hasn't been set with .setVideoURI or .setVideoPath then null will be returned.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVideoUri(Uri)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVideoUri</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setVideoUri(Uri)>setVideoUri</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> videoUri)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getPositionOffset()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getPositionOffset</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> <a href=VideoView.html#getPositionOffset()>getPositionOffset</a>()</pre>
+                                        <div class="block"><p>Sets the amount of time to change the return value from .getCurrentPosition. This value will be reset when a new audio item is selected.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPositionOffset(Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPositionOffset</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setPositionOffset(Long)>setPositionOffset</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> positionOffset)</pre>
+                                        <div class="block"><p>Sets the amount of time to change the return value from .getCurrentPosition. This value will be reset when a new audio item is selected.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getReleaseOnDetachFromWindow()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getReleaseOnDetachFromWindow</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=VideoView.html#getReleaseOnDetachFromWindow()>getReleaseOnDetachFromWindow</a>()</pre>
+                                        <div class="block"><p><i>WARNING:</i> Use of this method may cause memory leaks.</p><p>Enables or disables the automatic release when the VideoView is detached from the window.  Normally this is expected to release all resources used by calling .release.  If <code>releaseOnDetach</code> is disabled then .release will need to be manually called.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setReleaseOnDetachFromWindow(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setReleaseOnDetachFromWindow</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setReleaseOnDetachFromWindow(Boolean)>setReleaseOnDetachFromWindow</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> releaseOnDetachFromWindow)</pre>
+                                        <div class="block"><p><i>WARNING:</i> Use of this method may cause memory leaks.</p><p>Enables or disables the automatic release when the VideoView is detached from the window.  Normally this is expected to release all resources used by calling .release.  If <code>releaseOnDetach</code> is disabled then .release will need to be manually called.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getHandleAudioFocus()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getHandleAudioFocus</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=VideoView.html#getHandleAudioFocus()>getHandleAudioFocus</a>()</pre>
+                                        <div class="block"><p>Enables or Disables automatic handling of audio focus. By default this is enabled however in instances where a service handles playback of both audio and video it is recommended to disable this and manually handle it in the service for consistency</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setHandleAudioFocus(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setHandleAudioFocus</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setHandleAudioFocus(Boolean)>setHandleAudioFocus</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> handleAudioFocus)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getVideoControls()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getVideoControls</h4>
+                                        <pre class="methodSignature"> final <a href=controls/VideoControls.html>VideoControls</a> <a href=VideoView.html#getVideoControls()>getVideoControls</a>()</pre>
+                                        <div class="block"><p>Retrieves the video controls being used by this view. If the controls haven't been specified with .setControls or through the XML attribute <code>useDefaultControls</code> this will return null</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVideoControls(VideoControls)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVideoControls</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setVideoControls(VideoControls)>setVideoControls</a>(<a href=controls/VideoControls.html>VideoControls</a> videoControls)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getVolume()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getVolume</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> <a href=VideoView.html#getVolume()>getVolume</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVolume(Float)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVolume</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setVolume(Float)>setVolume</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> volume)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getIsPlaying()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getIsPlaying</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=VideoView.html#getIsPlaying()>getIsPlaying</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getDuration()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getDuration</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> <a href=VideoView.html#getDuration()>getDuration</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getCurrentPosition()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getCurrentPosition</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> <a href=VideoView.html#getCurrentPosition()>getCurrentPosition</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getBufferPercentage()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getBufferPercentage</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> <a href=VideoView.html#getBufferPercentage()>getBufferPercentage</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getWindowInfo()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getWindowInfo</h4>
+                                        <pre class="methodSignature"> final <a href=../../nmp/manager/window/WindowInfo.html>WindowInfo</a> <a href=VideoView.html#getWindowInfo()>getWindowInfo</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getPlaybackSpeed()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getPlaybackSpeed</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> <a href=VideoView.html#getPlaybackSpeed()>getPlaybackSpeed</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getAvailableTracks()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getAvailableTracks</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/util/Map.html>Map</a>&lt;<a href=../../core/renderer/RendererType.html>RendererType</a>, TrackGroupArray&gt; <a href=VideoView.html#getAvailableTracks()>getAvailableTracks</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getBitmap()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getBitmap</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a> <a href=VideoView.html#getBitmap()>getBitmap</a>()</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnTouchListener(View.OnTouchListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnTouchListener</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOnTouchListener(View.OnTouchListener)>setOnTouchListener</a>(<a href=https://developer.android.com/reference/kotlin/android/view/View.OnTouchListener.html>View.OnTouchListener</a> listener)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="release()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>release</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#release()>release</a>()</pre>
+                                        <div class="block"><p>Stops the playback and releases all resources attached to this VideoView.  This should not be called manually unless .setReleaseOnDetachFromWindow has been set.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPreviewImage(Drawable)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPreviewImage</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setPreviewImage(Drawable)>setPreviewImage</a>(<a href=https://developer.android.com/reference/kotlin/android/graphics/drawable/Drawable.html>Drawable</a> drawable)</pre>
+                                        <div class="block"><p>Sets an image that will be visible only when the video is loading.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>drawable</code> - The drawable to use for the preview image</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPreviewImage(Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPreviewImage</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setPreviewImage(Integer)>setPreviewImage</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/DrawableRes.html>DrawableRes</a>() <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> resourceId)</pre>
+                                        <div class="block"><p>Sets an image that will be visible only when the video is loading.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>resourceId</code> - The resourceId representing the preview image</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPreviewImage(Bitmap)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPreviewImage</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setPreviewImage(Bitmap)>setPreviewImage</a>(<a href=https://developer.android.com/reference/kotlin/android/graphics/Bitmap.html>Bitmap</a> bitmap)</pre>
+                                        <div class="block"><p>Sets an image that will be visible only when the video is loading.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>bitmap</code> - The bitmap to use for the preview image</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPreviewImage(Uri)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPreviewImage</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setPreviewImage(Uri)>setPreviewImage</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri)</pre>
+                                        <div class="block"><p>Sets an image that will be visible only when the video is loading.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>uri</code> - The Uri pointing to the preview image</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="showControls()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>showControls</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#showControls()>showControls</a>()</pre>
+                                        <div class="block"><p>Requests the DefaultVideoControls to become visible.  This should only be called after setControls.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVideoURI(Uri)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVideoURI</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setVideoURI(Uri)>setVideoURI</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri)</pre>
+                                        <div class="block"><p>Sets the Uri location for the video to play</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>uri</code> - The video's Uri</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVideoURI(Uri,MediaSource)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVideoURI</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setVideoURI(Uri,MediaSource)>setVideoURI</a>(<a href=https://developer.android.com/reference/kotlin/android/net/Uri.html>Uri</a> uri, MediaSource mediaSource)</pre>
+                                        <div class="block"><p>Sets the Uri location for the video to play</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>uri</code> - The video's Uri</dd>
+                                            
+                                            
+                                            
+                                            <dd><code>mediaSource</code> - MediaSource that should be used</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVideoPath(String)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVideoPath</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setVideoPath(String)>setVideoPath</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> path)</pre>
+                                        <div class="block"><p>Sets the path to the video.  This path can be a web address (e.g. http://) or an absolute local path (e.g. file://)</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>path</code> - The path to the video</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setDrmSessionManagerProvider(DrmSessionManagerProvider)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setDrmSessionManagerProvider</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setDrmSessionManagerProvider(DrmSessionManagerProvider)>setDrmSessionManagerProvider</a>(DrmSessionManagerProvider drmSessionManagerProvider)</pre>
+                                        <div class="block"><p>Sets the DrmSessionManager to use when handling DRM for media. This should be specified before setting the video's URI</p><p>NOTE: This will only configure DRM for the ExoPlayer implementation and not the native (MediaPlayer) backed implementation.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>drmSessionManagerProvider</code> - The session manager provider to handle the DRM authorization</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="reset()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>reset</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#reset()>reset</a>()</pre>
+                                        <div class="block"><p>Stops the current video playback and resets the repeatListener states so that we receive the callbacks for events like onPrepared</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="seekTo(Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>seekTo</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#seekTo(Long)>seekTo</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> milliSeconds)</pre>
+                                        <div class="block"><p>Moves the current video progress to the specified location.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>milliSeconds</code> - The time to move the playback to</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="start()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>start</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#start()>start</a>()</pre>
+                                        <div class="block"><p>Starts the playback for the video specified in .setVideoURI or .setVideoPath.  This should be called after the VideoView is correctly prepared (see .setOnPreparedListener)</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="pause(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>pause</h4>
+                                        <pre class="methodSignature">@<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html>JvmOverloads</a>() final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#pause(Boolean)>pause</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> transientFocusLoss)</pre>
+                                        <div class="block"><p>Pauses the current video in playback, only abandoning the audio focus if <code>transientFocusLoss</code> is <code>false</code>. Calling <a href=VideoView.html#pause(Boolean)>pause</a> should be used in most cases unless the audio focus is being handled manually</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>transientFocusLoss</code> - <code>true</code> if the pause is temporary and the audio focus should be retained</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="pause()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>pause</h4>
+                                        <pre class="methodSignature">@<a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html>JvmOverloads</a>() final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#pause(Boolean)>pause</a>()</pre>
+                                        <div class="block"><p>Pauses the current video in playback, only abandoning the audio focus if <code>transientFocusLoss</code> is <code>false</code>. Calling <a href=VideoView.html#pause(Boolean)>pause</a> should be used in most cases unless the audio focus is being handled manually</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="stopPlayback()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>stopPlayback</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#stopPlayback()>stopPlayback</a>()</pre>
+                                        <div class="block"><p>If a video is currently in playback then the playback will be stopped</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="restart()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>restart</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=VideoView.html#restart()>restart</a>()</pre>
+                                        <div class="block"><p>If the video has completed playback, calling <code>restart</code> will seek to the beginning of the video, and play it.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="suspend()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>suspend</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#suspend()>suspend</a>()</pre>
+                                        <div class="block"><p>If a video is currently in playback then the playback will be suspended TODO: rename to release? Internally we call release on the videoPlayer which     means we won't be able to start playback again with this instance</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="overrideDuration(Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>overrideDuration</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#overrideDuration(Long)>overrideDuration</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> duration)</pre>
+                                        <div class="block"><p>Setting this will override the duration that the item may actually be.  This method should only be used when the item doesn't return the correct duration such as with audio streams. This only overrides the current audio item.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>duration</code> - The duration for the current media item or &amp;lt; 0 to disable</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="restartOverridePosition()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>restartOverridePosition</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#restartOverridePosition()>restartOverridePosition</a>()</pre>
+                                        <div class="block"><p>Restarts the audio position to the start if the position is being overridden (see .overridePosition). This will be the value specified with .setPositionOffset or 0 if it hasn't been set.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="overridePosition(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>overridePosition</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#overridePosition(Boolean)>overridePosition</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> override)</pre>
+                                        <div class="block"><p>Sets if the position should be overridden, allowing the time to be restarted at will.  This is useful for streaming media where the media doesn't have breaks between songs.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>override</code> - True if the position should be overridden</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOverridePositionMatchesPlaybackSpeed(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOverridePositionMatchesPlaybackSpeed</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOverridePositionMatchesPlaybackSpeed(Boolean)>setOverridePositionMatchesPlaybackSpeed</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> match)</pre>
+                                        <div class="block"><p>If set the overridden position will use the same playback rate as the media in playback.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>match</code> - <code>true</code> to match the playback speed</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setRepeatMode(Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setRepeatMode</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setRepeatMode(Integer)>setRepeatMode</a>(@Player.RepeatMode() <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> repeatMode)</pre>
+                                        <div class="block"><p>Sets the repeat mode for this MediaPlayer. Note: This will only change the ExoPlayer implementation</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>repeatMode</code> - The repeat mode to use</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setPlaybackSpeed(Float)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setPlaybackSpeed</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=VideoView.html#setPlaybackSpeed(Float)>setPlaybackSpeed</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> speed)</pre>
+                                        <div class="block"><p>Sets the playback speed for this MediaPlayer.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>speed</code> - The speed to play the media back at</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setCaptionListener(CaptionListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setCaptionListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setCaptionListener(CaptionListener)>setCaptionListener</a>(<a href=../../core/listener/CaptionListener.html>CaptionListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the caption repeatListener for this MediaPlayer Only the exoplayer implementation supports captions.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The caption repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="trackSelectionAvailable()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>trackSelectionAvailable</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=VideoView.html#trackSelectionAvailable()>trackSelectionAvailable</a>()</pre>
+                                        <div class="block"><p>Determines if the current video player implementation supports track selection for audio or video tracks.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setTrack(RendererType,Integer,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setTrack</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setTrack(RendererType,Integer,Integer)>setTrack</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> trackType, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> groupIndex, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackIndex)</pre>
+                                        <div class="block"><p>Changes to the track with <code>trackIndex</code> for the specified <code>trackType</code></p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>trackType</code> - The type for the track to switch to the selected index</dd>
+                                            
+                                            
+                                            
+                                            <dd><code>groupIndex</code> - The index for the group in the TrackGroupArray specified by the <code>trackType</code></dd>
+                                            
+                                            
+                                            
+                                            <dd><code>trackIndex</code> - The index for the track to switch to</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getSelectedTrackIndex(RendererType,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getSelectedTrackIndex</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> <a href=VideoView.html#getSelectedTrackIndex(RendererType,Integer)>getSelectedTrackIndex</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> groupIndex)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="clearSelectedTracks(RendererType)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>clearSelectedTracks</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#clearSelectedTracks(RendererType)>clearSelectedTracks</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type)</pre>
+                                        <div class="block"><p>Clear all selected tracks for the specified renderer.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>type</code> - The renderer type</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setRendererEnabled(RendererType,Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setRendererEnabled</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setRendererEnabled(RendererType,Boolean)>setRendererEnabled</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> enabled)</pre>
+                                        <div class="block"><p>Enables or disables the track associated with the <code>type</code>. Note, by default all tracks are enabled</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>type</code> - The com.devbrackets.android.exomedia.ExoMedia.</dd>
+                                            
+                                            
+                                            
+                                            <dd><code>enabled</code> - <code>true</code> if the track should be enabled.</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="isRendererEnabled(RendererType)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>isRendererEnabled</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=VideoView.html#isRendererEnabled(RendererType)>isRendererEnabled</a>(<a href=../../core/renderer/RendererType.html>RendererType</a> type)</pre>
+                                        <div class="block"><p>Return true if at least one renderer for the given type is enabled</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>type</code> - The renderer type</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setScaleType(ScaleType)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setScaleType</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setScaleType(ScaleType)>setScaleType</a>(<a href=../../core/video/scale/ScaleType.html>ScaleType</a> scaleType)</pre>
+                                        <div class="block"><p>Sets how the video should be scaled in the view</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>scaleType</code> - how to scale the videos</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setMeasureBasedOnAspectRatioEnabled(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setMeasureBasedOnAspectRatioEnabled</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setMeasureBasedOnAspectRatioEnabled(Boolean)>setMeasureBasedOnAspectRatioEnabled</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> measureBasedOnAspectRatioEnabled)</pre>
+                                        <div class="block"><p>Measures the underlying <a href=../../core/video/VideoPlayerApi.html>VideoPlayerApi</a> using the video's aspect ratio if <code>true</code></p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>measureBasedOnAspectRatioEnabled</code> - whether to measure using the video's aspect ratio or not</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setVideoRotation(Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setVideoRotation</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setVideoRotation(Integer)>setVideoRotation</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/IntRange.html>IntRange</a>(from = 0.toLong(), to = 359.toLong()) <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> rotation)</pre>
+                                        <div class="block"><p>Sets the rotation for the Video</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>rotation</code> - The rotation to apply to the video</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnPreparedListener(OnPreparedListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnPreparedListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOnPreparedListener(OnPreparedListener)>setOnPreparedListener</a>(<a href=../../listener/OnPreparedListener.html>OnPreparedListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of VideoPlayer prepared events</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnCompletionListener(OnCompletionListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnCompletionListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOnCompletionListener(OnCompletionListener)>setOnCompletionListener</a>(<a href=../../listener/OnCompletionListener.html>OnCompletionListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of VideoPlayer completion events</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnBufferUpdateListener(OnBufferUpdateListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnBufferUpdateListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOnBufferUpdateListener(OnBufferUpdateListener)>setOnBufferUpdateListener</a>(<a href=../../listener/OnBufferUpdateListener.html>OnBufferUpdateListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of VideoPlayer buffer update events</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnSeekCompletionListener(OnSeekCompletionListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnSeekCompletionListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOnSeekCompletionListener(OnSeekCompletionListener)>setOnSeekCompletionListener</a>(<a href=../../listener/OnSeekCompletionListener.html>OnSeekCompletionListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of VideoPlayer seek completion events</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnErrorListener(OnErrorListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnErrorListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOnErrorListener(OnErrorListener)>setOnErrorListener</a>(<a href=../../listener/OnErrorListener.html>OnErrorListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of playback errors</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setId3MetadataListener(MetadataListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setId3MetadataListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setId3MetadataListener(MetadataListener)>setId3MetadataListener</a>(<a href=../../core/listener/MetadataListener.html>MetadataListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of ID3 metadata updates</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setAnalyticsListener(AnalyticsListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setAnalyticsListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setAnalyticsListener(AnalyticsListener)>setAnalyticsListener</a>(AnalyticsListener listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of Analytics updates</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnVideoSizedChangedListener(OnVideoSizeChangedListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnVideoSizedChangedListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=VideoView.html#setOnVideoSizedChangedListener(OnVideoSizeChangedListener)>setOnVideoSizedChangedListener</a>(<a href=../../listener/OnVideoSizeChangedListener.html>OnVideoSizeChangedListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of video size changes</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="getApiImplementation()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getApiImplementation</h4>
+                                        <pre class="methodSignature"> final <a href=../../core/video/VideoPlayerApi.html>VideoPlayerApi</a> <a href=VideoView.html#getApiImplementation()>getApiImplementation</a>()</pre>
+                                        <div class="block"><p>Retrieves the API implementation to use to play media</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer role="contentinfo">
+    <nav role="navigation">
+        <!-- ======= START OF BOTTOM NAVBAR ====== -->
+        <div class="bottomNav"><a id="navbar.bottom">
+            <!--   -->
+        </a>
+            <div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a>
+            </div>
+            <a id="navbar.bottom.firstrow">
+                <!--   -->
+            </a>
+            <ul class="navList" title="Navigation">
+    <li><a href="../../../../../../index.html">Overview</a></li>
+    
+    <li><a href="package-summary.html">Package</a></li>
+    
+    <li class="navBarCell1Rev">Class</li>
+    
+    <li><a href="package-tree.html">Tree</a></li>
+    
+    <li><a href="../../../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../../../index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+        <a id="skip.navbar.bottom">
+            <!--   -->
+        </a>
+        <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="../../../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ======== END OF BOTTOM NAVBAR ======= -->
+    </nav>
+</footer><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0"
+    style="display: none;"></ul>
+<span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+</body>
+</html>

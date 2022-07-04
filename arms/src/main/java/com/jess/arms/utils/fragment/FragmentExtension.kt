@@ -57,38 +57,6 @@ fun <T> Bundle.put(key: String, value: T) {
     }
 }
 
-inline fun <reified VB : ViewBinding> Fragment.bindView() =
-    FragmentBindingDelegate(VB::class.java)
-
-inline fun <reified VB : ViewBinding> BaseFragment<IPresenter>.binView() = FragmentBindingDelegate(
-    VB::class.java
-)
-
-class FragmentBindingDelegate<VB : ViewBinding>(
-    private val clazz: Class<VB>
-) : ReadOnlyProperty<Fragment, VB> {
-
-    private var isInitialized = false
-    private var _binding: VB? = null
-    private val binding: VB get() = _binding!!
-
-    override fun getValue(thisRef: Fragment, property: KProperty<*>): VB {
-        if (!isInitialized) {
-            thisRef.viewLifecycleOwner.lifecycle.addObserver(object : LifecycleObserver {
-                @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-                fun onDestroyView() {
-                    _binding = null
-                }
-            })
-            _binding = clazz.getMethod("bind", View::class.java)
-                .invoke(null, thisRef.requireView()) as VB
-            isInitialized = true
-        }
-        return binding
-    }
-}
-
-
 
 
 inline fun <F : Fragment, V : ViewBinding> bind(

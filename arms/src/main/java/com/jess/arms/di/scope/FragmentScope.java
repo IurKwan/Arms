@@ -23,9 +23,13 @@ import javax.inject.Scope;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
+ * 片段范围
  * A scoping annotation to permit objects whose lifetime should
  * conform to the life of the fragment to be memorized in the
  * correct component.
+ *
+ * @author guanzhirui
+ * @date 2022/06/26
  */
 @Scope
 @Documented
