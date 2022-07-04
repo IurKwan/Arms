@@ -25,7 +25,6 @@ import androidx.fragment.app.FragmentManager;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jess.arms.integration.ActivityLifecycle;
-import com.jess.arms.integration.AppManager;
 import com.jess.arms.integration.FragmentLifecycle;
 import com.jess.arms.integration.IRepositoryManager;
 import com.jess.arms.integration.RepositoryManager;
@@ -61,12 +60,6 @@ public abstract class AppModule {
 
     @Singleton
     @Provides
-    static AppManager provideAppManager(Application application) {
-        return AppManager.getAppManager().init(application);
-    }
-
-    @Singleton
-    @Provides
     static Cache<String, Object> provideExtras(Cache.Factory cacheFactory) {
         return cacheFactory.build(CacheType.EXTRAS);
     }
@@ -77,9 +70,21 @@ public abstract class AppModule {
         return new ArrayList<>();
     }
 
+    /**
+     * IRepositoryManager
+     *
+     * @param repositoryManager repository manager
+     * @return {@link IRepositoryManager}
+     */
     @Binds
     abstract IRepositoryManager bindRepositoryManager(RepositoryManager repositoryManager);
 
+    /**
+     * ActivityLifecycleCallbacks
+     *
+     * @param activityLifecycle 活动生命周期
+     * @return {@link Application.ActivityLifecycleCallbacks}
+     */
     @Binds
     @Named("ActivityLifecycle")
     abstract Application.ActivityLifecycleCallbacks bindActivityLifecycle(ActivityLifecycle activityLifecycle);

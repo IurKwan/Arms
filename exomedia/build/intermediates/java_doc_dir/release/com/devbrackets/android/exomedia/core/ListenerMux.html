@@ -1,0 +1,2289 @@
+<!DOCTYPE HTML>
+<!-- NewPage -->
+<html lang="en"><head>
+    <title>ListenerMux </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="dc.created" content="2020-03-25">
+    <link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../../dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../../jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="../../../../../jquery/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="../../../../../jquery/jquery-migrate-3.0.1.js"></script>
+    <script type="text/javascript" src="../../../../../jquery/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="../../../../../search.js"></script>
+    <script async type="text/javascript" src="../../../../../module-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../package-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../type-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../member-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../../tag-search-index.js"></script>
+</head><body>
+<script type="text/javascript">
+var pathtoroot = "../../../../../";
+</script>
+<noscript>
+    <div>JavaScript is disabled on your browser.</div>
+</noscript><header role="banner">
+    <nav role="navigation">
+        <div class="fixedNav">
+            <!-- ========= START OF TOP NAVBAR ======= -->
+            <div class="topNav"><a id="navbar.top">
+                <!--   -->
+            </a>
+                <div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a>
+                </div>
+                <a id="navbar.top.firstrow">
+                    <!--   -->
+                </a>
+                <ul class="navList" title="Navigation">
+    <li><a href="../../../../../index.html">Overview</a></li>
+    
+    <li><a href="package-summary.html">Package</a></li>
+    
+    <li class="navBarCell1Rev">Class</li>
+    
+    <li><a href="package-tree.html">Tree</a></li>
+    
+    <li><a href="../../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../../index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+            <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="../../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+
+<ul class="navListSearch">
+<li><label for="search">SEARCH:</label>
+<input type="text" id="search" value="search" class="ui-autocomplete-input" autocomplete="off" placeholder="Search">
+<input type="reset" id="reset" value="reset">
+</li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ========= END OF TOP NAVBAR ========= -->
+        </div>
+        <div class="navPadding">&nbsp;</div>
+        <script type="text/javascript"><!--
+        $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
+        //-->
+        </script>
+    </nav>
+</header>
+
+<main role="main">
+    <div class="header">
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html"></a></div>
+        <h2 title="Class ListenerMux" class="title">Class ListenerMux</h2>
+    </div>
+    <div class="contentContainer">
+        <!-- <ul class="inheritance">
+            <li>java.lang.Object</li>
+            <li>
+                <ul class="inheritance">
+                    <li>adaptation.Adaptation</li>
+                </ul>
+            </li>
+        </ul> TODO inheritance tree -->
+        <div class="description">
+            <ul class="blockList">
+                <li class="blockList">
+                    
+                    <dl>
+                        <dt>All Implemented Interfaces:</dt>
+                        <dd>
+                            
+                            <code>android.media.MediaPlayer.OnBufferingUpdateListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.media.MediaPlayer.OnCompletionListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.media.MediaPlayer.OnErrorListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.media.MediaPlayer.OnPreparedListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>android.media.MediaPlayer.OnSeekCompleteListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>com.devbrackets.android.exomedia.core.listener.ExoPlayerListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>com.devbrackets.android.exomedia.core.listener.MetadataListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>com.devbrackets.android.exomedia.listener.OnBufferUpdateListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>com.devbrackets.android.exomedia.listener.OnSeekCompletionListener</code>
+                            
+                            ,
+                            
+                            
+                            <code>com.google.android.exoplayer2.analytics.AnalyticsListener</code>
+                            
+                            
+                        </dd>
+                    </dl>
+                    
+                    <hr>
+                    <pre class="wrap-overflow">
+
+public final class <span class="typeNameLabel"><a href=ListenerMux.html>ListenerMux</a></span>
+ implements <a href=listener/ExoPlayerListener.html>ExoPlayerListener</a>, <a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.OnPreparedListener.html>MediaPlayer.OnPreparedListener</a>, <a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.OnCompletionListener.html>MediaPlayer.OnCompletionListener</a>, <a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.OnErrorListener.html>MediaPlayer.OnErrorListener</a>, <a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.OnBufferingUpdateListener.html>MediaPlayer.OnBufferingUpdateListener</a>, <a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.OnSeekCompleteListener.html>MediaPlayer.OnSeekCompleteListener</a>, <a href=../listener/OnBufferUpdateListener.html>OnBufferUpdateListener</a>, <a href=listener/MetadataListener.html>MetadataListener</a>, AnalyticsListener
+                    </pre>
+                    <div class="block"><p>An internal Listener that implements the listeners for the <a href=../nmp/ExoMediaPlayerImpl.html>ExoMediaPlayerImpl</a>, Android VideoView, and the Android MediaPlayer to output to the correct error listeners.</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="summary">
+            <ul class="blockList">
+                <li class="blockList">
+                <!-- ======== NESTED CLASS SUMMARY ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="nested.class.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Nested Class Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Class</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public class</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="ListenerMux.Companion.html">ListenerMux.Companion</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public abstract class</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="ListenerMux.Notifier.html">ListenerMux.Notifier</a></span></code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- =========== FIELD SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="field.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Field Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Field</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>private  <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code></td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#isPrepared>isPrepared</a></code></th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- ======== CONSTRUCTOR SUMMARY ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tbody>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Constructor</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+
+                                        
+                                            <tr class="altColor">
+                                                <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a
+                                                        href="#ListenerMux(ListenerMux.Notifier)">ListenerMux</a></span>(<a href=ListenerMux.Notifier.html>ListenerMux.Notifier</a> muxNotifier)</code></th>
+                                                <td class="colLast"></td>
+                                            </tr>
+                                        
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- =========== ENUM CONSTANT SUMMARY =========== -->
+                    
+                    <!-- ========== METHOD SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="method.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Method Summary</h3>
+                                <div class="memberSummary">
+                                    <div role="tablist" aria-orientation="horizontal">
+                                        <button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button>
+                                        <!-- TODO: Instance and Concrete Methods #1118 -->
+                                    </div>
+                                    <div id="memberSummary_tabpanel" role="tabpanel">
+                                    <table aria-labelledby="t0">
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Method</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                        <tr id="i0" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#getIsPrepared()>getIsPrepared</a>() </code>
+                                            </th>
+                                            <td class="colLast">Retrieves if the player was prepared</td>
+                                        </tr>
+                                        
+                                        <tr id="i1" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setIsPrepared(Boolean)>setIsPrepared</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isPrepared) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i2" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onBufferingUpdate(MediaPlayer,Integer)>onBufferingUpdate</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> percent) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i3" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onBufferingUpdate(Integer)>onBufferingUpdate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/IntRange.html>IntRange</a>(from = 0.toLong(), to = 100.toLong()) <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> percent) </code>
+                                            </th>
+                                            <td class="colLast">Called to update status in buffering a media stream.</td>
+                                        </tr>
+                                        
+                                        <tr id="i4" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onCompletion(MediaPlayer)>onCompletion</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i5" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onError(MediaPlayer,Integer,Integer)>onError</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> what, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> extra) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i6" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onError(ExoMediaPlayer,Exception)>onError</a>(<a href=../nmp/ExoMediaPlayer.html>ExoMediaPlayer</a> player, <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> e) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i7" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onSeekComplete(MediaPlayer)>onSeekComplete</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i8" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onSeekComplete()>onSeekComplete</a>() </code>
+                                            </th>
+                                            <td class="colLast">Called to indicate the completion of a seek operation.</td>
+                                        </tr>
+                                        
+                                        <tr id="i9" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPrepared(MediaPlayer)>onPrepared</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i10" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onStateChanged(Boolean,Integer)>onStateChanged</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> playWhenReady, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> playbackState) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i11" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onMetadata(Metadata)>onMetadata</a>(Metadata metadata) </code>
+                                            </th>
+                                            <td class="colLast">Called each time there is a metadata associated with current playback time.</td>
+                                        </tr>
+                                        
+                                        <tr id="i12" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onMetadata(AnalyticsListener.EventTime,Metadata)>onMetadata</a>(AnalyticsListener.EventTime eventTime, Metadata metadata) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i13" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVideoSizeChanged(Integer,Integer,Integer,Float)>onVideoSizeChanged</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> width, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> height, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> unAppliedRotationDegrees, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> pixelWidthHeightRatio) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i14" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVideoSizeChanged(AnalyticsListener.EventTime,Integer,Integer,Integer,Float)>onVideoSizeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> width, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> height, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> unappliedRotationDegrees, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> pixelWidthHeightRatio) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i15" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPlayerStateChanged(AnalyticsListener.EventTime,Boolean,Integer)>onPlayerStateChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> playWhenReady, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> playbackState) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i16" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onTimelineChanged(AnalyticsListener.EventTime,Integer)>onTimelineChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i17" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPositionDiscontinuity(AnalyticsListener.EventTime,Integer)>onPositionDiscontinuity</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i18" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onSeekStarted(AnalyticsListener.EventTime)>onSeekStarted</a>(AnalyticsListener.EventTime eventTime) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i19" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onSeekProcessed(AnalyticsListener.EventTime)>onSeekProcessed</a>(AnalyticsListener.EventTime eventTime) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i20" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPlaybackParametersChanged(AnalyticsListener.EventTime,PlaybackParameters)>onPlaybackParametersChanged</a>(AnalyticsListener.EventTime eventTime, PlaybackParameters playbackParameters) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i21" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onRepeatModeChanged(AnalyticsListener.EventTime,Integer)>onRepeatModeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> repeatMode) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i22" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onShuffleModeChanged(AnalyticsListener.EventTime,Boolean)>onShuffleModeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> shuffleModeEnabled) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i23" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onLoadingChanged(AnalyticsListener.EventTime,Boolean)>onLoadingChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isLoading) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i24" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPlayerError(AnalyticsListener.EventTime,PlaybackException)>onPlayerError</a>(AnalyticsListener.EventTime eventTime, PlaybackException error) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i25" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onTracksChanged(AnalyticsListener.EventTime,TrackGroupArray,TrackSelectionArray)>onTracksChanged</a>(AnalyticsListener.EventTime eventTime, TrackGroupArray trackGroups, TrackSelectionArray trackSelections) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i26" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onLoadStarted(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)>onLoadStarted</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i27" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onLoadCompleted(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)>onLoadCompleted</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i28" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onLoadCanceled(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)>onLoadCanceled</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i29" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onLoadError(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData,IOException,Boolean)>onLoadError</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, <a href=https://developer.android.com/reference/kotlin/java/io/IOException.html>IOException</a> error, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> wasCanceled) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i30" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDownstreamFormatChanged(AnalyticsListener.EventTime,MediaLoadData)>onDownstreamFormatChanged</a>(AnalyticsListener.EventTime eventTime, MediaLoadData mediaLoadData) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i31" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onUpstreamDiscarded(AnalyticsListener.EventTime,MediaLoadData)>onUpstreamDiscarded</a>(AnalyticsListener.EventTime eventTime, MediaLoadData mediaLoadData) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i32" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onBandwidthEstimate(AnalyticsListener.EventTime,Integer,Long,Long)>onBandwidthEstimate</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> totalLoadTimeMs, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> totalBytesLoaded, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> bitrateEstimate) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i33" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onSurfaceSizeChanged(AnalyticsListener.EventTime,Integer,Integer)>onSurfaceSizeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> width, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> height) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i34" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVolumeChanged(AnalyticsListener.EventTime,Float)>onVolumeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> volume) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i35" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDrmSessionAcquired(AnalyticsListener.EventTime)>onDrmSessionAcquired</a>(AnalyticsListener.EventTime eventTime) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i36" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDrmSessionReleased(AnalyticsListener.EventTime)>onDrmSessionReleased</a>(AnalyticsListener.EventTime eventTime) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i37" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioAttributesChanged(AnalyticsListener.EventTime,AudioAttributes)>onAudioAttributesChanged</a>(AnalyticsListener.EventTime eventTime, AudioAttributes audioAttributes) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i38" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDecoderEnabled(AnalyticsListener.EventTime,Integer,DecoderCounters)>onDecoderEnabled</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, DecoderCounters decoderCounters) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i39" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDecoderInitialized(AnalyticsListener.EventTime,Integer,String,Long)>onDecoderInitialized</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> decoderName, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> initializationDurationMs) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i40" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDecoderInputFormatChanged(AnalyticsListener.EventTime,Integer,Format)>onDecoderInputFormatChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, Format format) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i41" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDecoderDisabled(AnalyticsListener.EventTime,Integer,DecoderCounters)>onDecoderDisabled</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, DecoderCounters decoderCounters) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i42" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioSessionIdChanged(AnalyticsListener.EventTime,Integer)>onAudioSessionIdChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> audioSessionId) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i43" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioUnderrun(AnalyticsListener.EventTime,Integer,Long,Long)>onAudioUnderrun</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> bufferSize, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> bufferSizeMs, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> elapsedSinceLastFeedMs) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i44" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDroppedVideoFrames(AnalyticsListener.EventTime,Integer,Long)>onDroppedVideoFrames</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> droppedFrames, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> elapsedMs) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i45" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onRenderedFirstFrame(AnalyticsListener.EventTime,Object,Long)>onRenderedFirstFrame</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Object.html>Object</a> output, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> renderTimeMs) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i46" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDrmKeysLoaded(AnalyticsListener.EventTime)>onDrmKeysLoaded</a>(AnalyticsListener.EventTime eventTime) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i47" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDrmSessionManagerError(AnalyticsListener.EventTime,Exception)>onDrmSessionManagerError</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> error) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i48" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDrmKeysRestored(AnalyticsListener.EventTime)>onDrmKeysRestored</a>(AnalyticsListener.EventTime eventTime) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i49" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onDrmKeysRemoved(AnalyticsListener.EventTime)>onDrmKeysRemoved</a>(AnalyticsListener.EventTime eventTime) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i50" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPlaybackStateChanged(AnalyticsListener.EventTime,Integer)>onPlaybackStateChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> state) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i51" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPlayWhenReadyChanged(AnalyticsListener.EventTime,Boolean,Integer)>onPlayWhenReadyChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> playWhenReady, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i52" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onPlaybackSuppressionReasonChanged(AnalyticsListener.EventTime,Integer)>onPlaybackSuppressionReasonChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> playbackSuppressionReason) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i53" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onIsPlayingChanged(AnalyticsListener.EventTime,Boolean)>onIsPlayingChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isPlaying) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i54" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onMediaItemTransition(AnalyticsListener.EventTime,MediaItem,Integer)>onMediaItemTransition</a>(AnalyticsListener.EventTime eventTime, MediaItem mediaItem, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i55" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onIsLoadingChanged(AnalyticsListener.EventTime,Boolean)>onIsLoadingChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isLoading) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i56" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioEnabled(AnalyticsListener.EventTime,DecoderCounters)>onAudioEnabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i57" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioDecoderInitialized(AnalyticsListener.EventTime,String,Long)>onAudioDecoderInitialized</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> decoderName, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> initializationDurationMs) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i58" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioInputFormatChanged(AnalyticsListener.EventTime,Format)>onAudioInputFormatChanged</a>(AnalyticsListener.EventTime eventTime, Format format) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i59" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioPositionAdvancing(AnalyticsListener.EventTime,Long)>onAudioPositionAdvancing</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> playoutStartSystemTimeMs) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i60" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onAudioDisabled(AnalyticsListener.EventTime,DecoderCounters)>onAudioDisabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i61" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onSkipSilenceEnabledChanged(AnalyticsListener.EventTime,Boolean)>onSkipSilenceEnabledChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> skipSilenceEnabled) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i62" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVideoEnabled(AnalyticsListener.EventTime,DecoderCounters)>onVideoEnabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i63" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVideoDecoderInitialized(AnalyticsListener.EventTime,String,Long)>onVideoDecoderInitialized</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> decoderName, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> initializationDurationMs) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i64" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVideoInputFormatChanged(AnalyticsListener.EventTime,Format)>onVideoInputFormatChanged</a>(AnalyticsListener.EventTime eventTime, Format format) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i65" class="rowColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVideoDisabled(AnalyticsListener.EventTime,DecoderCounters)>onVideoDisabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i66" class="altColor">
+                                            <td class="colFirst"><code><a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#onVideoFrameProcessingOffset(AnalyticsListener.EventTime,Long,Integer)>onVideoFrameProcessingOffset</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> totalProcessingOffsetUs, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> frameCount) </code>
+                                            </th>
+                                            <td class="colLast"></td>
+                                        </tr>
+                                        
+                                        <tr id="i67" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#clearSurfaceWhenReady(VideoSurface)>clearSurfaceWhenReady</a>(<a href=video/surface/VideoSurface.html>VideoSurface</a> videoSurface) </code>
+                                            </th>
+                                            <td class="colLast">Specifies the surface to clear when the playback reaches an appropriate state.</td>
+                                        </tr>
+                                        
+                                        <tr id="i68" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setOnPreparedListener(OnPreparedListener)>setOnPreparedListener</a>(<a href=../listener/OnPreparedListener.html>OnPreparedListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of VideoPlayer prepared events</td>
+                                        </tr>
+                                        
+                                        <tr id="i69" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setOnCompletionListener(OnCompletionListener)>setOnCompletionListener</a>(<a href=../listener/OnCompletionListener.html>OnCompletionListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of VideoPlayer completion events</td>
+                                        </tr>
+                                        
+                                        <tr id="i70" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setOnBufferUpdateListener(OnBufferUpdateListener)>setOnBufferUpdateListener</a>(<a href=../listener/OnBufferUpdateListener.html>OnBufferUpdateListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of buffering updates</td>
+                                        </tr>
+                                        
+                                        <tr id="i71" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setOnSeekCompletionListener(OnSeekCompletionListener)>setOnSeekCompletionListener</a>(<a href=../listener/OnSeekCompletionListener.html>OnSeekCompletionListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of VideoPlayer seek completion events</td>
+                                        </tr>
+                                        
+                                        <tr id="i72" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setOnErrorListener(OnErrorListener)>setOnErrorListener</a>(<a href=../listener/OnErrorListener.html>OnErrorListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of playback errors</td>
+                                        </tr>
+                                        
+                                        <tr id="i73" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setMetadataListener(MetadataListener)>setMetadataListener</a>(<a href=listener/MetadataListener.html>MetadataListener</a> listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of ID3 metadata updates</td>
+                                        </tr>
+                                        
+                                        <tr id="i74" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setAnalyticsListener(AnalyticsListener)>setAnalyticsListener</a>(AnalyticsListener listener) </code>
+                                            </th>
+                                            <td class="colLast">Sets the repeatListener to inform of Analytics updates</td>
+                                        </tr>
+                                        
+                                        <tr id="i75" class="rowColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setNotifiedPrepared(Boolean)>setNotifiedPrepared</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> wasNotified) </code>
+                                            </th>
+                                            <td class="colLast">Sets weather the repeatListener was notified when we became prepared.</td>
+                                        </tr>
+                                        
+                                        <tr id="i76" class="altColor">
+                                            <td class="colFirst"><code>final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=ListenerMux.html#setNotifiedCompleted(Boolean)>setNotifiedCompleted</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> wasNotified) </code>
+                                            </th>
+                                            <td class="colLast">Sets weather the repeatListener was notified when the playback was completed (played through the end).</td>
+                                        </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <ul class="blockList">
+                                
+                                    <li class="blockList"><a id="methods.inherited.from.class.com.devbrackets.android.exomedia.core.ListenerMux">
+                                            <!--   -->
+                                        </a>
+                                            <h3>Methods inherited from class&nbsp;com.devbrackets.android.exomedia.core.ListenerMux</h3>
+                                            <code>onAudioCodecError, onAudioDecoderInitialized, onAudioDecoderReleased, onAudioInputFormatChanged, onAudioSinkError, onAvailableCommandsChanged, onCues, onDeviceInfoChanged, onDeviceVolumeChanged, onDrmSessionAcquired, onEvents, onMaxSeekToPreviousPositionChanged, onMediaMetadataChanged, onPlayerErrorChanged, onPlayerReleased, onPlaylistMetadataChanged, onPositionDiscontinuity, onSeekBackIncrementChanged, onSeekForwardIncrementChanged, onTrackSelectionParametersChanged, onTracksInfoChanged, onVideoCodecError, onVideoDecoderInitialized, onVideoDecoderReleased, onVideoInputFormatChanged, onVideoSizeChanged</code></li>
+                                 
+                                    <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
+                                        <!--   -->
+                                    </a>
+                                        <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+                                        <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString,
+                                            wait, wait, wait</code></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="details">
+            <ul class="blockList">
+                <li class="blockList">
+                    <!-- ========= CONSTRUCTOR DETAIL ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.detail">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Detail</h3>
+                                
+                                <a name="ListenerMux(ListenerMux.Notifier)"></a>
+                                <ul class="blockList">
+                                    <li class="blockList">
+                                        <h4>ListenerMux</h4>
+                                        <pre>ListenerMux(<a href=ListenerMux.Notifier.html>ListenerMux.Notifier</a> muxNotifier)</pre>
+                                        <div class="block"></div>
+                                        
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- ============ METHOD DETAIL ========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="method.detail">
+                                <!--   -->
+                            </a>
+                                <h3>Method Detail</h3>
+                                
+                                <a id="getIsPrepared()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>getIsPrepared</h4>
+                                        <pre class="methodSignature"> final <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=ListenerMux.html#getIsPrepared()>getIsPrepared</a>()</pre>
+                                        <div class="block"><p>Retrieves if the player was prepared</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setIsPrepared(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setIsPrepared</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setIsPrepared(Boolean)>setIsPrepared</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isPrepared)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onBufferingUpdate(MediaPlayer,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onBufferingUpdate</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onBufferingUpdate(MediaPlayer,Integer)>onBufferingUpdate</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> percent)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onBufferingUpdate(Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onBufferingUpdate</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onBufferingUpdate(Integer)>onBufferingUpdate</a>(@<a href=https://developer.android.com/reference/kotlin/androidx/annotation/IntRange.html>IntRange</a>(from = 0.toLong(), to = 100.toLong()) <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> percent)</pre>
+                                        <div class="block"><p>Called to update status in buffering a media stream. The received buffering percentage indicates how much of the content has been buffered or played. For example a buffering update of 80 percent when half the content has already been played indicates that the next 30 percent of the content to play has been buffered.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>percent</code> - The integer percent that is buffered 0, 100 inclusive</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onCompletion(MediaPlayer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onCompletion</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onCompletion(MediaPlayer)>onCompletion</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onError(MediaPlayer,Integer,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onError</h4>
+                                        <pre class="methodSignature"> <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> <a href=ListenerMux.html#onError(MediaPlayer,Integer,Integer)>onError</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> what, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> extra)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onError(ExoMediaPlayer,Exception)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onError</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onError(ExoMediaPlayer,Exception)>onError</a>(<a href=../nmp/ExoMediaPlayer.html>ExoMediaPlayer</a> player, <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> e)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onSeekComplete(MediaPlayer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onSeekComplete</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onSeekComplete(MediaPlayer)>onSeekComplete</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onSeekComplete()">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onSeekComplete</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onSeekComplete()>onSeekComplete</a>()</pre>
+                                        <div class="block"><p>Called to indicate the completion of a seek operation.</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPrepared(MediaPlayer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPrepared</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPrepared(MediaPlayer)>onPrepared</a>(<a href=https://developer.android.com/reference/kotlin/android/media/MediaPlayer.html>MediaPlayer</a> mp)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onStateChanged(Boolean,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onStateChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onStateChanged(Boolean,Integer)>onStateChanged</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> playWhenReady, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> playbackState)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onMetadata(Metadata)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onMetadata</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onMetadata(Metadata)>onMetadata</a>(Metadata metadata)</pre>
+                                        <div class="block"><p>Called each time there is a metadata associated with current playback time.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>metadata</code> - The metadata.</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onMetadata(AnalyticsListener.EventTime,Metadata)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onMetadata</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onMetadata(AnalyticsListener.EventTime,Metadata)>onMetadata</a>(AnalyticsListener.EventTime eventTime, Metadata metadata)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVideoSizeChanged(Integer,Integer,Integer,Float)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVideoSizeChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVideoSizeChanged(Integer,Integer,Integer,Float)>onVideoSizeChanged</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> width, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> height, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> unAppliedRotationDegrees, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> pixelWidthHeightRatio)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVideoSizeChanged(AnalyticsListener.EventTime,Integer,Integer,Integer,Float)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVideoSizeChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVideoSizeChanged(AnalyticsListener.EventTime,Integer,Integer,Integer,Float)>onVideoSizeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> width, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> height, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> unappliedRotationDegrees, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> pixelWidthHeightRatio)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPlayerStateChanged(AnalyticsListener.EventTime,Boolean,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPlayerStateChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPlayerStateChanged(AnalyticsListener.EventTime,Boolean,Integer)>onPlayerStateChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> playWhenReady, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> playbackState)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onTimelineChanged(AnalyticsListener.EventTime,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onTimelineChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onTimelineChanged(AnalyticsListener.EventTime,Integer)>onTimelineChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPositionDiscontinuity(AnalyticsListener.EventTime,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPositionDiscontinuity</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPositionDiscontinuity(AnalyticsListener.EventTime,Integer)>onPositionDiscontinuity</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onSeekStarted(AnalyticsListener.EventTime)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onSeekStarted</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onSeekStarted(AnalyticsListener.EventTime)>onSeekStarted</a>(AnalyticsListener.EventTime eventTime)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onSeekProcessed(AnalyticsListener.EventTime)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onSeekProcessed</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onSeekProcessed(AnalyticsListener.EventTime)>onSeekProcessed</a>(AnalyticsListener.EventTime eventTime)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPlaybackParametersChanged(AnalyticsListener.EventTime,PlaybackParameters)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPlaybackParametersChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPlaybackParametersChanged(AnalyticsListener.EventTime,PlaybackParameters)>onPlaybackParametersChanged</a>(AnalyticsListener.EventTime eventTime, PlaybackParameters playbackParameters)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onRepeatModeChanged(AnalyticsListener.EventTime,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onRepeatModeChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onRepeatModeChanged(AnalyticsListener.EventTime,Integer)>onRepeatModeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> repeatMode)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onShuffleModeChanged(AnalyticsListener.EventTime,Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onShuffleModeChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onShuffleModeChanged(AnalyticsListener.EventTime,Boolean)>onShuffleModeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> shuffleModeEnabled)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onLoadingChanged(AnalyticsListener.EventTime,Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onLoadingChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onLoadingChanged(AnalyticsListener.EventTime,Boolean)>onLoadingChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isLoading)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPlayerError(AnalyticsListener.EventTime,PlaybackException)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPlayerError</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPlayerError(AnalyticsListener.EventTime,PlaybackException)>onPlayerError</a>(AnalyticsListener.EventTime eventTime, PlaybackException error)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onTracksChanged(AnalyticsListener.EventTime,TrackGroupArray,TrackSelectionArray)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onTracksChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onTracksChanged(AnalyticsListener.EventTime,TrackGroupArray,TrackSelectionArray)>onTracksChanged</a>(AnalyticsListener.EventTime eventTime, TrackGroupArray trackGroups, TrackSelectionArray trackSelections)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onLoadStarted(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onLoadStarted</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onLoadStarted(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)>onLoadStarted</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onLoadCompleted(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onLoadCompleted</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onLoadCompleted(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)>onLoadCompleted</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onLoadCanceled(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onLoadCanceled</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onLoadCanceled(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData)>onLoadCanceled</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onLoadError(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData,IOException,Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onLoadError</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onLoadError(AnalyticsListener.EventTime,LoadEventInfo,MediaLoadData,IOException,Boolean)>onLoadError</a>(AnalyticsListener.EventTime eventTime, LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, <a href=https://developer.android.com/reference/kotlin/java/io/IOException.html>IOException</a> error, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> wasCanceled)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDownstreamFormatChanged(AnalyticsListener.EventTime,MediaLoadData)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDownstreamFormatChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDownstreamFormatChanged(AnalyticsListener.EventTime,MediaLoadData)>onDownstreamFormatChanged</a>(AnalyticsListener.EventTime eventTime, MediaLoadData mediaLoadData)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onUpstreamDiscarded(AnalyticsListener.EventTime,MediaLoadData)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onUpstreamDiscarded</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onUpstreamDiscarded(AnalyticsListener.EventTime,MediaLoadData)>onUpstreamDiscarded</a>(AnalyticsListener.EventTime eventTime, MediaLoadData mediaLoadData)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onBandwidthEstimate(AnalyticsListener.EventTime,Integer,Long,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onBandwidthEstimate</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onBandwidthEstimate(AnalyticsListener.EventTime,Integer,Long,Long)>onBandwidthEstimate</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> totalLoadTimeMs, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> totalBytesLoaded, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> bitrateEstimate)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onSurfaceSizeChanged(AnalyticsListener.EventTime,Integer,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onSurfaceSizeChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onSurfaceSizeChanged(AnalyticsListener.EventTime,Integer,Integer)>onSurfaceSizeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> width, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> height)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVolumeChanged(AnalyticsListener.EventTime,Float)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVolumeChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVolumeChanged(AnalyticsListener.EventTime,Float)>onVolumeChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Float.html>Float</a> volume)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDrmSessionAcquired(AnalyticsListener.EventTime)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDrmSessionAcquired</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDrmSessionAcquired(AnalyticsListener.EventTime)>onDrmSessionAcquired</a>(AnalyticsListener.EventTime eventTime)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDrmSessionReleased(AnalyticsListener.EventTime)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDrmSessionReleased</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDrmSessionReleased(AnalyticsListener.EventTime)>onDrmSessionReleased</a>(AnalyticsListener.EventTime eventTime)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioAttributesChanged(AnalyticsListener.EventTime,AudioAttributes)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioAttributesChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioAttributesChanged(AnalyticsListener.EventTime,AudioAttributes)>onAudioAttributesChanged</a>(AnalyticsListener.EventTime eventTime, AudioAttributes audioAttributes)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDecoderEnabled(AnalyticsListener.EventTime,Integer,DecoderCounters)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDecoderEnabled</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDecoderEnabled(AnalyticsListener.EventTime,Integer,DecoderCounters)>onDecoderEnabled</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, DecoderCounters decoderCounters)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDecoderInitialized(AnalyticsListener.EventTime,Integer,String,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDecoderInitialized</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDecoderInitialized(AnalyticsListener.EventTime,Integer,String,Long)>onDecoderInitialized</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> decoderName, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> initializationDurationMs)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDecoderInputFormatChanged(AnalyticsListener.EventTime,Integer,Format)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDecoderInputFormatChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDecoderInputFormatChanged(AnalyticsListener.EventTime,Integer,Format)>onDecoderInputFormatChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, Format format)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDecoderDisabled(AnalyticsListener.EventTime,Integer,DecoderCounters)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDecoderDisabled</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDecoderDisabled(AnalyticsListener.EventTime,Integer,DecoderCounters)>onDecoderDisabled</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> trackType, DecoderCounters decoderCounters)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioSessionIdChanged(AnalyticsListener.EventTime,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioSessionIdChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioSessionIdChanged(AnalyticsListener.EventTime,Integer)>onAudioSessionIdChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> audioSessionId)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioUnderrun(AnalyticsListener.EventTime,Integer,Long,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioUnderrun</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioUnderrun(AnalyticsListener.EventTime,Integer,Long,Long)>onAudioUnderrun</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> bufferSize, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> bufferSizeMs, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> elapsedSinceLastFeedMs)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDroppedVideoFrames(AnalyticsListener.EventTime,Integer,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDroppedVideoFrames</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDroppedVideoFrames(AnalyticsListener.EventTime,Integer,Long)>onDroppedVideoFrames</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> droppedFrames, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> elapsedMs)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onRenderedFirstFrame(AnalyticsListener.EventTime,Object,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onRenderedFirstFrame</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onRenderedFirstFrame(AnalyticsListener.EventTime,Object,Long)>onRenderedFirstFrame</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Object.html>Object</a> output, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> renderTimeMs)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDrmKeysLoaded(AnalyticsListener.EventTime)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDrmKeysLoaded</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDrmKeysLoaded(AnalyticsListener.EventTime)>onDrmKeysLoaded</a>(AnalyticsListener.EventTime eventTime)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDrmSessionManagerError(AnalyticsListener.EventTime,Exception)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDrmSessionManagerError</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDrmSessionManagerError(AnalyticsListener.EventTime,Exception)>onDrmSessionManagerError</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Exception.html>Exception</a> error)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDrmKeysRestored(AnalyticsListener.EventTime)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDrmKeysRestored</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDrmKeysRestored(AnalyticsListener.EventTime)>onDrmKeysRestored</a>(AnalyticsListener.EventTime eventTime)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onDrmKeysRemoved(AnalyticsListener.EventTime)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onDrmKeysRemoved</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onDrmKeysRemoved(AnalyticsListener.EventTime)>onDrmKeysRemoved</a>(AnalyticsListener.EventTime eventTime)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPlaybackStateChanged(AnalyticsListener.EventTime,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPlaybackStateChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPlaybackStateChanged(AnalyticsListener.EventTime,Integer)>onPlaybackStateChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> state)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPlayWhenReadyChanged(AnalyticsListener.EventTime,Boolean,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPlayWhenReadyChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPlayWhenReadyChanged(AnalyticsListener.EventTime,Boolean,Integer)>onPlayWhenReadyChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> playWhenReady, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onPlaybackSuppressionReasonChanged(AnalyticsListener.EventTime,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onPlaybackSuppressionReasonChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onPlaybackSuppressionReasonChanged(AnalyticsListener.EventTime,Integer)>onPlaybackSuppressionReasonChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> playbackSuppressionReason)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onIsPlayingChanged(AnalyticsListener.EventTime,Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onIsPlayingChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onIsPlayingChanged(AnalyticsListener.EventTime,Boolean)>onIsPlayingChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isPlaying)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onMediaItemTransition(AnalyticsListener.EventTime,MediaItem,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onMediaItemTransition</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onMediaItemTransition(AnalyticsListener.EventTime,MediaItem,Integer)>onMediaItemTransition</a>(AnalyticsListener.EventTime eventTime, MediaItem mediaItem, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> reason)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onIsLoadingChanged(AnalyticsListener.EventTime,Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onIsLoadingChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onIsLoadingChanged(AnalyticsListener.EventTime,Boolean)>onIsLoadingChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> isLoading)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioEnabled(AnalyticsListener.EventTime,DecoderCounters)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioEnabled</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioEnabled(AnalyticsListener.EventTime,DecoderCounters)>onAudioEnabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioDecoderInitialized(AnalyticsListener.EventTime,String,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioDecoderInitialized</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioDecoderInitialized(AnalyticsListener.EventTime,String,Long)>onAudioDecoderInitialized</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> decoderName, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> initializationDurationMs)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioInputFormatChanged(AnalyticsListener.EventTime,Format)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioInputFormatChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioInputFormatChanged(AnalyticsListener.EventTime,Format)>onAudioInputFormatChanged</a>(AnalyticsListener.EventTime eventTime, Format format)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioPositionAdvancing(AnalyticsListener.EventTime,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioPositionAdvancing</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioPositionAdvancing(AnalyticsListener.EventTime,Long)>onAudioPositionAdvancing</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> playoutStartSystemTimeMs)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onAudioDisabled(AnalyticsListener.EventTime,DecoderCounters)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onAudioDisabled</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onAudioDisabled(AnalyticsListener.EventTime,DecoderCounters)>onAudioDisabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onSkipSilenceEnabledChanged(AnalyticsListener.EventTime,Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onSkipSilenceEnabledChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onSkipSilenceEnabledChanged(AnalyticsListener.EventTime,Boolean)>onSkipSilenceEnabledChanged</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> skipSilenceEnabled)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVideoEnabled(AnalyticsListener.EventTime,DecoderCounters)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVideoEnabled</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVideoEnabled(AnalyticsListener.EventTime,DecoderCounters)>onVideoEnabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVideoDecoderInitialized(AnalyticsListener.EventTime,String,Long)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVideoDecoderInitialized</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVideoDecoderInitialized(AnalyticsListener.EventTime,String,Long)>onVideoDecoderInitialized</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/String.html>String</a> decoderName, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> initializationDurationMs)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVideoInputFormatChanged(AnalyticsListener.EventTime,Format)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVideoInputFormatChanged</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVideoInputFormatChanged(AnalyticsListener.EventTime,Format)>onVideoInputFormatChanged</a>(AnalyticsListener.EventTime eventTime, Format format)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVideoDisabled(AnalyticsListener.EventTime,DecoderCounters)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVideoDisabled</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVideoDisabled(AnalyticsListener.EventTime,DecoderCounters)>onVideoDisabled</a>(AnalyticsListener.EventTime eventTime, DecoderCounters counters)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="onVideoFrameProcessingOffset(AnalyticsListener.EventTime,Long,Integer)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>onVideoFrameProcessingOffset</h4>
+                                        <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#onVideoFrameProcessingOffset(AnalyticsListener.EventTime,Long,Integer)>onVideoFrameProcessingOffset</a>(AnalyticsListener.EventTime eventTime, <a href=https://developer.android.com/reference/kotlin/java/lang/Long.html>Long</a> totalProcessingOffsetUs, <a href=https://developer.android.com/reference/kotlin/java/lang/Integer.html>Integer</a> frameCount)</pre>
+                                        <div class="block"></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="clearSurfaceWhenReady(VideoSurface)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>clearSurfaceWhenReady</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#clearSurfaceWhenReady(VideoSurface)>clearSurfaceWhenReady</a>(<a href=video/surface/VideoSurface.html>VideoSurface</a> videoSurface)</pre>
+                                        <div class="block"><p>Specifies the surface to clear when the playback reaches an appropriate state. Once the <code>clearableSurface</code> is cleared, the reference will be removed</p></div>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnPreparedListener(OnPreparedListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnPreparedListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setOnPreparedListener(OnPreparedListener)>setOnPreparedListener</a>(<a href=../listener/OnPreparedListener.html>OnPreparedListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of VideoPlayer prepared events</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnCompletionListener(OnCompletionListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnCompletionListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setOnCompletionListener(OnCompletionListener)>setOnCompletionListener</a>(<a href=../listener/OnCompletionListener.html>OnCompletionListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of VideoPlayer completion events</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnBufferUpdateListener(OnBufferUpdateListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnBufferUpdateListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setOnBufferUpdateListener(OnBufferUpdateListener)>setOnBufferUpdateListener</a>(<a href=../listener/OnBufferUpdateListener.html>OnBufferUpdateListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of buffering updates</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnSeekCompletionListener(OnSeekCompletionListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnSeekCompletionListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setOnSeekCompletionListener(OnSeekCompletionListener)>setOnSeekCompletionListener</a>(<a href=../listener/OnSeekCompletionListener.html>OnSeekCompletionListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of VideoPlayer seek completion events</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setOnErrorListener(OnErrorListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setOnErrorListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setOnErrorListener(OnErrorListener)>setOnErrorListener</a>(<a href=../listener/OnErrorListener.html>OnErrorListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of playback errors</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setMetadataListener(MetadataListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setMetadataListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setMetadataListener(MetadataListener)>setMetadataListener</a>(<a href=listener/MetadataListener.html>MetadataListener</a> listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of ID3 metadata updates</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setAnalyticsListener(AnalyticsListener)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setAnalyticsListener</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setAnalyticsListener(AnalyticsListener)>setAnalyticsListener</a>(AnalyticsListener listener)</pre>
+                                        <div class="block"><p>Sets the repeatListener to inform of Analytics updates</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>listener</code> - The repeatListener to inform</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setNotifiedPrepared(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockList"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setNotifiedPrepared</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setNotifiedPrepared(Boolean)>setNotifiedPrepared</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> wasNotified)</pre>
+                                        <div class="block"><p>Sets weather the repeatListener was notified when we became prepared.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>wasNotified</code> - True if the onPreparedListener was already notified</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                                <a id="setNotifiedCompleted(Boolean)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>setNotifiedCompleted</h4>
+                                        <pre class="methodSignature"> final <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=ListenerMux.html#setNotifiedCompleted(Boolean)>setNotifiedCompleted</a>(<a href=https://developer.android.com/reference/kotlin/java/lang/Boolean.html>Boolean</a> wasNotified)</pre>
+                                        <div class="block"><p>Sets weather the repeatListener was notified when the playback was completed (played through the end).</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>wasNotified</code> - True if the onCompletionListener was already notified</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer role="contentinfo">
+    <nav role="navigation">
+        <!-- ======= START OF BOTTOM NAVBAR ====== -->
+        <div class="bottomNav"><a id="navbar.bottom">
+            <!--   -->
+        </a>
+            <div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a>
+            </div>
+            <a id="navbar.bottom.firstrow">
+                <!--   -->
+            </a>
+            <ul class="navList" title="Navigation">
+    <li><a href="../../../../../index.html">Overview</a></li>
+    
+    <li><a href="package-summary.html">Package</a></li>
+    
+    <li class="navBarCell1Rev">Class</li>
+    
+    <li><a href="package-tree.html">Tree</a></li>
+    
+    <li><a href="../../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../../index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+        <a id="skip.navbar.bottom">
+            <!--   -->
+        </a>
+        <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="../../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ======== END OF BOTTOM NAVBAR ======= -->
+    </nav>
+</footer><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0"
+    style="display: none;"></ul>
+<span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+</body>
+</html>

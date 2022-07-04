@@ -1,0 +1,27 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:2:1-5:12
+	package
+		ADDED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:2:11-53
+		INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml
+		INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:2:1-5:12
+uses-sdk
+ADDED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+	android:targetSdkVersion
+		INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml
+		ADDED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+		INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml
+		ADDED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+		INJECTED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml
+application
+ADDED from /Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:4:5-20

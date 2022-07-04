@@ -18,7 +18,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="11" />
+        <option name="gradleJvm" value="11 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -27,11 +27,12 @@
             <option value="$PROJECT_DIR$/arms-imageloader-glide" />
             <option value="$PROJECT_DIR$/arms-push" />
             <option value="$PROJECT_DIR$/arms-rxerrorhandler" />
+            <option value="$PROJECT_DIR$/exomedia" />
+            <option value="$PROJECT_DIR$/playlist-core" />
             <option value="$PROJECT_DIR$/sqlbrite" />
             <option value="$PROJECT_DIR$/../plugin" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

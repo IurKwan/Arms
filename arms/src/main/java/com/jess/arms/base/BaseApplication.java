@@ -26,8 +26,9 @@ import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.Preconditions;
 
-import timber.log.Timber;
-
+/**
+ * @author guanzhirui
+ */
 public class BaseApplication extends Application implements App {
     private AppLifecycles mAppDelegate;
 

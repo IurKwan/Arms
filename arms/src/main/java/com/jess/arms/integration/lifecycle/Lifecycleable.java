@@ -34,6 +34,12 @@ import io.reactivex.rxjava3.subjects.Subject;
  *
  */
 public interface Lifecycleable<E> {
+
+    /**
+     * 提供生命周期主题
+     *
+     * @return {@link Subject}<{@link E}>
+     */
     @NonNull
     Subject<E> provideLifecycleSubject();
 }

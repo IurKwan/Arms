@@ -18,21 +18,18 @@ package com.jess.arms.base.delegate;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Message;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.jess.arms.base.BaseFragment;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.integration.cache.Cache;
 import com.jess.arms.integration.cache.LruCache;
 
 /**
  * 框架要求框架中的每个 {@link Fragment} 都需要实现此类,以满足规范
+ *
  * @author guanzhirui
  */
 public interface IFragment {
@@ -50,19 +47,21 @@ public interface IFragment {
     /**
      * 提供 AppComponent (提供所有的单例对象) 给实现类, 进行 Component 依赖
      *
-     * @param appComponent
+     * @param appComponent appComponent
      */
     void setupFragmentComponent(@NonNull AppComponent appComponent);
 
     /**
-     * 是否需要统计
+     * 需要统计数据
+     *
+     * @return boolean
      */
     boolean needStatistics();
 
     /**
      * 初始化数据
      *
-     * @param savedInstanceState
+     * @param savedInstanceState savedInstanceState
      */
     void initData(@Nullable Bundle savedInstanceState);
 
@@ -99,7 +98,7 @@ public interface IFragment {
      * data.arg1 = 1;
      * fragment.setData(data);
      * </pre>
-     *
+     * <p>
      * {@link #setData(Object)} 框架是不会调用的, 是拿给开发者自己去调用的, 让 {@link Activity} 或者其他类可以和 {@link Fragment} 通信,
      * 并且因为 {@link #setData(Object)} 是 {@link IFragment} 的方法, 所以你可以通过多态, 持有父类,
      * 不持有具体子类的方式就可以和子类 {@link Fragment} 通信, 这样如果需要替换子类, 就不会影响到其他地方,
@@ -110,6 +109,5 @@ public interface IFragment {
      * @param data 当不需要参数时 {@code data} 可以为 {@code null}
      */
     void setData(@Nullable Object data);
-
 
 }

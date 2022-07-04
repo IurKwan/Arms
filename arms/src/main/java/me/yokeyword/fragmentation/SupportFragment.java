@@ -110,7 +110,7 @@ public class SupportFragment extends Fragment implements ISupportFragment {
     }
 
     /**
-     * Causes the Runnable r to be added to the action queue.
+     * Causes the Runnable r to be added to the action queue.ƒ
      * <p>
      * The runnable will be run after all the previous action has been run.
      * <p>

@@ -24,7 +24,6 @@ import com.jess.arms.di.module.ClientModule;
 import com.jess.arms.di.module.GlobalConfigModule;
 import com.jess.arms.http.imageloader.BaseImageLoaderStrategy;
 import com.jess.arms.http.imageloader.ImageLoader;
-import com.jess.arms.integration.AppManager;
 import com.jess.arms.integration.ConfigModule;
 import com.jess.arms.integration.IRepositoryManager;
 import com.jess.arms.integration.cache.Cache;
@@ -55,18 +54,6 @@ public interface AppComponent {
     Application application();
 
     /**
-     * 用于管理所有 {@link androidx.appcompat.app.AppCompatActivity}
-     * 之前 {@link AppManager} 使用 Dagger 保证单例, 只能使用 {@link AppComponent#appManager()} 访问
-     * 现在直接将 AppManager 独立为单例类, 可以直接通过静态方法 {@link AppManager#getAppManager()} 访问, 更加方便
-     * 但为了不影响之前使用 {@link AppComponent#appManager()} 获取 {@link AppManager} 的项目, 所以暂时保留这种访问方式
-     *
-     * @return {@link AppManager}
-     * @deprecated Use {@link AppManager#getAppManager()} instead
-     */
-    @Deprecated
-    AppManager appManager();
-
-    /**
      * 用于管理网络请求层, 以及数据缓存层
      *
      * @return {@link IRepositoryManager}
@@ -81,12 +68,13 @@ public interface AppComponent {
     RxErrorHandler rxErrorHandler();
 
     /**
+     * 图像加载程序
      * 图片加载管理器, 用于加载图片的管理类, 使用策略者模式, 可在运行时动态替换任何图片加载框架
      * arms-imageloader-glide 提供 Glide 的策略实现类, 也可以自行实现
      * 需要在 {@link ConfigModule#applyOptions(Context, GlobalConfigModule.Builder)} 中
      * 手动注册 {@link BaseImageLoaderStrategy}, {@link ImageLoader} 才能正常使用
      *
-     * @return
+     * @return {@link ImageLoader}
      */
     ImageLoader imageLoader();
 

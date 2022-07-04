@@ -1,0 +1,33 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.devbrackets.android.playlistcore.api/MediaPlayerApi.RemoteConnectionState///PointingToDeclaration/com/devbrackets/android/playlistcore/api/MediaPlayerApi.RemoteConnectionState.html
+$dokka.location:com.devbrackets.android.playlistcore.components.audiofocus/DefaultAudioFocusProvider.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/components/audiofocus/DefaultAudioFocusProvider.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.components.mediasession/DefaultMediaSessionControlsReceiver.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/components/mediasession/DefaultMediaSessionControlsReceiver.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.components.mediasession/DefaultMediaSessionProvider.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/components/mediasession/DefaultMediaSessionProvider.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.components.notification/DefaultPlaylistNotificationProvider.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/components/notification/DefaultPlaylistNotificationProvider.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.components.playlisthandler/DefaultPlaylistHandler.Builder///PointingToDeclaration/com/devbrackets/android/playlistcore/components/playlisthandler/DefaultPlaylistHandler.Builder.html
+$dokka.location:com.devbrackets.android.playlistcore.components.playlisthandler/DefaultPlaylistHandler.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/components/playlisthandler/DefaultPlaylistHandler.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.components.playlisthandler/DefaultPlaylistHandler.Listener///PointingToDeclaration/com/devbrackets/android/playlistcore/components/playlisthandler/DefaultPlaylistHandler.Listener.html
+$dokka.location:com.devbrackets.android.playlistcore.data/MediaInfo.MediaState///PointingToDeclaration/com/devbrackets/android/playlistcore/data/MediaInfo.MediaState.html
+$dokka.location:com.devbrackets.android.playlistcore.data/MediaProgress.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/data/MediaProgress.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.manager/BasePlaylistManager.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/manager/BasePlaylistManager.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.service/BasePlaylistService.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/service/BasePlaylistService.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.util/MediaProgressPoll.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/util/MediaProgressPoll.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.util/Repeater.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/util/Repeater.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.util/Repeater.RepeatListener///PointingToDeclaration/com/devbrackets/android/playlistcore/util/Repeater.RepeatListener.html
+$dokka.location:com.devbrackets.android.playlistcore.util/StopWatch.Companion///PointingToDeclaration/com/devbrackets/android/playlistcore/util/StopWatch.Companion.html
+$dokka.location:com.devbrackets.android.playlistcore.util/StopWatch.TickListener///PointingToDeclaration/com/devbrackets/android/playlistcore/util/StopWatch.TickListener.html
+com.devbrackets.android.playlistcore.annotation
+com.devbrackets.android.playlistcore.api
+com.devbrackets.android.playlistcore.components.audiofocus
+com.devbrackets.android.playlistcore.components.image
+com.devbrackets.android.playlistcore.components.mediacontrols
+com.devbrackets.android.playlistcore.components.mediasession
+com.devbrackets.android.playlistcore.components.notification
+com.devbrackets.android.playlistcore.components.playlisthandler
+com.devbrackets.android.playlistcore.data
+com.devbrackets.android.playlistcore.listener
+com.devbrackets.android.playlistcore.manager
+com.devbrackets.android.playlistcore.service
+com.devbrackets.android.playlistcore.util
+

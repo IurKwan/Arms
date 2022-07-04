@@ -1,0 +1,52 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.devbrackets.android.exomedia.core.source.builder/MediaSourceBuilder.MediaSourceAttributes///PointingToDeclaration/com/devbrackets/android/exomedia/core/source/builder/MediaSourceBuilder.MediaSourceAttributes.html
+$dokka.location:com.devbrackets.android.exomedia.core.source/MediaSourceProvider.SourceTypeBuilder///PointingToDeclaration/com/devbrackets/android/exomedia/core/source/MediaSourceProvider.SourceTypeBuilder.html
+$dokka.location:com.devbrackets.android.exomedia.core.video.scale/MatrixManager.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/core/video/scale/MatrixManager.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.core.video.scale/ScaleType.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/core/video/scale/ScaleType.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.core.video.surface/ResizingSurfaceView.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/core/video/surface/ResizingSurfaceView.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.core.video.surface/ResizingSurfaceView.OnSizeChangeListener///PointingToDeclaration/com/devbrackets/android/exomedia/core/video/surface/ResizingSurfaceView.OnSizeChangeListener.html
+$dokka.location:com.devbrackets.android.exomedia.core.video.surface/ResizingTextureView.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/core/video/surface/ResizingTextureView.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.core.video.surface/ResizingTextureView.OnSizeChangeListener///PointingToDeclaration/com/devbrackets/android/exomedia/core/video/surface/ResizingTextureView.OnSizeChangeListener.html
+$dokka.location:com.devbrackets.android.exomedia.core/ListenerMux.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/core/ListenerMux.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.core/ListenerMux.Notifier///PointingToDeclaration/com/devbrackets/android/exomedia/core/ListenerMux.Notifier.html
+$dokka.location:com.devbrackets.android.exomedia.fallback.audio/NativeAudioPlayer.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/fallback/audio/NativeAudioPlayer.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.fallback.video/NativeVideoPlayer.InternalListeners///PointingToDeclaration/com/devbrackets/android/exomedia/fallback/video/NativeVideoPlayer.InternalListeners.html
+$dokka.location:com.devbrackets.android.exomedia.fallback.video/NativeVideoPlayer.State///PointingToDeclaration/com/devbrackets/android/exomedia/fallback/video/NativeVideoPlayer.State.html
+$dokka.location:com.devbrackets.android.exomedia.nmp.manager/UserAgentProvider.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/nmp/manager/UserAgentProvider.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.nmp.manager/WakeManager.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/nmp/manager/WakeManager.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.nmp/ExoMediaPlayerImpl.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/nmp/ExoMediaPlayerImpl.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.ui.widget.controls/DefaultVideoControls.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/ui/widget/controls/DefaultVideoControls.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.ui.widget.controls/VideoControlsLeanback.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/ui/widget/controls/VideoControlsLeanback.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.util/FallbackManager.DeviceModels///PointingToDeclaration/com/devbrackets/android/exomedia/util/FallbackManager.DeviceModels.html
+$dokka.location:com.devbrackets.android.exomedia.util/Repeater.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/util/Repeater.Companion.html
+$dokka.location:com.devbrackets.android.exomedia.util/StopWatch.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/util/StopWatch.Companion.html
+$dokka.location:com.devbrackets.android.exomedia/AudioPlayer.Companion///PointingToDeclaration/com/devbrackets/android/exomedia/AudioPlayer.Companion.html
+com.devbrackets.android.exomedia
+com.devbrackets.android.exomedia.core
+com.devbrackets.android.exomedia.core.audio
+com.devbrackets.android.exomedia.core.listener
+com.devbrackets.android.exomedia.core.renderer
+com.devbrackets.android.exomedia.core.renderer.provider
+com.devbrackets.android.exomedia.core.source
+com.devbrackets.android.exomedia.core.source.builder
+com.devbrackets.android.exomedia.core.source.data
+com.devbrackets.android.exomedia.core.video
+com.devbrackets.android.exomedia.core.video.scale
+com.devbrackets.android.exomedia.core.video.surface
+com.devbrackets.android.exomedia.fallback.audio
+com.devbrackets.android.exomedia.fallback.exception
+com.devbrackets.android.exomedia.fallback.video
+com.devbrackets.android.exomedia.listener
+com.devbrackets.android.exomedia.nmp
+com.devbrackets.android.exomedia.nmp.config
+com.devbrackets.android.exomedia.nmp.manager
+com.devbrackets.android.exomedia.nmp.manager.track
+com.devbrackets.android.exomedia.nmp.manager.window
+com.devbrackets.android.exomedia.ui.animation
+com.devbrackets.android.exomedia.ui.listener
+com.devbrackets.android.exomedia.ui.widget
+com.devbrackets.android.exomedia.ui.widget.attr
+com.devbrackets.android.exomedia.ui.widget.controls
+com.devbrackets.android.exomedia.util
+

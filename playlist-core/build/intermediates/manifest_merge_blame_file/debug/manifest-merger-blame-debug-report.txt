@@ -1,0 +1,29 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.devbrackets.android.playlistcore" >
+4
+5    <uses-sdk
+5-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:6:5-16
+6        android:minSdkVersion="19"
+6-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:6:5-16
+7        android:targetSdkVersion="30" />
+7-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:6:5-16
+8
+9    <application>
+9-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:7:5-15:19
+10        <receiver
+10-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:8:9-14:20
+11            android:name="com.devbrackets.android.playlistcore.components.mediasession.DefaultMediaSessionControlsReceiver"
+11-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:9:13-88
+12            android:exported="true" >
+12-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:10:13-36
+13            <intent-filter>
+13-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:11:13-13:29
+14                <action android:name="android.intent.action.MEDIA_BUTTON" />
+14-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:12:17-76
+14-->/Users/guanzhirui/Arms/playlist-core/src/main/AndroidManifest.xml:12:25-74
+15            </intent-filter>
+16        </receiver>
+17    </application>
+18
+19</manifest>

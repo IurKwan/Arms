@@ -46,7 +46,6 @@ import java.security.MessageDigest;
  * 一些框架常用的工具
  */
 public class ArmsUtils {
-    static public Toast mToast;
 
     private ArmsUtils() {
         throw new IllegalStateException("you can't instantiate me!");

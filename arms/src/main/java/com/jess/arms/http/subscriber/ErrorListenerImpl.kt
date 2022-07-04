@@ -27,22 +27,25 @@ class ErrorListenerImpl : ResponseErrorListener{
         Timber.tag("Catch-Error").w(e)
 
         var message = "未知错误"
-        if (e is CodeException){
-            message = e.message ?: ""
-        } else if (e is UnknownHostException){
-            message = "无连接异常"
-        } else if (e is SocketTimeoutException){
-            message = "请求网络超时"
-        } else if (e is HttpException){
-            message = convertStatusCode(e)
-        } else if (e is JsonParseException
-            || e is android.net.ParseException
-            || e is JSONException
-            || e is JsonIOException
-            || e is ParseException) {
-            message = "数据解析错误"
-        } else if (e is ConnectException){
-            message = "无法连接到服务器"
+        when (e) {
+            is CodeException -> {
+                message = e.message ?: ""
+            }
+            is UnknownHostException -> {
+                message = "无连接异常"
+            }
+            is SocketTimeoutException -> {
+                message = "请求网络超时"
+            }
+            is HttpException -> {
+                message = convertStatusCode(e)
+            }
+            is JsonParseException, is android.net.ParseException, is JSONException, is JsonIOException, is ParseException -> {
+                message = "数据解析错误"
+            }
+            is ConnectException -> {
+                message = "无法连接到服务器"
+            }
         }
 
         AppManager.getAppManager().showSnackbar(message, true)

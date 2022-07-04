@@ -24,14 +24,28 @@ import androidx.annotation.NonNull;
  * 用于代理 {@link Application} 的生命周期
  * @author guanzhirui
  * @see AppDelegate
- * Created by JessYan on 18/07/2017 17:43
  */
 public interface AppLifecycles {
 
+    /**
+     * attachBaseContext
+     *
+     * @param base base
+     */
     void attachBaseContext(@NonNull Context base);
 
+    /**
+     * onCreate
+     *
+     * @param application application
+     */
     void onCreate(@NonNull Application application);
 
+    /**
+     * onTerminate
+     *
+     * @param application application
+     */
     void onTerminate(@NonNull Application application);
 
 }

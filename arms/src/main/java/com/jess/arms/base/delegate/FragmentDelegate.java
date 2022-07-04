@@ -31,32 +31,82 @@ public interface FragmentDelegate {
 
     String FRAGMENT_DELEGATE = "FRAGMENT_DELEGATE";
 
+    /**
+     * onAttach
+     *
+     * @param context 上下文
+     */
     void onAttach(@NonNull Context context);
 
+    /**
+     * onCreate
+     *
+     * @param savedInstanceState 保存实例状态
+     */
     void onCreate(@Nullable Bundle savedInstanceState);
 
+    /**
+     * onCreateView
+     *
+     * @param view               视图
+     * @param savedInstanceState savedInstanceState
+     */
     void onCreateView(@Nullable View view, @Nullable Bundle savedInstanceState);
 
+    /**
+     * onActivityCreate
+     *
+     * @param savedInstanceState savedInstanceState
+     */
     void onActivityCreate(@Nullable Bundle savedInstanceState);
 
+    /**
+     * onStart
+     */
     void onStart();
 
+    /**
+     * onResume
+     */
     void onResume();
 
+    /**
+     * onPause
+     */
     void onPause();
 
+    /**
+     * onStop
+     */
     void onStop();
 
+    /**
+     * onSaveInstanceState
+     *
+     * @param outState 国家
+     */
     void onSaveInstanceState(@NonNull Bundle outState);
 
+    /**
+     * onDestroyView
+     */
     void onDestroyView();
 
+    /**
+     * onDestroy
+     */
     void onDestroy();
 
+    /**
+     * onDetach
+     */
     void onDetach();
 
     /**
+     * isAdded
      * Return true if the fragment is currently added to its activity.
+     *
+     * @return boolean
      */
     boolean isAdded();
 

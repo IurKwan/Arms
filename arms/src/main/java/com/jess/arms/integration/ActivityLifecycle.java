@@ -41,16 +41,14 @@ import javax.inject.Singleton;
 
 import dagger.Lazy;
 
-
 /**
  * {@link Application.ActivityLifecycleCallbacks} 默认实现类
  * 通过 {@link ActivityDelegate} 管理 {@link Activity}
+ * @author guanzhirui
  */
 @Singleton
 public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks {
 
-    @Inject
-    AppManager mAppManager;
     @Inject
     Application mApplication;
     @Inject
@@ -73,7 +71,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
         }
 
         if (!isNotAdd){
-            mAppManager.addActivity(activity);
+            AppManager.getAppManager().addActivity(activity);
         }
 
         //配置ActivityDelegate
@@ -94,7 +92,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
 
     @Override
     public void onActivityStarted(@NotNull Activity activity) {
-        mAppManager.onActivityStarted();
+        AppManager.getAppManager().onActivityStarted();
 
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
         if (activityDelegate != null) {
@@ -104,7 +102,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
 
     @Override
     public void onActivityResumed(@NotNull Activity activity) {
-        mAppManager.setCurrentActivity(activity);
+        AppManager.getAppManager().setCurrentActivity(activity);
 
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
         if (activityDelegate != null) {
@@ -122,9 +120,9 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
 
     @Override
     public void onActivityStopped(@NotNull Activity activity) {
-        mAppManager.onActivityStopped();
-        if (mAppManager.getCurrentActivity() == activity) {
-            mAppManager.setCurrentActivity(null);
+        AppManager.getAppManager().onActivityStopped();
+        if (AppManager.getAppManager().getCurrentActivity() == activity) {
+            AppManager.getAppManager().setCurrentActivity(null);
         }
 
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
@@ -143,7 +141,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
 
     @Override
     public void onActivityDestroyed(@NotNull Activity activity) {
-        mAppManager.removeActivity(activity);
+        AppManager.getAppManager().removeActivity(activity);
 
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
         if (activityDelegate != null) {

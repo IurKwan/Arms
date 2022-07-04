@@ -1,0 +1,128 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.krbb.arms",
+    "module": "playlist-core",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.4.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "playlist-core-1.0.0.aar",
+          "url": "playlist-core-1.0.0.aar",
+          "size": 151796,
+          "sha512": "4efab435bd6837afaf6c42a96c6c2793ae598f0c47303458f99c115f39f447bb153cca1b7fd96cb0783abbc7610f18d89ad6bfa9d31959dbc951caadd2cc083c",
+          "sha256": "173e9d69d1f05161bde43b4b2563d9031e2cca1782afdf8276f5006d71513ccf",
+          "sha1": "f80d67aca4f5f29890067adae94b89e002bc16db",
+          "md5": "820433b79fdef3b13b46c5e93fe1b1ba"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-parcelize-runtime",
+          "version": {
+            "requires": "1.6.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.6.10"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.3.1"
+          }
+        },
+        {
+          "group": "androidx.media",
+          "module": "media",
+          "version": {
+            "requires": "1.4.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "playlist-core-1.0.0.aar",
+          "url": "playlist-core-1.0.0.aar",
+          "size": 151796,
+          "sha512": "4efab435bd6837afaf6c42a96c6c2793ae598f0c47303458f99c115f39f447bb153cca1b7fd96cb0783abbc7610f18d89ad6bfa9d31959dbc951caadd2cc083c",
+          "sha256": "173e9d69d1f05161bde43b4b2563d9031e2cca1782afdf8276f5006d71513ccf",
+          "sha1": "f80d67aca4f5f29890067adae94b89e002bc16db",
+          "md5": "820433b79fdef3b13b46c5e93fe1b1ba"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "playlist-core-1.0.0-sources.jar",
+          "url": "playlist-core-1.0.0-sources.jar",
+          "size": 51341,
+          "sha512": "60db4e37b98b76926e359a66b7c740b11acf264c08e8369c5d587d35baaaa5a4c2ee1cffcb53f4d18bdc02fa2177f415358951ccb5d646339efc7405bf9465ca",
+          "sha256": "0a3260c4aafb71f1da602a6ff0933fb5d924a76561c6a1347b600ad501e249e0",
+          "sha1": "70245d6846a61b56c3ede7b95b3c719f4193fb0c",
+          "md5": "8d6ebf73fc3b3b0a12703308a582f0ce"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "playlist-core-1.0.0-javadoc.jar",
+          "url": "playlist-core-1.0.0-javadoc.jar",
+          "size": 515347,
+          "sha512": "a936cd548e442c87a64092ca74fab7f62f3445a43a226bef06866ef007ad5b8f944898ff5f6fb18a5b4d0c1fb6c0cd3a52e3e5d4cb7dd77023a999bc6b5f3c20",
+          "sha256": "5591ffca7f22a948c5996902018c943ac1729eb260cc4f255980b9f7528bf20b",
+          "sha1": "83fde67a75dbccbf929e79022700c8c8214640c9",
+          "md5": "eb19fcf190c550ad5c2329538a1e825c"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.devbrackets.android.exomedia" >
+4
+5    <uses-sdk
+5-->/Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+6        android:minSdkVersion="19"
+6-->/Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+7        android:targetSdkVersion="30" />
+7-->/Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:3:5-16
+8
+9    <application />
+9-->/Users/guanzhirui/Arms/exomedia/src/main/AndroidManifest.xml:4:5-20
+10
+11</manifest>

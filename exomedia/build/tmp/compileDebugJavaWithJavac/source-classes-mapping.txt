@@ -1,0 +1,2 @@
+com/devbrackets/android/exomedia/BuildConfig.java
+ com.devbrackets.android.exomedia.BuildConfig
