@@ -1,2 +1,0 @@
-me.jessyan.rxerrorhandler
-string app_name
